@@ -1048,15 +1048,8 @@ if (! function_exists('create_json_object_by_product_id')) {
             // Add dummy item 2 days before each date, fully booked
             if($is_old) {
             $dates = explode(',', $course['la_phleb_course_date']);
-            $course_date = str_replace('th', '', $course['la_phleb_course_date']);
-            $course_date = trim($course['la_phleb_course_date']);
-
             if (count($dates) == 1) {
-                if (strpos($course['la_phleb_course_date'], ',') === false) {
-                    $dummy_date = date('d F Y', strtotime(trim($course['la_phleb_course_date'])) - 2 * 24 * 3600); 
-                } else {
-                    $dummy_date = date('d F Y', strtotime(trim($course['la_phleb_course_date'])) - 2 * 24 * 3600); 
-                }
+                $dummy_date = date('d F Y', strtotime(trim($course['la_phleb_course_date'])) - 2 * 24 * 3600);
                 $dummy_item = $formatted_item;
                 $dummy_item['quota'] = 1; 
                 $dummy_item['real'] = 0;   
