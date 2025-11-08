@@ -1016,6 +1016,7 @@ if (! function_exists('create_json_object_by_product_id')) {
         foreach ($course_meta_group as $course) {
             $course_date = $course['adv_course_date'] ?? $course['la_phleb_course_date'];
             $is_future_date = strtotime($course_date) >= strtotime("now");
+            $is_old = strtotime($course_date) < strtotime("now") - 2 * 24 * 3600;
             preg_match('/\d+/', $course['la_phleb_course_seats_left'], $matches);
             $seats_left = (int) ($matches[0] ?? 0);
             $stock_qty = get_stock_by_variation($course['la_phleb_course_var_id']);
@@ -1023,6 +1024,28 @@ if (! function_exists('create_json_object_by_product_id')) {
             $quota_full = $stock_qty < 1;
             $delete_flag = !$is_future_date || !empty($course['la_phleb_course_delete']);
             $hide_flag = !empty($course['la_phleb_course_hide']) ? 1 : 0;
+
+            // Add dummy item for old dates (more than 2 days ago)
+            if ($is_old) {
+                $dummy_item = [
+                    'var'     => 0,
+                    'pti'     => 0,
+                    'real'    => 0,
+                    'seat'    => 0,
+                    'hide'    => 0,
+                    'quota'   => 1,
+                    'delete'  => 0,
+                    'date'    => sanitize_text_field($course['la_phleb_course_date'])
+                ];
+                if (!empty($course['la_phleb_course_address'])) {
+                    $dummy_item['address'] = sanitize_text_field($course['la_phleb_course_address']);
+                }
+                if (!empty($course['la_phleb_course_time'])) {
+                    $dummy_item['time'] = sanitize_text_field($course['la_phleb_course_time']);
+                }
+                $formatted_items[] = $dummy_item;
+            }
+
             $formatted_item = [
                 'var'     => intval($course['la_phleb_course_var_id'] ?? 0),
                 'pti'     => intval($course['pb_phleb_course_var_id'] ?? 0),
