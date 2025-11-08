@@ -1042,16 +1042,12 @@ if (! function_exists('create_json_object_by_product_id')) {
                 $formatted_item['time'] = sanitize_text_field($course['la_phleb_course_time']);
             }
 
-            // Add dummy item 2 and 3 days before each date, fully booked
-            if (count(explode(',', $course_date)) == 3) {
-                $dummy_date = date('d F Y', strtotime($course_date) - 2 * 24 * 3600);
-                $dummy_item = $formatted_item;
-                $dummy_item['quota'] = 1;
-                $dummy_item['seat'] = 0;
-                $dummy_item['real'] = 0;
-                $dummy_item['date'] = $dummy_date;
-                $formatted_items[] = $dummy_item;
-            }
+            // Add dummy item 2 days before each date, fully booked
+            $dummy_date = date('d F Y', strtotime($course_date) - 2 * 24 * 3600);
+            $dummy_item = $formatted_item;
+            $dummy_item['quota'] = 1;
+            $dummy_item['date'] = $dummy_date;
+            $formatted_items[] = $dummy_item;
 
             if ($delete_flag != 1) {
                 $formatted_items[] = $formatted_item;
