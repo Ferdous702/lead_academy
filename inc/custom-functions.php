@@ -1025,27 +1025,6 @@ if (! function_exists('create_json_object_by_product_id')) {
             $delete_flag = !$is_future_date || !empty($course['la_phleb_course_delete']);
             $hide_flag = !empty($course['la_phleb_course_hide']) ? 1 : 0;
 
-            // Add dummy item for old dates (more than 2 days ago)
-            if ($is_old) {
-                $dummy_item = [
-                    'var'     => 0,
-                    'pti'     => 0,
-                    'real'    => 0,
-                    'seat'    => 0,
-                    'hide'    => 0,
-                    'quota'   => 1,
-                    'delete'  => 0,
-                    'date'    => sanitize_text_field($course['la_phleb_course_date'])
-                ];
-                if (!empty($course['la_phleb_course_address'])) {
-                    $dummy_item['address'] = sanitize_text_field($course['la_phleb_course_address']);
-                }
-                if (!empty($course['la_phleb_course_time'])) {
-                    $dummy_item['time'] = sanitize_text_field($course['la_phleb_course_time']);
-                }
-                $formatted_items[] = $dummy_item;
-            }
-
             $formatted_item = [
                 'var'     => intval($course['la_phleb_course_var_id'] ?? 0),
                 'pti'     => intval($course['pb_phleb_course_var_id'] ?? 0),
@@ -1062,6 +1041,14 @@ if (! function_exists('create_json_object_by_product_id')) {
             if (!empty($course['la_phleb_course_time'])) {
                 $formatted_item['time'] = sanitize_text_field($course['la_phleb_course_time']);
             }
+
+            // Add dummy item for old dates (more than 2 days ago)
+            if ($is_old) {
+                $dummy_item = $formatted_item;
+                $dummy_item['quota'] = 1;
+                $formatted_items[] = $dummy_item;
+            }
+
             if ($delete_flag != 1) {
                 $formatted_items[] = $formatted_item;
             }
