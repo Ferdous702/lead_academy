@@ -1,0 +1,328 @@
+    #bundle-offer-banner {
+    background-image: url(https://lead-academy.org/wp-content/uploads/2022/09/Frame-1-min-scaled-1.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    padding: 150px 0px;
+}
+
+    #bundle-offer-banner h1 {
+    font-family: "Sen", Sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+    background: -webkit-linear-gradient(#f24875, #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+    #bundle-offer-banner img {
+    width: 20%;
+    height: auto;
+}
+
+    #bundle-offer-banner h2 {
+    color: #FFFFFF;
+    font-family: "Sen", Sans-serif;
+    font-size: 72px;
+    font-weight: 800;
+    line-height: 108px;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.95);
+}
+
+    #bundle-offer-banner h3 {
+    color: #ffc1d1;
+    font-family: "Sen", Sans-serif;
+    font-weight: 600;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.85);
+}
+
+    #bundle-offer-banner p {
+    text-align: center;
+    color: #FFFFFF;
+    font-family: "Sen", Sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+    #bundle-review-part {
+    padding: 50px 0px 10px 0px;
+}
+
+    #bundle-review-part h2 {
+    color: #000000;
+    font-family: "Sen", Sans-serif;
+    font-size: 35px;
+    font-weight: 600;
+    line-height: 57px;
+    text-align: center;
+}
+
+    .rev-checked {
+        color: orange;
+}
+
+/* -Bundle Course Box Section- */
+
+    #bundle-courses-box-part {
+    padding: 50px 60px;
+}
+
+    .bundle-courses-card-box {
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 35px 0px rgba(0, 0, 0, 0.5);
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+    margin: 0px 0px 25px 0px;
+    padding: 0px 0px 0px 0px;
+    border-radius: 6px 6px 6px 6px;
+    border: 1px solid #c0c0c0;
+}
+
+    .bundle-courses-card-box:hover {
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 35px 0px rgba(0, 0, 0, 0.034);
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+}
+
+    .bundle-courses-card-box img {
+    width: 100%;
+    height: auto;
+}
+
+    .bundle-course-box-dtls {
+    padding: 0px 20px 10px 20px;
+    height: 100%;
+}
+
+    .bundle-courses-card-box h2 {
+    text-align: center;
+}
+
+    .bundle-courses-card-box h2 a {
+    color: #000000;
+    font-family: "Sen", Sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 22px;
+    text-decoration: none;
+}
+
+    .bundle-course-box-dtls h3 {
+    color: #000000;
+    font-family: "Sen", Sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 17px;
+    text-align: center;
+}
+
+
+    .bundle-p {
+    color: #000000 !important;
+    font-family: "Sen", Sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    line-height: 17px !important;   
+    text-align: center;
+}
+
+    .bundle-courses-card-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px 6px 0px 0px;
+}
+
+    .bundle-course-box-dtls p {
+    color: #000000;
+    font-family: "Sen", Sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+    span.bundle-course-rating {
+    color: #000000;
+    font-family: "Sen", Sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+}
+
+    .bundle-course-price {
+    text-align: right;
+}
+
+    span.bundle-regular-price {
+    color: #000;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+    span.bundle-sale-price {
+    color: #000000;
+    font-family: "Sen", Sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-left: 3px;
+}
+
+    .bundle-rating-course-part {
+    margin-top: 5px;
+}
+
+    .bundle-course-box-button a {
+    font-family: "Sen", Sans-serif;
+    font-weight: 800;
+    background-color: #B91948;
+    border-radius: 2px 2px 2px 2px;
+    padding: 12px 22px 12px 22px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+    .bundle-course-box-button a:hover {
+    background-color: #ed0047;
+}
+
+    .bundle-course-discount-percent {
+    position: relative;
+    top: -35px;
+    width: 18%;
+}
+
+    .bundle-courses-card-box h2 {
+    text-align: center;
+    margin-top: -45px;
+    margin-bottom: 0px;
+}
+
+    .bundle-courses-title h2 {
+    color: #000000;
+    font-family: "Sen", Sans-serif;
+    font-size: 35px;
+    font-weight: 600;
+    line-height: 57px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+    .bundle-w-s-t-box img {
+    width: 40%;
+    text-align: center;
+}
+
+    .bundle-w-s-t-box {
+    text-align: center;
+}
+
+    #bundle-why-should-train h2 {
+    text-align: center;
+    margin: 10px 0px 65px 0px;
+    color: #000000;
+    font-family: "Sen", Sans-serif;
+    font-size: 35px;
+    font-weight: 600;
+    line-height: 57px;
+}
+
+    .bundle-w-s-t-box h3 {
+    color: #000000;
+    font-family: "Sen", Sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 36px;
+    margin-bottom: 0;
+}
+
+    .bundle-w-s-t-box p {
+    text-align: center;
+    color: #000000;
+    font-family: "Sen", Sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+}
+
+button.btn.custom-add-to-cart.bundle-course-btn {
+    float: none !important;
+    width: 100%;
+}
+
+
+/* -Mobile Device- */
+@media (max-width: 767px) {
+    #bundle-offer-banner img {
+        width: 80%;
+        height: auto;
+    }
+
+    #bundle-offer-banner h1 {
+        font-size: 28px;
+    }
+
+    #bundle-offer-banner h2 {
+        color: #FFFFFF;
+        font-family: "Sen", Sans-serif;
+        font-size: 46px;
+        font-weight: 800;
+        line-height: 60px;
+        text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.95);
+    }
+    
+    #bundle-review-part h2 {
+        color: #000000;
+        font-family: "Sen", Sans-serif;
+        font-size: 25px;
+        font-weight: 600;
+        line-height: 32px;
+        text-align: center;
+    }
+
+    .bundle-courses-title h2 {
+        color: #000000;
+        font-family: "Sen", Sans-serif;
+        font-size: 25px;
+        font-weight: 600;
+        line-height: 33px;
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    #bundle-why-should-train h2 {
+        text-align: center;
+        margin: 10px 0px 65px 0px;
+        color: #000000;
+        font-family: "Sen", Sans-serif;
+        font-size: 25px;
+        font-weight: 600;
+        line-height: 33px;
+    }
+
+    .bundle-w-s-t-box h3 {
+        color: #000000;
+        font-family: "Sen", Sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 36px;
+        margin-bottom: 0;
+    }
+
+    #bundle-courses-box-part {
+        padding: 50px 0px;
+    }
+
+}
+
+/* -Tab Device- */
+@media (max-width: 1100px) {
+
+    /* -Bundle Course Box Section- */
+
+    #bundle-courses-box-part {
+        padding: 50px 0px;
+    }
+}

@@ -1,0 +1,72 @@
+/* Sticky Place Order bar (checkout) */
+
+#la-sticky-orderbar {
+  display: none; /* hidden by default (non-mobile) */
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background: rgba(255, 255, 255, 0.158);
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.08);
+  border-top: 1px solid #eee;
+  padding: 10px 16px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+#la-sticky-orderbar.la-hidden {
+  opacity: 0;
+  transform: translateY(100%);
+  pointer-events: none;
+}
+
+.la-sticky-orderbar__inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.la-sticky-orderbar__button {
+  appearance: none;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 20px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  background: #af1f47;
+  color: #fff;
+}
+
+.la-sticky-orderbar__button:focus {
+  outline: 2px solid #af1f47;
+  outline-offset: 2px;
+}
+
+.la-sticky-orderbar__button:hover {
+  outline: 2px solid #af1f47;
+  outline-offset: 2px;
+  background-color: #af1f47;
+}
+
+/* Ensure it sits above Woo notices */
+.woocommerce-NoticeGroup,
+.woocommerce-error,
+.woocommerce-info,
+.woocommerce-message {
+  z-index: 1;
+}
+
+/* Small screens: full width button */
+@media (max-width: 600px) {
+  .la-sticky-orderbar__button {
+    width: 100%;
+  }
+}
+
+/* Only show the sticky bar on mobile viewports */
+@media (max-width: 768px) {
+  #la-sticky-orderbar { display: block; }
+}

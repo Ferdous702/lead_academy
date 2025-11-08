@@ -1,0 +1,206 @@
+.cart-switch-container-wrapper {
+    margin: 30px auto 60px;
+    border: 1px solid #ccc;
+    padding: 35px;
+    background-color: #fff8fa;
+}
+.cart-switch-container {
+    font-family: open sans;
+    text-align: left;
+}
+.cart-switch-container label.switch {
+    text-align: left;
+    margin-right: 10px;
+    vertical-align: top;
+    margin-top: 3px;
+}
+
+.cart-switch-container span.cart-switch-prc {
+    text-align: right;
+}
+.cart-switch-text {
+    display: inline-block;
+    margin: 20px 0;
+    width: 400px;
+    max-width: 80%;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 25px;
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.switch .slider:before {
+    position: absolute;
+    content: "";
+    height: 17px;
+    width: 17px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input.switch-box:checked + .slider {
+    background-color: #B91948;
+}
+
+input.switch-box:focus + .slider {
+    box-shadow: 0 0 1px #B91948;
+}
+
+input.switch-box:checked + .slider:before {
+    -webkit-transform: translateX(19px);
+    -ms-transform: translateX(19px);
+    transform: translateX(19px);
+}
+
+.cart-switch-text ul {
+    margin-left: 18px;
+}
+.cart-switch-text li {
+    list-style: disc;
+}
+
+/* Rounded sliders */
+.switch .slider.round {
+    border-radius: 14px;
+}
+
+.switch .slider.round:before {
+    border-radius: 50%;
+}
+
+.cart-switch-container-wrapper h3 {
+color: #AF1F47;
+}
+
+.woocommerce-message::before, .woocommerce-info::before {
+color: #af1f47;
+}
+
+.woocommerce-message, .woocommerce-info {
+border-top-color: #af1f47;
+}
+
+.phlebotomy-practical-training-course.cart-switch-container-wrapper h3 a {
+    color: #AF1F47;
+}
+
+.phlebotomy-practical-training-course.cart-switch-container-wrapper h3 img {
+    width: 26px;
+    margin-left: 10px;
+}
+
+.phlebotomy-practical-training-course.cart-switch-container-wrapper #add-suggestion-course-to-cart {
+    display: inline-block;
+    background: #af1f47;
+    color: #fff;
+    font-weight: bold;
+    padding: 6px 18px;
+    margin-left: 10px;
+}
+.cart-switch-container-wrapper.phlebotomy-practical-training-course .cart-switch-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cart-vanue-time-wrap {
+    text-align: left;
+    display: block;
+}
+.cart-vanue-time-wrap span{
+    display: block;
+}
+@media screen and (max-width: 700px) {
+    .woocommerce-cart-form {
+        overflow-x: scroll;	
+    }
+}
+@media (max-width: 460px) {
+    .cart-switch-container-wrapper {
+        margin: 10px auto 10px;
+        border: 1px solid #ccc;
+        padding: 15px;
+        background-color: #fff8fa;
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .cart-switch-container {
+        font-family: open sans;
+        text-align: left;
+        border-bottom: 1px solid #AF1F47;
+        margin-bottom: 5px;
+    }
+}
+div.cart-switch-container-wrapper h3 > img{
+    width: 26px;
+}
+.cart-switch-text{
+    margin-top: 0px;
+}
+
+input#coupon_code {
+    border: 1px solid #af1f47;
+    margin-right: -5px;
+}
+
+#custom_apply_coupon{
+    background: #000000;
+    color: #ffffff;
+    font-weight: 800;
+    border-radius: 0px;
+}
+
+.woocommerce a.button, .woocommerce a.button:hover, .woocommerce a.button:focus {
+    border: solid;
+    background: #af1f47;
+    color: #fff;
+    border-radius: 5px;
+    border-color: #af1f47;
+}
+
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+    input#coupon_code {
+        width: 55%;
+    }
+
+    #custom_apply_coupon{
+        padding: 15px 12px;
+    }
+}
+
+/** For tablet devices **/
+@media (min-width: 768px) and (max-width: 1024px) {
+    input#coupon_code {
+        width: 50%;
+    }
+
+    #custom_apply_coupon {
+        padding: 15px 6px;
+    }
+}

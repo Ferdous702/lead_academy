@@ -1,0 +1,287 @@
+/* General popup styles (for larger screens) */
+.unique-popup-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.unique-popup-content {
+    background: linear-gradient(135deg, #fff, #ffd1d8);
+    padding: 40px 20px 20px 20px;
+    text-align: center;
+    max-width: 550px;
+    width: 90%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: fadeIn 0.5s ease-in-out;
+    /* Responsive height and scrolling fix */
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.unique-popup-header h2 {
+    color: #FF1493;
+    font-size: 24px;
+    margin: 0;
+}
+
+.unique-popup-p {
+    color: #FF1493 ;
+    margin: 0;
+    font-size: 36px !important;
+    margin-bottom: 30px !important;
+    font-weight: 700;
+}
+
+span#unique-popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 22px;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    color: #ff1493;
+    background-color: #ffffff;
+    border: 1px solid #ff1493;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    text-align: center;
+}
+
+.unique-countdown-text {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.unique-countdown {
+    font-size: 22px;
+    color: #FF1493;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.unique-popup-content p {
+    font-size: 16px;
+}
+
+/* Styles for Gravity Forms (ID 130, 131, 132) */
+
+/* Align form labels to the left */
+#gform_130 .gfield_label,
+#gform_131 .gfield_label,
+#gform_132 .gfield_label {
+    text-align: left;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Adjust input fields width for better alignment */
+#gform_130 .ginput_container input, 
+#gform_130 .ginput_container select, 
+#gform_130 .ginput_container textarea,
+#gform_131 .ginput_container input, 
+#gform_131 .ginput_container select, 
+#gform_131 .ginput_container textarea,
+#gform_132 .ginput_container input, 
+#gform_132 .ginput_container select, 
+#gform_132 .ginput_container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 0px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Adjust the alignment of the submit button */
+#gform_130 .gform_footer .gform_button,
+#gform_131 .gform_footer .gform_button,
+#gform_132 .gform_footer .gform_button {
+    width: 100%;
+    padding: 15px;
+    background-color: #FF1493;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+/* Style for better form layout */
+#gform_130 .gform_fields .gfield,
+#gform_131 .gform_fields .gfield,
+#gform_132 .gform_fields .gfield {
+    margin-bottom: 0px;
+}
+
+/* Professional Confirmation Message Styles */
+.pro-confirmation-container {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.08);
+    max-width: 560px;
+    margin: 20px auto;
+    padding: 10px;
+    text-align: center;
+}
+.pro-header {
+    color: #8B0000;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0px;
+}
+.pro-text {
+    color: #374151;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0px;
+}
+.pro-coupon-block {
+    background-color: #fdf5f5;
+    border-radius: 8px;
+    padding: 0px;
+}
+.pro-coupon-label {
+    color: #525252;
+    font-size: 15px;
+    margin-bottom: 0px;
+    display: block;
+    font-weight: 400;
+}
+.pro-coupon-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    background-color: #af1f47;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 8px 24px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+.pro-copy-feedback {
+    display: none;
+    color: #16a34a;
+    font-weight: 600;
+    margin-top: 15px;
+    font-size: 15px;
+}
+
+/* Fade-in animation for popup */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* --- Responsive Styles --- */
+
+/* Tablet styles (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+    .unique-popup-content {
+        max-width: 450px;
+        padding: 30px 15px 15px 15px;
+    }
+
+    .unique-popup-header h2 {
+        font-size: 22px;
+    }
+
+    .unique-popup-p {
+        font-size: 22px; /* Reduce header font size */
+    }
+
+}
+
+/* Mobile styles (max-width: 767px) */
+@media screen and (max-width: 767px) {
+    .unique-popup-content {
+        max-width: 90%;
+        padding: 45px 10px 10px 10px;
+    }
+
+    .unique-popup-header h2 {
+        font-size: 22px !important;
+    }
+
+    .unique-popup-p {
+        font-size: 22px !important; /* Reduce header font size */
+    }
+
+    .unique-countdown {
+        font-size: 18px !important;
+    }
+
+    .unique-popup-content h3 {
+        font-size: 18px !important;
+        margin: 0px !important
+    }
+
+    span#unique-popup-close {
+        top: 5px;
+        right: 5px;
+        font-size: 18px;
+        width: 22px;
+        height: 22px;
+    }
+    
+    #gform_130 .ginput_container,
+    #gform_131 .ginput_container,
+    #gform_132 .ginput_container {
+        width: 100%;
+    }
+
+    #gform_130 .ginput_container input, #gform_130 .ginput_container select, #gform_130 .ginput_container textarea,
+    #gform_131 .ginput_container input, #gform_131 .ginput_container select, #gform_131 .ginput_container textarea,
+    #gform_132 .ginput_container input, #gform_132 .ginput_container select, #gform_132 .ginput_container textarea {
+        padding: 4px 10px;
+    }
+
+    #gform_130 .gform_footer .gform_button,
+    #gform_131 .gform_footer .gform_button,
+    #gform_132 .gform_footer .gform_button {
+        padding: 10px; /* Adjusted for better mobile view */
+        font-size: 14px;
+    }
+
+    label.gfield_label.gform-field-label {
+        font-size: 14px !important;
+    }
+
+    /* Responsive styles for Confirmation Message */
+    .pro-confirmation-container {
+        padding: 25px;
+    }
+    .pro-header {
+        font-size: 24px;
+    }
+    .pro-coupon-wrapper {
+        font-size: 18px;
+        padding: 8px 24px;
+        width: 80%;
+        box-sizing: border-box;
+        justify-content: center;
+    }
+}

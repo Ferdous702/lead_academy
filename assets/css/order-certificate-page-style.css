@@ -1,0 +1,583 @@
+section#order-certificate-banner {
+    background: linear-gradient(200deg, #00000073 0%, #0000005c 100%), url(https://lead-academy.org/wp-content/uploads/0223/12/Certificate_banner3.webp); 
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 1;
+    transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+    padding: 100px 0px 100px 0px;
+    text-align: center;
+}
+
+.order-certificate-banner-text {
+    background-color: rgba(0, 0, 0, 0.53);
+    padding: 30px 105px;
+    margin: 0px 105px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 4px 6px rgb(0 0 0);
+}
+
+.order-certificate-banner-text h1 {
+    color: #FFFFFF;
+    font-family: "Sen", Sans-serif;
+    font-size: 40px;
+    line-height: 1.3em;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+section#order-certificate-info {
+    padding: 100px 0px 50px 0px;
+}
+
+.order-certificate-info-box {
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    border-color: #DDDDDD;
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+    margin: 0px 60px 0px 60px;
+    padding: 30px 30px 10px 30px;
+}
+
+.certificate-info-title {
+    padding: 15px 0px 15px 0px;
+    background-color: transparent;
+    background-image: linear-gradient(45deg, #B91948 0%, #DF0E4B 100%);
+    border-radius: 100px 100px 100px 100px;
+    box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.6);
+    margin-top: -70px;
+}
+
+.certificate-info-title h2 {
+    text-align: center;
+    color: #FFFFFF;
+    font-family: "Sen", Sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0;
+}
+
+
+  .icon-parent {
+    background: #bf1849;
+    text-align: center;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAADElEQVR4nGPYL+EJAAK6ASG7xDAHAAAAAElFTkSuQmCC) repeat-x center;
+    width: 45%;
+    margin: 0 auto;    
+  }
+  
+  .icons {
+    background: white;
+    display: inline-block;
+    padding: 0px 10px;
+  }
+  
+  .icons i {
+    padding: 7px;
+    color: #bf1849;
+    font-size: 24px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    vertical-align: center;
+  }
+
+  .order-certificate-info-box-1 {
+    margin-top: 40px;
+}
+
+.order-certificate-info-box-1 h2 {
+    text-align: center;
+    color: #444444;
+    font-family: "Sen", Sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.order-certificate-info-box-1 p {
+    margin: 15px 0px;
+    padding: 20px 20px 20px 20px;
+    background-color: #B91948;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    border-color: #ffffff;
+    box-shadow: 0px 5px 14px 0px rgba(0, 0, 0, 0.09);
+    color: #ffffff;
+    text-align: justify;
+    font-family: "Sen", Sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.order-certificate-info-box-1 img {
+    width: 100%;
+    margin: 20px 0px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.order-certificate-info-box-2 {
+    margin: 45px 0px;
+}
+
+.order-certificate-info-box-2 h2 {
+    color: #444444;
+    font-family: "Sen", Sans-serif;
+    font-weight: 600;
+    text-align: center;
+    font-size: 30px;
+}
+
+.order-certificate-info-box-2 p {
+    margin: 15px 0px;
+    padding: 20px 20px 20px 20px;
+    background-color: #B91948;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    border-color: #ffffff;
+    box-shadow: 0px 5px 14px 0px rgba(0, 0, 0, 0.09);
+    color: #ffffff;
+    text-align: justify;
+    font-family: "Sen", Sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    height: 200px;
+}
+
+.order-certificate-info-box-2 img {
+    width: 100%;
+    margin: 20px 0px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.order-certificate-info-box-3 img {
+    width: 50%;
+    margin: 30px auto;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    display: block;
+}
+
+.certificate-student-id-card-1 h2 {
+    text-align: center;
+    color: #444444;
+    font-family: "Sen", Sans-serif;
+    font-weight: 600;
+    text-transform: capitalize;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.certificate-student-id-card-box {
+    padding: 20px 20px 24px 20px;
+    background-color: transparent;
+    background-image: linear-gradient(45deg, #B91948 0%, #DF0E4B 100%);
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    border-color: #F7F7F7;
+    box-shadow: 0px 5px 14px 0px rgba(0, 0, 0, 0.09);
+    border-radius: 10px;
+    margin: 40px 0px;
+}
+
+.certificate-student-id-card-box h3:nth-of-type(1)  {
+    margin-bottom: 30px;
+}
+
+.certificate-student-id-card-box h3 {
+    color: #fff;
+    font-size: 22px;
+    font-family: "Sen", Sans-serif;
+    font-weight: 600;
+    line-height: 33px;
+    margin-bottom: 15px;
+}
+
+.certificate-student-id-card-box ul {
+    margin: 0;
+    padding-left: 10px;
+}
+
+.certificate-student-id-card-box ul li {
+    color: #ffffff;
+    text-align: justify;
+    font-family: "Sen", Sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    list-style: none;
+    line-height: 35px;
+}
+
+.certificate-student-id-card-1 img {
+    width: 100%;
+}
+
+.order-certificate-info-box-3 {
+    margin-top: 0;
+}
+
+section#order-certificate {
+    background-color: transparent;
+    background-image: linear-gradient(45deg, #df0e4dc6 0%, #b91949c5 100%);
+    transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+    padding: 60px 0px;
+    margin: 60px 0px;
+}
+
+.order-certificate-form {
+    background-color: #fff;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    border-color: #FAFAFA;
+    box-shadow: 0px 6px 16px 0px rgba(0, 0, 0, 0.55);
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+    padding: 70px 40px 30px 40px;
+    margin: 0px 100px;
+    border-radius: 10px;
+} 
+
+.order-certificate-title h2 {
+    padding: 15px 0px 15px 0px;
+    background-color: transparent;
+    background-image: linear-gradient(45deg, #B91948 0%, #DF0E4B 100%);
+    border-radius: 100px 100px 100px 100px;
+    box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    color: #FFFFFF;
+    font-family: "Sen", Sans-serif;
+    font-size: 30px;
+    margin-bottom: -35px;
+}
+
+p.gform_required_legend {
+    display: none;
+}
+
+.od-c-m h3 {
+    margin-top: 35px;
+    background-color: #443d3f;
+    color: #fff;
+    text-align: center;
+    padding: 6px;
+    border-radius: 6px;
+    font-size: 24px;
+    width: 100%;
+}
+
+legend.gfield_label.gform-field-label {
+    font-size: 18px !important;
+    margin-bottom: 5px !important;
+    width: 100% !important;
+    display: block !important;
+}
+
+.order-certificate-form label {
+    padding: 8px 0px;
+}
+
+.ginput_container {
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+.ginput_container ul li {
+    font-size: 18px !important;
+}
+
+.od-c-m {
+    border: 0px !important;
+    padding: 0px !important;
+}
+
+label.gfield_label.gform-field-label {
+    width: 100% !important;
+    margin-bottom: 15px !important;
+}
+
+label.gfield_label.gform-field-label {
+    width: 100% !important;
+    margin-bottom: 15px !important;
+    font-size: 18px !important;
+}
+
+select {
+    -webkit-appearance: none !important;
+    height: 100% !important;
+    background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc) !important;
+    background-position: calc(100% - 19px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em !important;
+    background-size: 5px 5px, 5px 5px, 1px 1.5em !important;
+    background-repeat: no-repeat !important;
+    padding: 8px !important;
+}
+
+.gform_wrapper.gravity-theme .left_label div.gfield>div:not(.ui-resizable-handle):not(.gfield-admin-icons) {
+    width: 100% !important;
+}
+
+.gfield select {
+    width: 60% !important;
+}
+
+select#input_33_44_6 {
+    width: 100% !important;
+}
+
+input#gf_coupon_button {
+    padding: 13px 18px;
+    background-color: #bf1748;
+}
+
+input#gform_submit_button_33 {
+    background-color: #bf1748;
+}
+
+input#gform_submit_button_6 {
+    background-color: #bf1748;
+}
+
+.gform_wrapper.gravity-theme .gfield input, .gform_wrapper.gravity-theme .gfield select {
+    cursor: pointer !important;
+}
+
+.gform_wrapper.gravity-theme .gfield-choice-input+label {
+    cursor: pointer;
+}
+
+section#la-cretificate-of-achivment img {
+    width: 80%;
+}
+
+section#la-cretificate-of-achivment p {
+    font-family: "Sen", Sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+
+/* -Mobile Device- */
+@media (max-width: 767px) {
+    .order-certificate-banner-text h1 {
+        font-size: 26px;
+    }
+    
+    .order-certificate-banner-text {
+        padding: 10px;
+        margin: 0px 0px;
+    }
+
+    section#order-certificate-banner {
+        padding: 50px 0px 50px 0px;
+    }
+
+    .order-certificate-info-box {
+        margin: 0;
+        padding: 30px 15px 10px 15px;
+    }
+
+    .order-certificate-info-box-1 h2 {
+        font-size: 22px;
+    }
+
+    .certificate-info-title h2 {
+        font-size: 24px;
+    }
+
+    .order-certificate-info-box-2 h2 {
+        font-size: 22px;
+        margin-top: 20px;
+    }
+
+    .order-certificate-info-box-3 {
+        margin-top: 0;
+    }
+
+    .order-certificate-info-box-3 img {
+        width: 100%;
+    }
+
+    .order-certificate-info-box-2 {
+        margin: 15px 0px;
+    }
+
+    section#order-certificate-info {
+        padding: 0px 0px;
+        margin-top: 100px;
+    }
+
+    section#certificate-student-id-card {
+        padding: 50px 0px;
+    }
+
+    .order-certificate-form {
+        padding: 40px 15px 30px 15px;
+        margin: 0px;
+    }
+
+    .od-c-m h3 {
+        font-size: 20px;
+    }
+
+    .od-c-m h2.gsection_title {
+        font-size: 20px;
+    }
+
+    .gfield select {
+        width: 100% !important;
+    }
+
+    .order-certificate-title h2 {
+        font-size: 26px;
+    }
+
+    input#gf_coupon_button {
+        padding: 10px 18px;
+    }
+
+    .gform_footer.left_label {
+        padding: 20px 0px 0px 0px !important;
+    }
+
+    .certificate-student-id-card-box h3 {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    .certificate-student-id-card-box ul {
+        margin: 0;
+        padding-left: 0px;
+    }
+
+    .certificate-student-id-card-1 h2 {
+        font-size: 26px;
+    }
+
+    section#order-certificate {
+        margin: 20px 0px;
+    }
+
+    input#gform_submit_button_33 {
+        background-color: #bf1748;
+        width: 100% !important;
+    } 
+
+    section#la-cretificate-of-achivment img {
+        width: 80%;
+        margin-bottom: 30px;
+    }
+
+    section#la-cretificate-of-achivment p {
+        margin-bottom: 40px;
+    }
+}
+
+/* -Tab Device- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    section#order-certificate-banner {
+        padding: 55px 0px 55px 0px;
+    }
+
+    .order-certificate-banner-text {
+        padding: 20px;
+        margin: 0px 0px;
+    }
+
+    .order-certificate-banner-text h1 {
+        font-size: 30px;
+    }
+
+    .order-certificate-info-box {
+        margin: 0;
+    }
+
+    .certificate-info-title h2 {
+        font-size: 28px;
+    }
+
+    .order-certificate-info-box-1 h2 {
+        font-size: 26px;
+    }
+
+    .order-certificate-info-box-2 h2 {
+        font-size: 26px;
+    }
+
+    .order-certificate-form {
+        padding: 40px 20px 30px 20px;
+        margin: 0px 20px;
+        border-radius: 10px;
+    }
+
+}
+
+/* -Endorsed Certificate- */
+ul#input_13_69 span {
+    display: none;
+}
+
+.od-c-m h2.gsection_title {
+    margin-top: 35px !important;
+    background-color: #443d3f !important;
+    color: #fff;
+    text-align: center;
+    padding: 6px !important;
+    border-radius: 6px;
+    line-height: 45px;
+    font-size: 25px;
+}
+
+label#input_6_97_5_label {
+    position: absolute;
+    bottom: 370px;
+}
+
+input#input_6_97_5 {
+    margin-top: 35px;
+}
+
+.gfield_description {
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+.gform_wrapper ul.gform_fields:not(.top_label) li ul.gfield_radio {
+    width: 100% !important;
+}
+
+.gform_legacy_markup_wrapper .field_sublabel_above .ginput_complex.ginput_container label {
+    font-size: 14px !important;
+}
+
+label#input_6_44_1_label {
+    display: inline-block;
+}
+
+.gform_legacy_markup_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
+    padding: 8px !important;
+    width: 100%;
+}
+
+input#gf_coupon_code_6 {
+    width: 50%;
+    padding: 8px;
+}
+
+label#input_6_103_1_label {
+    display: inline-block;
+}
+
+select#input_6_44_6 {
+    width: 100% !important;
+}
+
+/* -Order Certificate of Completion- */
+
+input#gf_coupon_code_11 {
+    width: 50%;
+}
+
+label#input_11_44_1_label {
+    display: inline-block;
+}
+
+select#input_11_44_6 {
+    width: 100% !important;
+}

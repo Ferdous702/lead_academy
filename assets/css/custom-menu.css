@@ -1,0 +1,176 @@
+@media screen and ( min-width: 1101px ){
+    #header > div.container{
+        display: flex;
+    }
+    #header .loggedin-user-submenu{
+        left: -135px;
+    }
+    #mobile-menu-expandable{
+        display: flex !important;
+        vertical-align: middle;
+        align-items: center;
+        margin-left: 5px;
+    }
+    #mobile-menu-expandable div.la-popular-course-sml-devices{
+        display: none;
+    }
+    .hot-deal-btn{
+        margin-left: 18px !important;
+    }
+    #mobile-menu-expandable > .hot-deal-wrapper > .la-hot-deals-submenu{
+        position: absolute !important;
+        width: 190px !important;
+        top: 40px;
+        left: 13px;
+        z-index: 9;
+        background: #fff;
+        border: 1px solid #af1f47;
+        border-radius: 5px;
+        padding: 14px;
+    }
+    #mobile-menu-expandable > .la-popular-course-sml-devices,
+    #mobile-menu-expandable > a.contact-us-menu-item,
+    #mobile-menu-expandable > a:nth-child(2),
+    #mobile-menu-expandable > a:nth-child(6),
+    #mobile-menu-expandable > nav.hot-deal-wrapper > a > i.fa.fa-fire,
+    #mobile-menu-expandable > a.lifetime-membership > i.fa.fa-shield,
+    #mobile-menu-expandable > a.header-user-link{
+        display: none;
+    }
+    #mobile-menu-expandable > a.header-user-link.login{
+        display: block !important;
+        margin-left: 15px;
+    }
+    #mobile-menu-expandable > .hot-deal-wrapper{
+        position: relative;
+        padding-top: 2px;
+    }
+    #mobile-menu-expandable > nav.hot-deal-wrapper > div.la-hot-deals-submenu > p{
+        display: none;
+    }
+    #mobile-menu-expandable > a.lifetime-membership{
+        background: #af1f47;
+        color: #fff;
+        padding: 6px 10px;
+        border-radius: 20px;
+        border: 1px solid #af1f47;
+        align-content: center;
+        margin: 0px 20px;
+    }
+    #mobile-menu-expandable > a.lifetime-membership:hover{
+        background:#fff;
+        color: #af1f47;
+    }
+    form#mobile-header-search{
+        display: none !important;
+    }
+    #search-box{
+        border: 2px solid #af1f47 !important;
+        border-right: none !important;
+        border-radius: 31px 0px 0px 31px !important;
+        padding: 10px 25px !important;
+        width: 100%;
+        /* font-family: 'Poppins'; */
+    }
+    #mobile-header-search > button{
+        padding: 10px 20px;
+        border-radius: 0px 31px 31px 0px;
+        background-color: #fff;
+        color: #000;
+        border: 2px solid #af1f47 !important;
+        border-left: none !important;
+    }
+    #mobile-header-search > button.search-submit > i.fa.fa-search{
+        font-size: 19px;
+    }
+    .subjects-menu-container .la-all-courses-mega-menu-wrap>ul.la-popular-courses li span{
+        display: none;
+    }
+    .la-ajax-src,
+    .la-ajax-src .asl_w_container{
+        margin: 0px !important;
+        min-width: 200px;
+    }
+}
+@media screen and ( min-width: 1130px ){
+    #header .loggedin-user-submenu{
+        left: -110px;
+    }
+}
+@media screen and ( min-width: 1165px ){
+    #header .loggedin-user-submenu{
+        left: -68px;
+    }
+}
+@media screen and ( max-width: 1100px ){
+    #mobile-menu-expandable{
+        position: absolute;
+        background: #fff;
+        width: 100%;
+        left: 0px;
+        z-index: 2;
+        top: 73px;
+    }
+    #mobile-menu-expandable.admin-class{
+        top: 106px;
+    }
+    #la-home-page-hero-section div.la-home-p-search-bar{
+        position: relative;
+        z-index: 0;
+    }
+    .hot-deal-btn{
+        margin-left: 0px !important;
+        font-size: 20px;
+    }
+    .subjects-menu-container p.la-mega-menu-label span{
+        display: inherit !important;
+    }
+    .subjects-menu-container .la-all-courses-mega-menu-wrap.show{
+        top: 75px !important;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .subjects-menu-container .la-all-courses-mega-menu-wrap.admin-class.show{
+        top: 106px !important;
+    }
+    .subjects-menu-container .la-all-courses-mega-menu-wrap>ul.la-popular-courses li span{
+        background: #ffe2e2;
+        /*margin-bottom: 5px;*/
+        line-height: 15px;
+        font-weight: bold;
+        padding: 12px;
+        display: block;
+    }
+    .la-our-clients-mega-menu{
+        display: none !important;
+    }
+    #mobile-menu-expandable .la-hot-deals-submenu.show{
+        top: 75px !important;
+    }
+    #mobile-menu-expandable .la-hot-deals-submenu.show.admin-class{
+        top: 106px !important;
+    }
+    .subjects-menu-container .la-all-courses-mega-menu-wrap, .la-popular-course-sml-devices{
+        width: 100% !important;
+    }
+    .subjects-menu-container .la-all-courses-mega-menu-wrap ul.la-popular-courses ul{
+        overflow-y: scroll;
+        height: calc(100% - 210px);
+    }
+    .subjects-menu-container .la-all-courses-mega-menu-wrap>ul.la-popular-courses li a{
+        font-weight: 500;
+        padding: 12px;
+    }
+    span.back-to-mega-menu{
+        margin-bottom: 5px !important;
+    }
+    .subjects-menu-container .la-all-courses-mega-menu-wrap>ul.la-popular-courses>p.la-mega-menu-label{
+        margin-bottom: 5px;
+    }
+}
+@media screen and (max-width: 767px) {
+    #mobile-menu-expandable .la-hot-deals-submenu.show,
+    #mobile-menu-expandable .la-hot-deals-submenu.show.admin-class{
+        top: 10px !important;
+    }
+}

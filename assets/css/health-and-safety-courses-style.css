@@ -1,0 +1,326 @@
+section#health-sef-part-1 {
+    background-image: url(https://lead-academy.org/wp-content/uploads/0223/12/engineer-holding-hard-hat-construction-worker-professional-safety-work-industry-building-person-manager-service-1-min-scaled-1.webp);
+    padding: 80px 0px;
+    background-size: cover;
+}
+
+section#health-sef-part-1 img {
+    width: 200px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.health-blur-bg-text {
+    backdrop-filter: blur(8px);
+    background-color: #00000054;
+    border-style: solid;
+    border-width: 1px 0px 0px 1px;
+    border-color: #DADADA40;
+    box-shadow: 20px 20px 50px 5px rgba(0, 0, 0, 0.5);
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+    padding: 50px 20px 50px 20px;
+    border-radius: 15px;
+    margin-bottom: 50px;
+}
+
+.health-blur-bg-text h1 {
+    color: #FFFFFF;
+    font-family: "Sen", Sans-serif;
+    font-size: 45px;
+    font-weight: 600;
+    line-height: 55px;
+}
+
+.health-blur-bg-text p {
+    color: #FFFFFF;
+    font-family: "Sen", Sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+}
+
+section#health-sef-part-2 img {
+    width: 150px;
+}
+
+section#health-sef-part-2 p {
+    text-align: justify;
+    color: #000000;
+    font-family: "Sen", Sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+section#health-sef-part-2 {
+    padding: 50px 0px;
+}
+
+.review-io-img {
+    text-align: center;
+}
+
+.health-sef-course-card {
+    box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.25);
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+    margin: 25px 15px;
+}
+
+.h-course-card-top img {
+    width: 100%;
+}
+
+.h-course-card-bottom {
+    padding: 20px;
+}
+
+.h-course-card-bottom h3 {
+    color: #000000;
+    font-family: "Sen", Sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: center;
+    margin: 0px 30px;
+}
+
+.h-course-card-bottom h3 a {
+    color: #000;
+}
+
+.h-course-price {
+    display: flex;
+    margin: 30px 0px 10px 0px;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.h-course-price del {
+    color: #b91948;
+    font-weight: bold;
+    font-size: 16px;
+    margin-right: 15px;
+}
+
+.h-course-price span {
+    color: #434343;
+    font-size: 18px;
+    margin-left: 5px;
+    font-weight: 600;
+}
+
+.h-course-card-bottom .btn {
+    font-family: "Sen", Sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    fill: #B91948;
+    color: #B91948;
+    background-color: #B9194800;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    border-color: #B91948;
+    border-radius: 3px 3px 3px 3px;
+    padding: 10px 20px 10px 20px;
+    display: block;
+}
+
+.h-course-card-bottom .btn:hover {
+    color: #FFFFFF;
+    background-color: #B91948;
+}
+
+.health-sef-course-card:hover {
+    box-shadow: none;
+    border: 1px solid #d5d5d5;
+}
+
+section#health-sef-part-3 h2 {
+    color: #000000;
+    font-family: "Sen", Sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 1.3em;
+    text-align: center;
+}
+
+section#health-sef-part-3 {
+    padding: 30px 0px;
+}
+
+.all-course-btn {
+    text-align: center;
+}
+
+.all-course-btn a {
+    display: inline-block;
+    font-family: "Sen", Sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: #B91948;
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
+    padding: 12px 50px 12px 50px;
+    color: #fff;
+    margin-top: 40px;
+}
+
+.all-course-btn a:hover {
+    color: #B91948;
+    background-color: #fff;
+}
+
+.review-title h2 {
+    color: #000000;
+    font-family: "Sen", Sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.3em;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.review-title p {
+    text-align: center;
+    color: #000000;
+    font-family: "Sen", Sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.review-title {
+    margin-bottom: 40px;
+}
+
+section#health-sef-part-4 {
+    padding: 40px 0px;
+}
+
+.health-sef-part-5 h2 {
+    color: #000000;
+    font-family: "Sen", Sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.3em;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.health-sef-part-5 p {
+    color: #000000;
+    font-family: "Sen", Sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.health-sef-part-5 {
+    margin: 50px 0px !important;
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+    .health-blur-bg-text h1 {
+        color: #FFFFFF;
+        font-family: "Sen", Sans-serif;
+        font-size: 30px;
+        margin-bottom: 15px;
+        line-height: 35px;
+    }
+
+    section#health-sef-part-1 {
+        background-position: center;
+        padding: 35px 0px;
+    }
+
+    section#health-sef-part-1 img {
+        width: 150px;
+        background-color: #fff;
+        border-radius: 6px;
+    }
+
+    .review-io-img {
+        text-align: center;
+    }
+
+    .health-blur-bg-text {
+        padding: 30px 20px 30px 20px;
+    }
+
+    section#health-sef-part-2 {
+        text-align: center;
+    }
+
+    section#health-sef-part-2 img {
+        margin-top: 20px;
+    }
+
+    section#health-sef-part-3 h2 {
+        color: #000000;
+        font-family: "Sen", Sans-serif;
+        font-size: 26px;
+        font-weight: 600;
+        line-height: 1.3em;
+        text-align: center;
+    }
+    .h-course-card-bottom h3 {
+        margin: 0px 0px;
+    }
+
+    .all-course-btn a {
+        font-size: 20px;
+    }
+
+    .review-title h2 {
+        font-size: 26px;
+    }
+
+    .health-sef-part-5 h2 {
+        font-size: 26px;
+    }
+    
+
+}
+
+/** For tablet devices **/
+@media (min-width: 768px) and (max-width: 1024px) {
+    .health-blur-bg-text h1 {
+        font-size: 35px;
+        margin-bottom: 5px;
+    }
+
+    section#health-sef-part-1 {
+        padding: 40px 0px;
+    }
+
+    section#health-sef-part-1 img {
+        width: 150px;
+    }
+
+    section#health-sef-part-2 {
+        padding: 30px 0px;
+    }
+
+    section#health-sef-part-2 {
+        text-align: center;
+    }
+
+    .h-course-card-bottom h3 {
+        margin: 0px 0px;
+    }
+
+    section#health-sef-part-3 h2 {
+        font-size: 30px;
+    }
+
+    .all-course-btn a {
+        font-size: 20px;
+    }
+
+    .review-title h2 {
+        font-size: 30px;
+    }
+
+    .health-sef-part-5 h2 {
+        font-size: 30px;
+    }
+}

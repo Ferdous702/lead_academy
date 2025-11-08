@@ -1,0 +1,404 @@
+
+#xm-booking-banner {
+    background: linear-gradient(320deg, #b91948de 0%, #303131f2 100%), url(https://lead-academy.org/wp-content/uploads/0223/12/MicrosoftTeams-image-45.webp);
+    padding: 100px 0px;
+    background-size: contain;
+    background-attachment: fixed;
+}
+
+#tutor-support-banner {
+    background: linear-gradient(320deg, #b91948de 0%, #303131f2 100%), url(https://lead-academy.org/wp-content/uploads/0223/12/tutor-girl-home-writing-new-information-1.webp);
+    padding: 50px 0px;
+    background-size: contain;
+    background-attachment: fixed;
+}
+
+#xm-booking-banner h1 {
+    color: #ffffff;
+    font-family: "Sen", Sans-serif;
+    font-size: 65px;
+    font-weight: 600;
+    text-align: center;
+}
+
+#tutor-support-banner h1 {
+    color: #FFA428;
+    font-family: "Sen", Sans-serif;
+    font-size: 65px;
+    font-weight: 600;
+    text-align: center;
+}
+
+#xm-booking-banner p {
+    text-align: center;
+    color: #FFFFFF;
+    font-family: "Sen", Sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+#tutor-support-banner p {
+    text-align: center;
+    color: #FFFFFF;
+    font-family: "Sen", Sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+section#xm-booking-benefits {
+    background: linear-gradient(320deg, #000000f0 0%, #000000e6 100%), url(https://lead-academy.org/wp-content/uploads/0223/12/tutor-girl-home-writing-new-information.webp);
+    padding: 100px 0px;
+    background-size: contain;
+}
+
+section#xm-booking-benefits p {
+    text-align: left;
+    color: #FFFFFF;
+    font-family: "Sen", Sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+section#xm-booking-benefits h2 {
+    color: #ffffff;
+    font-family: "Sen", Sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+    line-height: 1.3em;
+}
+
+section#xm-booking-benefits ul li span {
+    color: #FFFFFF;
+    font-family: "Sen", Sans-serif;
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 1.8em;
+}
+
+section#xm-booking-benefits ul li span:last-child {
+    flex-grow: 1;
+}
+
+section#xm-booking-benefits ul li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.tutor-support-right-part li {
+    color: #fff;
+    list-style: none;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    font-family: "Sen", Sans-serif;
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 1.8em;
+    border-bottom: 1px solid #fff;
+    height: 80px;
+}
+
+section#xm-booking-benefits img {
+    border-radius: 10px;
+}
+
+span.tutor-info-num {
+    background-color: #B91948;
+    padding: 2px 15px;
+    border-radius: 40px;
+    margin-right: 15px;
+    font-size: 18px;
+}
+
+section#xm-booking-benefits ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.xm-booking-benefits-right-part ul li span i {
+    background-color: #B91948;
+    padding: 8px;
+    border-radius: 38px;
+    margin-right: 20px;
+}
+
+.xm-booking-benefits-right-part {
+    padding: 20px;
+    background-color: #b9194833;
+}
+
+.custom-shape-divider-bottom-1717684842 {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    top: 100px;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+#tutor-support-banner .custom-shape-divider-bottom-1717684842 {
+    top: 50px;
+}
+
+.custom-shape-divider-bottom-1717684842 svg {
+    position: relative;
+    display: block;
+    width: calc(175% + 1.3px);
+    height: 96px;
+}
+
+.custom-shape-divider-bottom-1717684842 .shape-fill {
+    fill: #C3B2B759;
+}
+
+section#xm-booking-benefits hr {
+    color: #fff;
+    opacity: 1;
+    width: 30%;
+}
+
+#xm-booking-form-part {
+    background: linear-gradient(310deg, #B91948 0%, #1C1C1DDB 100%), url(https://lead-academy.org/wp-content/uploads/0223/12/cheerful-attractive-young-woman-with-backpack-notebooks-standing-smiling-park-1.webp);
+    padding: 100px 0px;
+    background-size: cover;
+}
+
+.xm-booking-form {
+    background-color: #fff;
+    box-shadow: 0px 0px 7px 0px #C7C1C1;
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+    margin: 0px 0px 40px 0px;
+    padding: 30px 30px 30px 30px;
+}
+
+.custom-shape-divider-top-1718003077 {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    line-height: 0;
+    direction: ltr;
+}
+
+.custom-shape-divider-top-1718003077 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 22px;
+}
+
+.custom-shape-divider-top-1718003077 .shape-fill {
+    fill: #B91948;
+}
+
+.xm-booking-form h2 {
+    color: #B91948;
+    font-family: "Sen", Sans-serif;
+    font-weight: 700;
+    text-align: center;
+    font-size: 30px;
+}
+
+.custom-shape-divider-bottom-1718006923 {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    line-height: 0;
+    direction: ltr;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1718006923 svg {
+    position: relative;
+    display: block;
+    width: calc(185% + 1.3px);
+    height: 118px;
+    transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1718006923 .shape-fill {
+    fill: #000000;
+}
+
+select {
+    -webkit-appearance: none !important;
+    height: 100% !important;
+    background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc) !important;
+    background-position: calc(100% - 19px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em !important;
+    background-size: 5px 5px, 5px 5px, 1px 1.5em !important;
+    background-repeat: no-repeat !important;
+    padding: 8px !important;
+}
+
+input#gf_coupon_button {
+    background-color: #AF1F47;
+    padding: 10px 35px;
+    cursor: pointer;
+}
+
+input#gf_coupon_code_15 {
+    width: 50%;
+    height: 42px;
+}
+
+input#gform_submit_button_32 {
+    background-color: #B91948;
+}
+
+input#gform_submit_button_21 {
+    background-color: #B91948;
+}
+
+input#gform_submit_button_15 {
+    background-color: #af1f47;
+}
+
+input#gform_submit_button_75 {
+    background-color: #af1f47;
+}
+
+input#gform_submit_button_80 {
+    background-color: #af1f47;
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+    #xm-booking-banner {
+        padding: 50px 0px;
+    }
+
+    #xm-booking-banner h1, #tutor-support-banner h1 {
+        font-size: 26px;
+    }
+
+    #xm-booking-banner p, #tutor-support-banner p {
+        font-size: 16px;
+    }
+
+    .custom-shape-divider-bottom-1717684842 {
+        top: 50px;
+    }
+
+    .custom-shape-divider-bottom-1717684842 svg {
+        height: 50px;
+    }
+
+    section#xm-booking-benefits {
+        padding: 50px 0px;
+    }
+
+    section#xm-booking-benefits h2 {
+        color: #ffffff;
+        font-family: "Sen", Sans-serif;
+        font-size: 26px;
+        font-weight: 900;
+        line-height: 1.3em;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    section#xm-booking-benefits p {
+        text-align: left;
+        color: #FFFFFF;
+        font-family: "Sen", Sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    section#xm-booking-benefits ul li span {
+        font-size: 16px;
+    }
+
+    section#xm-booking-benefits hr {
+        display: none;
+    }
+
+    .custom-shape-divider-top-1718003077 svg {
+        width: calc(100% + 1.3px);
+        height: 22px;
+        display: none;
+    }
+
+    .custom-shape-divider-bottom-1718006923 svg {
+        width: calc(184% + 1.3px);
+        height: 41px;
+    }
+
+    .xm-booking-form {
+        background-color: #fff;
+        box-shadow: 0px 0px 7px 0px #C7C1C1;
+        transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+        margin: 0px 0px 30px 0px;
+        padding: 20px;
+    }
+
+    #xm-booking-form-part {
+        padding: 40px 0px;
+    }
+
+    .xm-booking-form h2 {
+        font-size: 26px;
+    }
+
+    input#gf_coupon_button {
+        padding: 6px 25px;
+    }
+
+    section#xm-booking-benefits img {
+        margin-bottom: 20px;
+    }
+
+    .tutor-support-right-part li {
+        font-size: 18px;
+        height: auto;
+    }
+
+    .tutor-support-right-part li span {
+        margin-bottom: 18px;
+    }
+
+}
+
+/** For tablet devices **/
+@media (min-width: 768px) and (max-width: 1023px) {
+    .custom-shape-divider-bottom-1718006923 svg {
+        width: calc(229% + 1.3px);
+        height: 73px;
+    }
+
+    #xm-booking-form-part {
+        padding: 70px 0px;
+    }
+
+    .custom-shape-divider-top-1718003077 {
+        display: none;
+    }
+
+    #xm-booking-banner h1, #tutor-support-banner h1 {
+        font-size: 40px;
+    }
+
+    section#xm-booking-benefits h2 {
+        font-size: 30px;
+    }
+
+    section#xm-booking-benefits hr {
+        display: none;
+    }
+
+    section#xm-booking-benefits {
+        padding: 60px 0px;
+    }
+
+    section#xm-booking-benefits img {
+        display: none;
+    }
+}

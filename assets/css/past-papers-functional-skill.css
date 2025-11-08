@@ -1,0 +1,584 @@
+section#past-papers-fun-1 {
+    background-image: linear-gradient(80deg, #FFFFFF 30%, #00000038 65%), url(https://lead-academy.org/wp-content/uploads/0223/12/past-paper-bg.webp);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 70px 0px;
+}
+
+section#past-papers-fun-1 h1 {
+    color: #C0234E;
+    font-family: "Sen", Sans-serif;
+    font-size: 35px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+section#past-papers-fun-1 .past-papers-fun-title
+{
+    color: #C0234E;
+    font-family: "Sen", Sans-serif;
+    font-size: 65px;
+    font-weight: 600;
+    line-height: 70px;
+}
+section#past-papers-fun-1 h2 {
+    color: #C0234E;
+    font-family: "Sen", Sans-serif;
+    font-size: 65px;
+    font-weight: 600;
+    line-height: 70px;
+}
+
+section#past-papers-fun-1 img {
+    width: 100%;
+}
+
+section#past-papers-fun-2 {
+    padding: 70px 0px;
+}
+
+.past-paper-all-title-text h2 {
+    color: #000000;
+    font-family: "Sen", Sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 60px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.past-paper-all-title-text p {
+    text-align: center;
+    color: #000000;
+    font-family: "Sen", Sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.past-paper-card {
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    margin-top: 35px;
+}
+
+.past-paper-card img {
+    width: 100%;
+    height: 100%;
+}
+
+.past-paper-card h4 {
+    color: #000000;
+    font-family: "Sen", Sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    margin-bottom: 10px;
+}
+
+.past-paper-card h5 {
+    color: #000000;
+    font-family: "Sen", Sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.past-paper-card h3 {
+    position: relative;
+    left: 95px;
+    color: #FFFFFF;
+    font-family: "Sen", Sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 30px;
+    background-color: #c0234e;
+    text-align: center;
+    top: 0px;
+    width: 300px;
+}
+
+.past-paper-card-title {
+    margin-bottom: 55px;
+}
+
+.past-paper-card a {
+    font-family: "Sen", Sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 19px;
+    background-color: #B91948;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    border-color: #B91948;
+    border-radius: 3px 3px 3px 3px;
+    padding: 5px 5px 5px 5px;
+    text-align: center;
+    display: block;
+    color: #fff;
+    margin-right: 15px;
+}
+
+.past-paper-card a:hover {
+    color: #b91948;
+    background-color: #fff;
+}
+
+.fs-courses-tabs {
+    padding: 20px 400px 40px 400px;
+}
+
+.fs-courses-tab-link {
+    text-align: center;
+    color: #616161;
+    padding: 15px;
+    font-family: "Sen", Sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    outline: none;
+    background: #f3f3f3;
+    transition: all 300ms cubic-bezier(0,.49,.27,.99);
+    position: relative;
+    width: 100%;
+    background-color: #00000000;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    border-color: #D5D5D5;
+    border-radius: 10px 10px 10px 10px;
+}
+
+button.fs-courses-tab-link.active {
+    border-bottom: 3px solid #c0234e;
+}
+
+button.fs-courses-tab-link:hover, button.fs-courses-tab-link:focus {
+    background-color: #fff;
+    color: #000;
+}
+
+.fs-courses-course-box-card {
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
+    padding: 0px 0px 20px 0px;
+    margin: 0px 15px 50px 15px;
+}
+
+.fs-courses-course-box-card img {
+    width: 100%;
+    height: 200px;
+}
+
+.fs-courses-course-box-card h3 {
+    color: #000000;
+    font-family: "Poppins", Sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: center;
+    margin: 20px;
+}
+
+.fs-courses-course-box-card h3 a {
+    color: #000;
+}
+
+.fs-courses-course-box-card-price {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-evenly;
+    padding: 0px 100px;
+}
+
+.fs-courses-course-box-card-price del {
+    color: #000;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.fs-courses-course-box-card-price p {
+    color: #C0234E;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+a.fs-course-box-card-button {
+    font-family: "Poppins", Sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    background-color: #B91948;
+    border-radius: 0px 0px 0px 0px;
+    padding: 10px 30px 10px 30px;
+    text-align: center;
+    display: block;
+    margin: 10px 60px;
+    color: #ffffff;
+    border: 3px solid #B91948;
+}
+
+.fs-course-box-card-button:hover {
+    color: #b91948;
+    background-color: #fff;
+}
+
+.free-mock-test-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.free-mock-test-card h3 {
+    color: #C0234E;
+    font-family: "Sen", Sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 25px;
+    margin-bottom: 15px;
+}
+
+.free-mock-test-card p:nth-child(2) {
+    font-size: 15px !important;
+}
+
+.free-mock-test-card p:nth-child(3) {
+    text-align: left;
+    color: #B91948;
+    font-family: "Sen", Sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.past-paper-star-icon {
+    text-align: left;
+}
+
+.past-paper-star-icon span {
+    color: #FF9529;
+    font-size: 25px;
+}
+
+.free-mock-test-card a {
+    font-family: "Sen", Sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #C0234E;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    border-color: #B91948;
+    border-radius: 35px 35px 35px 35px;
+    padding: 18px 40px;
+    display: inline-block;
+    color: #fff;
+    margin-top: 24px;
+    line-height: 0;
+}
+
+.free-mock-test-card a:hover {
+    background-color: #fff;
+    color: #b91948;
+}
+
+.free-mock-test-card {
+    margin-top: 70px;
+}
+
+section#bundle-why-should-train {
+    padding: 80px 0px;
+}
+
+.staff-training-flip-box {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgb(0 0 0 / 55%);
+}
+
+.staff-training-flip-box .popup-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%; /* Could be more or less, depending on screen size */
+    border-radius: 8px;
+}
+
+.staff-training-flip-box .staffclose {
+    color: #838383;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+    position: relative;
+    top: -15px;
+}
+
+.staff-training-flip-box .staffclose:hover,
+.staff-training-flip-box .staffclose:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.staff-training-flip-box .popup-content h2 {
+    color: #000000;
+    font-weight: 700;
+    text-align: center;
+    font-size: 30px;
+}
+
+button.staffpopupButton {
+    font-family: "Sen", Sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    background-color: transparent;
+    background-image: linear-gradient(180deg, #ff2e6a 0%, #dc328e 100%);
+    border-radius: 50px 50px 50px 50px;
+    box-shadow: 0px 0px 10px 0px #ff2e6a;
+    padding: 13px 50px 13px 50px;
+    border: 0;
+    color: #fff;
+    margin-top: 15px;
+}
+
+section#past-papers-fun-5 {
+    padding: 70px 0px 0px 0px;
+    text-align: center;
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+    section#past-papers-fun-1 {
+        background-image: linear-gradient(80deg, #FFFFFF 50%, #00000038 100%), url(https://lead-academy.org/wp-content/uploads/0223/12/past-paper-bg.webp);
+        padding: 50px 0px;
+    }
+
+    section#past-papers-fun-1 h1 {
+        font-size: 25px;
+    }
+
+    section#past-papers-fun-1 h2 {
+        font-size: 30px;
+        line-height: 38px;
+    }
+
+    section#past-papers-fun-1 img {
+        width: 60%;
+    }
+
+    .past-paper-card img {
+        width: 100%;
+        height: 180px;
+    }
+
+    .past-paper-card h3 {
+        position: relative;
+        left: 0;
+        top: 0px;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .past-paper-card-title {
+        margin-bottom: 30px;
+    }
+
+    .past-paper-card h4 {
+        text-align: center;
+    }
+
+    .past-paper-card h5 {
+        text-align: center;
+    }
+
+    .past-paper-card a {
+        margin: 0px 35px 20px 35px;
+    }
+
+    .past-paper-all-title-text h2 {
+        font-size: 22px;
+        line-height: 30px;
+    }
+
+    .past-paper-all-title-text p {
+        text-align: justify;
+        font-size: 16px;
+    }
+
+    section#past-papers-fun-2 {
+        padding: 40px 0px;
+    }
+    
+    .fs-courses-tabs {
+        padding: 20px 0px 35px 0px;
+    }
+
+    .fs-courses-tab-link {
+        padding: 8px;
+        font-size: 16px;
+    }
+
+    .fs-courses-course-box-card {
+        margin: 0px 15px 30px 15px;
+    }
+
+    .fs-courses-course-box-card h3 {
+        margin: 20px;
+    }
+
+    .fs-courses-course-box-card-price {
+        padding: 0px 50px;
+    }
+
+    a.fs-course-box-card-button {
+        font-size: 14px;
+    }
+
+    section#past-papers-fun-3 {
+        padding: 20px 0px;
+    }
+    
+    .free-mock-test-card {
+        box-shadow: 0px 0px 22px 0px rgba(0, 0, 0, 0.12);
+        padding: 15px;
+        border-radius: 10px;
+        margin-top: 50px;
+    }
+
+    .free-mock-test-card h3 {
+        color: #C0234E;
+        font-family: "Sen", Sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 25px;
+        margin-bottom: 15px;
+        margin-top: 20px;
+    }
+
+    .free-mock-test-card a {
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+
+    .staff-training-flip-box .popup-content {
+        width: 90%;
+    }
+
+    .staff-training-flip-box .popup-content h2 {
+        font-size: 24px;
+    }
+
+}
+
+
+/** For tablet devices **/
+@media (min-width: 768px) and (max-width: 1023px) {
+    section#past-papers-fun-1 {
+        background-image: linear-gradient(80deg, #FFFFFF 50%, #00000038 100%), url(https://lead-academy.org/wp-content/uploads/0223/12/past-paper-bg.webp);
+        padding: 50px 0px;
+    }
+
+    section#past-papers-fun-1 h1 {
+        font-size: 26px;
+    }
+
+    section#past-papers-fun-1 h2 {
+        font-size: 32px;
+        line-height: 45px;
+    }
+
+    section#past-papers-fun-1 img {
+        width: 60%;
+    }
+
+    .past-paper-card img {
+        width: 100%;
+        height: 200px;
+    }
+
+    .past-paper-card h3 {
+        position: relative;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .past-paper-card h4 {
+        text-align: center;
+    }
+
+    .past-paper-card h5 {
+        text-align: center;
+    }
+
+    .past-paper-card a {
+        margin: 0px 35px 20px 35px;
+    }
+
+    .past-paper-card-title {
+        margin-bottom: 30px;
+    }
+
+    section#past-papers-fun-2 {
+        padding: 35px 0px;
+    }
+
+    .past-paper-all-title-text h2 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    .past-paper-all-title-text p {
+        text-align: justify;
+        font-size: 16px;
+    }
+
+    .fs-courses-tabs {
+        padding: 20px 100px 40px 100px;
+    }
+
+    section#past-papers-fun-3 {
+        padding: 30px 0px;
+    }
+
+    .fs-courses-tab-link {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .fs-courses-course-box-card-price {
+        padding: 0px 70px;
+    }
+
+    .fs-courses-course-box-card h3 {
+        margin: 20px;
+    }
+
+    .free-mock-test-card {
+        box-shadow: 0px 0px 22px 0px rgba(0, 0, 0, 0.12);
+        padding: 15px;
+        border-radius: 10px;
+        margin-top: 50px;
+    }
+
+    .free-mock-test-card h3 {
+        color: #C0234E;
+        font-family: "Sen", Sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 25px;
+        margin-bottom: 15px;
+        margin-top: 20px;
+    }
+
+    .free-mock-test-card a {
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+    
+    .staff-training-flip-box .popup-content {
+        margin: 10% auto;
+        width: 70%;
+    }
+}

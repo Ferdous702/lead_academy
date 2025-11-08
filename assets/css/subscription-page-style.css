@@ -1,0 +1,669 @@
+body {
+    scroll-behavior: smooth;
+}
+#subscription-banner-part {
+    background: linear-gradient(200deg, #0000008f 0%, #000000db 100%), url(https://lead-academy.org/wp-content/uploads/0223/12/banner-Background-min-scaled-1.webp);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 1;
+    transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+    padding: 100px 0px 50px 0px;
+    text-align: center;
+}
+
+#subscription-banner-part h1 {
+    color: #FFFFFF;
+    font-family: "Sen", Sans-serif;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 75px;
+}
+
+#subscription-banner-part p {
+    text-align: center;
+    color: #FFFFFF;
+    font-family: "Mulish", Sans-serif;
+    font-size: 23px;
+    font-weight: 700;
+    margin-top: 25px;
+    margin-bottom: 0px;
+}
+
+.get-access-button {
+    font-family: "Sen", Sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    background-color: #B91948;
+    border-style: solid;
+    border-color: #FFFFFF;
+    border-radius: 50px 50px 50px 50px;
+    padding: 15px 50px 15px 50px;
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    margin: 25px 0px;
+    transition: all 300ms ease;
+}
+
+.get-access-button:hover {
+    background-color: rgb(241 73 122);
+    color: rgb(255, 255, 255);
+    transition: all 300ms ease;
+}
+
+#subscription-banner-part h2 {
+    color: #FFFFFF;
+    font-family: "Sen", Sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    margin: 25px 0px;
+}
+
+#subscription-banner-part img {
+    max-width: 100%;
+}
+
+#subscription-about-div-part img {
+    width: 100%;
+}
+
+section#subscription-about-div-part {
+    padding: 80px 0px;
+    margin: 0px 80px;
+}
+
+.subs-about {
+    text-align: center;
+    background-color: #B91948;
+    box-shadow: -6px -6px 13px 0px rgba(0, 0, 0, 0.5) inset;
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+    width: 40%;
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 20px 1px 20px 0px;
+    border-radius: 100px;
+}
+
+.subs-about p {
+    color: #FFFFFF;
+    font-family: "Sen", Sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.subscription-about-small-device {
+    display: none;
+}
+
+#get-access-now {
+    padding: 70px 0px;
+    margin: 0px 50px;
+    background-color: #fcfcfc;
+}
+
+.subscription-pricing-card-left {
+    box-shadow: 0px 3px 1024px 0px rgba(155, 155, 155, 0.1);
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+    background-color: #ffffff;
+    padding: 18px;
+    border-radius: 40px 40px 15px 15px;
+    border: 1px solid #ededed
+}
+
+.subscription-pricing-card-left img {
+    width: 100%;
+    height: 200px;
+    border-radius: 30px 30px 0px 0px;
+}
+
+.subscription-pricing-card-right {
+    box-shadow: 0px 3px 1024px 0px rgba(155, 155, 155, 0.1);
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+    background-color: #fff4f7;
+    padding: 18px;
+    border-radius: 40px 40px 15px 15px;
+    border: 1px solid #ededed
+}
+
+.subscription-pricing-card-right img {
+    width: 100%;
+    height: 200px;
+    border-radius: 30px 30px 0px 0px;
+}
+
+.subscription-pricing-top-part {
+    position: relative;
+    top: -145px;
+}
+
+.subscription-pricing-top-part {
+    position: relative;
+    top: -145px;
+    padding: 0px 15px;
+}
+
+.subscription-pricing-top-part h2 {
+    color: #FFFFFF;
+    font-family: "Poppins", Sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 38px;
+}
+
+.subscription-card-price {
+    text-align: right;
+}
+
+.subscription-card-price p {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 38px;
+    color: #fff;
+}
+
+.subscription-card-price p del {
+    font-size: 18px;
+    color: #f4f4f4;
+}
+
+.subscription-pricing-bottom-part ul li {
+    list-style: none;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0px;
+    display: flex;
+}
+
+.subscription-pricing-bottom-part {
+    margin-top: -70px;
+}
+
+.subscription-pricing-bottom-part ul {
+    padding: 0;
+    margin: 0;
+}
+
+.subscription-pricing-bottom-part ul li span .fa-circle-check {
+    font-size: 20px;
+    color: #35c22a;
+    margin-right: 10px;
+}
+
+.subscription-pricing-bottom-part ul li span .fa-circle-xmark {
+    color: #ff0036;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.subscription-pricing-bottom-part ul li span {
+    font-family: "Poppins", Sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #303030;
+    align-self: center;
+}
+
+.subscription-buy-now-button a {
+    background-color: #b91948;
+    padding: 10px 0px;
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid #b91948;
+    font-family: "Sen", Sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 300ms ease;
+}
+
+.subscription-buy-now-button {
+    margin-top: 35px;
+}
+
+.subscription-buy-now-button a:hover {
+    background-color: #ffffff;
+    padding: 10px 0px;
+    display: block;
+    text-decoration: none;
+    color: #b91948;
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid #b91948;
+    font-family: "Sen", Sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 300ms ease;
+}
+
+.subs-best-value p {
+    background-color: #ff3b7b;
+    padding: 6px 0px;
+    text-align: center;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    font-family: "Poppins", Sans-serif;
+    position: relative;
+    top: 110px;
+}
+
+.subs-course-cate-box img {
+    width: 100%;
+}
+
+#subscription-course-cate {
+    padding: 70px 0px;
+    text-align: center;
+}
+
+#subscription-course-cate h2 {
+    color: #000000;
+    font-family: "Sen", Sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.3em;
+}
+
+.subscription-course-cate-text p {
+    text-align: center;
+    color: #000000;
+    font-family: "Sen", Sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 50px;
+}
+
+.subs-course-cate-box h3 a {
+    color: #FFFFFF;
+    font-family: "Sen", Sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.subs-course-cate-box h3 {
+    margin-top: -50px;
+}
+
+.subs-course-cate-box h3 a:after {
+    display:block;
+    content: '';
+    border-bottom: solid 3px #fff;  
+    transform: scaleX(0);  
+    transition: transform 250ms ease-in-out;
+    padding-bottom:5px
+  }
+
+.subs-course-cate-box h3 a:hover:after { transform: scaleX(1); }
+
+.subs-course-cate-box {
+    margin-bottom: 35px;
+}
+
+.subscription-trusted-by {
+    margin-top: 0 !important;
+    text-align: center;
+}
+
+.subscription-trusted-by h2 {
+    color: #000000;
+    font-family: "Sen", Sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.3em;
+}
+
+.subscription-trusted-by p {
+    text-align: center;
+    color: #000000;
+    font-family: "Quicksand", Sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 50px;
+}
+
+#subscription-sticky {
+    background: #b91948;
+    position: sticky;
+    bottom: 0px;
+    padding: 25px 0px;
+    z-index: 9999;
+}
+
+section#subscription-sticky h2 {
+    color: #FFFFFF;
+    font-family: "Sen", Sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 40px;
+    margin: 0;
+    text-align: center;
+}
+
+.page-id-354162 .custom-add-to-cart.subscription-btn-fixed {
+    font-family: "Sen", Sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    fill: #FFFFFF;
+    color: #FFFFFF;
+    background-color: #61CE7000;
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
+    border-color: #FFFFFF;
+    padding: 10px 50px 10px 50px;
+    text-align: center;
+    float: none;
+    width: inherit !important;
+}
+
+.page-id-354162 .custom-add-to-cart.subscription-btn-fixed:hover, .page-id-354162 .custom-add-to-cart.subscription-btn-fixed:focus {
+    color: #B91948;
+    background-color: #FFFFFF;
+    border-color: #FFFFFF;
+}
+
+#subscription-course-cate {
+    padding: 70px 0px;
+    text-align: center;
+    margin: 0px 55px;
+}
+
+.page-id-354162 .btn.custom-add-to-cart.subscription-btn {
+    float: none !important;
+    width: 100%;
+}    
+
+/* -Mobile Device- */
+@media (max-width: 767px) {
+    #subscription-banner-part h1 {
+        font-size: 20px !important;
+        line-height: 30px !important;
+        margin-bottom: 0;
+    }
+
+    #subscription-banner-part p {
+        font-size: 16px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .get-access-button {
+        font-family: "Sen", Sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        background-color: #B91948;
+        border-style: solid;
+        border-color: #FFFFFF;
+        border-radius: 50px 50px 50px 50px;
+        padding: 10px 20px 10px 20px;
+        color: #fff;
+        text-decoration: none;
+        display: inline-block;
+        margin: 10px 0px;
+    }
+
+    #subscription-banner-part h2 {
+        color: #FFFFFF;
+        font-family: "Sen", Sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        margin: 20px 0px;
+    }
+
+    .subscription-about-big-device {
+        display: none;
+    }
+
+    .subscription-about-small-device {
+        display: block !important;
+    }
+
+    .subs-about {
+        text-align: center;
+        background-color: #B91948;
+        box-shadow: -6px -6px 13px 0px rgba(0, 0, 0, 0.5) inset;
+        transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+        margin-top: 10px !important;
+        width: 100% !important;
+        display: inline-block;
+        margin-bottom: 20px !important;
+        padding: 18px 0px 16px 0px !important;
+        border-radius: 100px;
+    }
+
+    .subs-about p {
+        font-size: 18px !important;
+    }
+
+    .subscription-pricing-top-part h2 {
+        font-size: 22px;
+    }
+
+    .subscription-pricing-top-part {
+        position: relative;
+        top: -160px;
+        padding: 0px 15px;
+    }
+
+    .subscription-card-price p {
+        font-size: 20px;
+    }
+
+    .subscription-buy-now-button a {
+        font-size: 16px;
+    }
+
+    .subs-best-value p {
+        background-color: #ff4682;
+        padding: 6px 0px;
+        text-align: center;
+        border-radius: 8px;
+        color: #fff;
+        font-weight: 600;
+        font-size: 16px;
+        font-family: "Poppins", Sans-serif;
+        position: initial;
+        top: 0;
+    }
+
+    .subscription-pricing-top-part-right {
+        top: -235px;
+    }
+
+    .subscription-pricing-card-right img {
+        width: 100%;
+        height: 280px;
+    }
+    
+    .subscription-pricing-card-right {
+        padding: 10px;
+    }
+
+    #subscription-banner-part {
+        padding: 50px 0px 50px 0px;
+    }
+
+    .subscription-pricing-bottom-part-right {
+        margin-top: -150px !important;
+    }
+
+    .subscription-pricing-bottom-part {
+        margin-top: -100px;
+    }
+
+    section#subscription-about-div-part {
+        padding: 40px 0px;
+        margin: 0px 0px;
+    }
+
+    #get-access-now {
+        padding: 40px 0px;
+        margin: 0px 0px;
+    }
+    
+    .subscription-pricing-card-left {
+        margin-bottom: 25px;
+        padding: 10px;
+    }
+
+    #subscription-course-cate h2 {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+
+    .subscription-pricing-bottom-part ul li span {
+        font-size: 14px;
+    }
+
+    .subscription-course-cate-text p {
+        font-size: 16px;
+        font-weight: 400;
+        margin-bottom: 40px;
+    }
+
+    #subscription-course-cate {
+        padding: 40px 0px;
+        text-align: center;
+    }
+
+    .subs-course-cate-box {
+        margin-bottom: 50px;
+    }
+
+    .subscription-trusted-by h2 {
+        color: #000000;
+        font-family: "Sen", Sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1.3em;
+        margin-bottom: 15px;
+    }
+
+    .subscription-trusted-by p {
+        font-size: 16px;
+    }
+
+    section#subscription-sticky h2 {
+        color: #FFFFFF;
+        font-family: "Sen", Sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 26px;
+        margin: 0;
+        text-align: left;
+    }
+
+    .subscription-sticky-button a {
+        font-size: 16px;
+        display: block;
+        margin-top: 10px;
+    }
+
+    #subscription-sticky {
+        background: #b91948;
+        position: sticky;
+        bottom: 0px;
+        padding: 15px 0px;
+        z-index: 9999;
+    }
+
+    div#chat-widget-container {
+        bottom: 140px !important;
+    }
+
+    #subscription-course-cate {
+        margin: 0px 0px;
+    }
+    
+    
+}
+
+/* -Tab Device- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    #subscription-banner-part h1 {
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 50px;
+    }
+
+    #subscription-banner-part p {
+        font-size: 20px;
+    }
+
+    .get-access-button {
+        font-family: "Sen", Sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        background-color: #B91948;
+        border-style: solid;
+        border-color: #FFFFFF;
+        border-radius: 50px 50px 50px 50px;
+        padding: 15px 25px 15px 25px;
+        color: #fff;
+        text-decoration: none;
+        display: inline-block;
+        margin: 15px 0px;
+    }
+
+    #subscription-banner-part h2 {
+        color: #FFFFFF;
+        font-family: "Sen", Sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        margin: 20px 0px;
+    }
+
+    .subs-about p {
+        color: #FFFFFF;
+        font-family: "Sen", Sans-serif;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .subs-about {
+        text-align: center;
+        background-color: #B91948;
+        box-shadow: -6px -6px 13px 0px rgba(0, 0, 0, 0.5) inset;
+        transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+        width: 60%;
+        display: inline-block;
+        margin-bottom: 20px;
+        padding: 20px 0px 20px 0px;
+        border-radius: 100px;
+    }
+
+    .subs-course-cate-box {
+        margin-bottom: 50px;
+    }
+
+    #subscription-course-cate {
+        padding: 40px 0px;
+        text-align: center;
+    }
+
+    section#subscription-sticky h2 {
+        text-align: left;
+    }
+
+    div#chat-widget-container {
+        bottom: 140px !important;
+    }
+
+    section#subscription-about-div-part {
+        margin: 0px 0px;
+    }
+
+    #get-access-now {
+        margin: 0px 0px;
+    }
+
+    #subscription-course-cate {
+        margin: 0px 0px;
+    }
+}

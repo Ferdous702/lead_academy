@@ -1,0 +1,275 @@
+#faq-banner {
+    background: linear-gradient(200deg, #0000008f 0%, #00000081 100%),  url(https://lead-academy.org/wp-content/uploads/2022/09/train-newskills.jpg);
+    background-size: cover;
+    padding: 150px 0px;
+    background-position: top center;
+}
+
+#faq-banner h1 {
+    text-align: center;
+    color: #fff;
+    font-family: "Sen", Sans-serif;
+    font-size: 39px;
+}
+
+section#faq-part {
+    padding: 50px 200px;
+    background-color: #ffffff;
+}
+
+section#faq-part h2 {
+    text-align: center;
+    color: #000000;
+    font-family: "Sen", Sans-serif;
+    font-size: 44px;
+    margin-bottom: 50px;
+}
+
+details {
+    overflow: hidden;
+}
+
+summary {
+    font-family: "Sen", Sans-serif;
+    font-weight: 600;
+    color: #444444;
+}
+
+details summary {
+    border-bottom: 1px solid #a8a8a8;
+    cursor: pointer;
+    grid-template-columns: 1fr auto;
+    font-weight: bold;
+    padding-block: 15px 15px;
+    font-size: 18px;
+}
+
+details[open] {
+    border-bottom: 1px solid #a8a8a8;
+}
+
+details[open] summary {
+    border-bottom: 1px solid transparent;
+}
+
+summary::marker {
+    color: #b91948;
+    font-size: 14px;
+}
+
+.faq-discription {
+    color: #313131;
+    font-family: "Sen", Sans-serif;
+    font-weight: 400;
+}
+
+.faqs-title {
+    display: inline-flex;
+    margin-bottom: 15px;
+    margin-top: 50px;
+}
+
+.faqs-title svg {
+    width: 30px;
+    margin-right: 17px;
+}
+
+.faqs-title h3 {
+    font-family: "Sen", Sans-serif;
+    font-size: 31px;
+    color: #2f2f2f;
+    margin-bottom: 0px;
+}
+
+section#faq-need-help {
+    background-color: transparent;
+    background-image: linear-gradient(45deg, #DF0E4B 0%, #B91948 100%);
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    padding: 50px 50px 50px 50px;
+    text-align: center;
+}
+
+section#faq-need-help h2 {
+    color: #ffffff;
+    font-family: "Sen", Sans-serif;
+    font-size: 48px;
+}
+
+section#faq-need-help p {
+    text-align: center;
+    color: #ffffff;
+    font-family: "Sen", Sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.help-line svg {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.help-line {
+    /* display: inline-flex; */
+    margin-top: 20px;
+}
+
+.help-line a {
+    color: #ffffff;
+    transition: color 0.3s;
+    text-decoration: none;
+    align-self: center;
+    font-family: "Sen", Sans-serif;
+    font-size: 26px;
+}
+
+section#faq-trending-courses {
+    padding: 70px 200px;
+}
+
+section#faq-trending-courses h2 {
+    color: #000000;
+    font-family: "Sen", Sans-serif;
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.trending-course-box svg {
+    transform: rotate(90deg);
+    width: 30px;
+    margin-left: 12px;
+    margin-top: -10px;
+}
+
+.trending-course-box {
+    box-shadow: 0px 0px 29px 2px rgba(0, 0, 0, 0.13);
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+    border-radius: 10px 10px 10px 10px;
+    padding: 1em 1em 1em 1em;
+    height: 100%;
+}
+
+.trending-course-box img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.trending-course-box h3 {
+    color: #070049;
+    font-family: "Sen", Sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: capitalize;
+    line-height: 30px;
+    letter-spacing: 0.5px;
+}
+
+.trending-course-box p {
+    text-align: left;
+    color: #515151;
+    font-family: "Sen", Sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6em;
+    letter-spacing: 0.2px;
+}
+
+.trending-course-button {
+    text-align: right;
+}
+
+.trending-course-button a {
+    text-align: right;
+    text-decoration: none;
+    font-family: "Sen", Sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1.2em;
+    letter-spacing: 0.6px;
+    fill: #ffffff;
+    color: #ffffff;
+    background-color: #B91948;
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
+    border-color: #B91948;
+    border-radius: 30px 30px 30px 30px;
+    padding: 6px 12px 6px 12px;
+    transition: all 400ms ease;
+}
+
+.trending-course-button a:hover {
+    border: 2px solid #b91948;
+    background-color: transparent;
+    color: #b91948;
+    transition: all 400ms ease;
+}
+
+/* -Mobile Device- */
+@media (max-width: 1100px) {
+    #faq-banner {
+        padding: 50px 0px;
+        background-position: center;
+    }
+
+    #faq-banner h1 {
+        font-size: 30px;
+    }
+
+    section#faq-part {
+        padding: 50px 10px;
+        background-color: #ffffff;
+    }
+
+    section#faq-part h2 {
+        font-size: 28px;
+        margin-bottom: 0px;
+    }
+
+    .faqs-title svg {
+        width: 25px;
+        margin-right: 15px;
+    }
+
+    .faqs-title h3 {
+        font-size: 25px;
+        margin-bottom: 0px;
+    }
+
+    section#faq-trending-courses {
+        padding: 50px 10px;
+    }
+
+    section#faq-need-help h2 {
+        font-size: 30px;
+    }
+
+    .help-line a {
+        font-size: 20px;
+    }
+
+    .help-line svg {
+        width: 25px;
+        margin-right: 10px;
+    }
+    
+    section#faq-trending-courses h2 {
+        font-size: 30px;
+        margin-bottom: 50px;
+    }
+
+    .trending-course-box {
+        margin-bottom: 35px;
+    }
+
+    section#faq-need-help {
+        padding: 50px 10px 50px 10px;
+    }
+
+    .trending-course-box {
+        height: auto;
+    }
+}

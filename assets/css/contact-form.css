@@ -1,0 +1,664 @@
+/* --- Field Wrapper and Layout (mimicking columns) --- */
+.wpcf7-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.wpcf7-form-control-wrap {
+  flex: 1 1 calc(50% - 10px);
+}
+
+.wpcf7 .wpcf7-form-control-wrap {
+    padding: 15px 15px;
+    background-color: #EEEEEE;
+    margin: 20px 0px;
+    border-radius: 5px;
+}
+
+form.wpcf7-form.init {
+    background-color: #FAFAFA;
+    padding: 20px;
+    border: 1px solid #f0f0f0;
+    border-radius: 5px;
+}
+
+
+/* --- MOBILE: SINGLE-COLUMN LAYOUT --- */
+
+
+@media (max-width: 767px) {
+  .wpcf7-form .wpcf7-form-control-wrap {
+    flex: 1 1 100%;
+  }
+
+  .wpcf7 .wpcf7-form-control-wrap {
+    width: 100%;
+    display: block;
+    padding: 10px 12px;
+    background-color: #EEEEEE;
+    margin: 5px 0px;
+    border-radius: 5px;
+}
+
+form.wpcf7-form.init {
+    background-color: #FAFAFA;
+    padding: 10px;
+    border: 1px solid #f0f0f0;
+    border-radius: 5px;
+}
+}
+
+/* Specific adjustment for the full-width enquiry and captcha */
+.wpcf7-textarea-wrap,
+.wpcf7-captcha-wrap {
+  flex: 1 1 100%;
+}
+
+/* --- Labels --- */
+.wpcf7-form-control-wrap label {
+  display: block;
+  margin-bottom: 8px;
+  margin-top: 5px;
+  font-weight: 600;
+  color: #333;
+  font-size: 18px;
+}
+
+/* Ensure the main label text for required fields remains dark */
+.wpcf7-form-control-wrap.wpcf7-validates-as-required label {
+  color: #333;
+}
+
+/* Add "(Required)" text to required field labels */
+.wpcf7-form-control-wrap.wpcf7-validates-as-required label::after {
+  content: " (Required)";
+  color: #e74c3c;
+  font-weight: normal;
+  font-size: 12px; 
+  margin-left: 5px; 
+}
+/* --- Input Fields (Text, Email, Phone, Postcode, Select, Textarea) --- */
+.wpcf7-form-control-wrap input[type="text"],
+.wpcf7-form-control-wrap input[type="email"],
+.wpcf7-form-control-wrap input[type="tel"],
+.wpcf7-form-control-wrap textarea,
+.wpcf7-form-control-wrap select {
+  width: 100%; 
+  padding: 12px 15px;
+  border: 1px solid #a5a5a5;
+  border-radius: 5px;
+  font-size: 14px; 
+  color: #555; 
+  background-color: #ffffff; 
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+  height: 38px !important; 
+}
+
+/* Placeholder text style */
+.wpcf7-form-control-wrap input::placeholder,
+.wpcf7-form-control-wrap textarea::placeholder,
+.wpcf7-form-control-wrap select option[value=""] {
+  color: #aaa;
+  opacity: 1; 
+}
+.wpcf7-form-control-wrap input:-ms-input-placeholder,
+.wpcf7-form-control-wrap textarea:-ms-input-placeholder {
+  color: #aaa;
+}
+
+/* Focus state for inputs */
+.wpcf7-form-control-wrap input[type="text"]:focus,
+.wpcf7-form-control-wrap input[type="email"]:focus,
+.wpcf7-form-control-wrap input[type="tel"]:focus,
+.wpcf7-form-control-wrap textarea:focus,
+.wpcf7-form-control-wrap select:focus {
+  border-color: #ccc; 
+  box-shadow: none; 
+}
+
+/* Specific styling for the select dropdown arrow */
+.wpcf7-form-control-wrap select {
+    -webkit-appearance: none !important;
+    height: 100% !important;
+    background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc) !important;
+    background-position: calc(100% - 19px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em !important;
+    background-size: 5px 5px, 5px 5px, 1px 1.5em !important;
+    background-repeat: no-repeat !important;
+    padding: 10px !important;
+}
+
+/* --- Textarea specific styling --- */
+.wpcf7-textarea {
+  min-height: 120px; 
+  resize: vertical; 
+}
+
+.wpcf7-form-control-wrap.grecaptcha-badge {
+  flex: 1 1 100%; 
+  text-align: left; 
+  margin-top: 15px; 
+}
+
+/* Checkbox (I'm not a robot) if you're using reCAPTCHA v2 checkbox */
+.wpcf7-acceptance {
+  margin-bottom: 20px;
+}
+/* Wrapper for acceptance field to control spacing */
+.wpcf7-acceptance-wrapper {
+  margin-top: 18px; 
+}
+.wpcf7-list-item {
+  margin: 0; 
+}
+.wpcf7-list-item-label {
+    font-size: 16px;
+    color: #c02b0a;
+}
+/* Specific alignment for the acceptance checkbox and its text */
+.wpcf7-acceptance .wpcf7-list-item label {
+  display: flex;
+  align-items: center;
+}
+
+/* Style for the Terms and Conditions link */
+.wpcf7-acceptance .wpcf7-list-item-label a {
+  color: #000;
+}
+
+/* --- Submit Button --- */
+input.wpcf7-submit {
+  background-color: #c0234e !important; 
+  color: #fff; 
+  padding: 15px 30px; 
+  border: none; 
+  border-radius: 5px; 
+  font-size: 16px; 
+  font-weight: 600;
+  cursor: pointer; 
+  transition: background-color 0.3s ease, transform 0.2s ease; 
+  width: auto;
+  margin: 20px auto 0; 
+  text-transform: uppercase; 
+  letter-spacing: 0.5px;
+}
+
+input.wpcf7-submit:hover {
+  background-color: #c82333; 
+  transform: translateY(-1px); 
+}
+
+/* --- Messages (Success/Error) --- */
+.wpcf7-response-output {
+  margin: 20px 0;
+  padding: 15px 20px;
+  border-radius: 5px;
+  font-size: 15px;
+  text-align: center;
+}
+
+.wpcf7-mail-sent-ok {
+  background-color: #d4edda; 
+  border-color: #28a745; 
+  color: #155724; 
+}
+
+.wpcf7-validation-errors,
+.wpcf7-mail-sent-ng,
+.wpcf7-aborted,
+.wpcf7-spam-blocked {
+  background-color: #f8d7da; 
+  border-color: #dc3545;
+  color: #721c24; 
+}
+
+/* Invalid field tip */
+.wpcf7-not-valid-tip {
+  color: #dc3545;
+  font-size: 13px;
+  margin-top: 5px; 
+  margin-bottom: 15px; 
+  display: block; 
+}
+
+/* --- Radio Buttons Styling --- */
+
+/* Container for each radio option (input + label) */
+.wpcf7-list-item {
+  display: inline-block; 
+  margin-right: 20px; 
+  margin-bottom: 10px; 
+  list-style-type: none;
+}
+
+/* Hide the default radio button */
+.wpcf7-list-item input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom radio button visual */
+.wpcf7-list-item input[type="radio"] + span.wpcf7-list-item-label:before {
+  content: "";
+  display: inline-block;
+  width: 18px; 
+  height: 18px;
+  margin-right: 8px; 
+  border: 2px solid #ccc; 
+  border-radius: 50%; 
+  vertical-align: middle; 
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  flex-shrink: 0; 
+}
+
+/* Style for the custom radio button when checked */
+.wpcf7-list-item
+  input[type="radio"]:checked
+  + span.wpcf7-list-item-label:before {
+  border-color: #c0234e; 
+  background-color: #c0234e;
+  box-shadow: 0 0 0 3px rgba(192, 44, 99, 0.2);
+}
+
+/* Inner dot for the custom radio button when checked */
+.wpcf7-list-item
+  input[type="radio"]:checked
+  + span.wpcf7-list-item-label:after {
+  content: "";
+  display: block;
+  width: 8px; 
+  height: 8px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Style the text label of the radio button */
+.wpcf7-list-item span.wpcf7-list-item-label {
+  position: relative; 
+  display: flex; 
+  align-items: center;
+  cursor: pointer;
+  color: #555; 
+  font-size: 14px; 
+  padding-top: 2px; 
+}
+
+/* Adjust question labels for radio groups */
+/* This targets the <label> directly preceding the [radio] shortcode */
+.wpcf7-form-control-wrap > label:not([for]) {
+  /* Selects labels without a 'for' attribute, typically wrapping radio/checkbox questions */
+  display: block;
+  margin-bottom: 5px;
+  margin-top: 20px; 
+  font-weight: 600;
+  color: #333;
+  font-size: 16px;
+}
+
+/* Specific adjustment for the overall radio group container */
+div.wpcf7-list-item.first {
+  margin-left: 0; 
+}
+
+/* Ensure the asterisk for required labels in radio groups appears correctly */
+.wpcf7-form-control-wrap > label:not([for]) span.wpcf7-list-item-label {
+  /* This rule might seem redundant but ensures the specific asterisk styling applies
+       to the asterisk within the main question label for radio groups. */
+  content: " *";
+  color: #e74c3c;
+  font-weight: normal;
+  font-size: 14px; 
+}
+
+/* for verical radio
+
+/* --- Styling for Radio Button Questions (ensures full width and vertical layout) --- */
+.wpcf7-radio-question-wrap {
+  flex: 1 1 100%; 
+  /* Add any other specific styling for the wrapper of radio questions here if needed */
+  width: 100%;
+  display: block;
+  margin-bottom: 25px;
+  margin-top: 10px;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #dedede;
+}
+
+.wpcf7-radio-question-wrap .wpcf7-list-item {
+  display: block; 
+  margin-bottom: 8px; 
+  margin-left: 0; 
+}
+
+/* Ensure the label and radio button are aligned */
+.wpcf7-radio-question-wrap .wpcf7-list-item input[type="radio"] {
+  vertical-align: middle; 
+  margin-right: 8px; 
+}
+
+.wpcf7-radio-question-wrap .wpcf7-list-item label {
+  display: inline-block;
+  font-weight: normal; 
+  color: #555; 
+  font-size: 14px; 
+  cursor: pointer; 
+}
+
+/* Ensure the main question label remains bold */
+.wpcf7-radio-question-wrap > label {
+  font-weight: 600; 
+  margin-bottom: 15px; 
+}
+
+/* Ensure the asterisk on the main question label is styled */
+.wpcf7-radio-question-wrap > label .wpcf7-list-item-label {
+  content: " *"; 
+  color: #e74c3c;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 767px) {
+  .wpcf7 {
+    padding: 5px; 
+    width: 100%; 
+    box-sizing: border-box; 
+  }
+
+  .wpcf7-form-control-wrap {
+    flex: 1 1 100%; 
+    min-width: auto;
+  }
+
+  /* Adjust spacing for the acceptance checkbox on mobile */
+  .wpcf7-acceptance {
+    margin-bottom: 15px;
+  }
+
+  /* Ensure submit button is full width and centered on mobile */
+  input.wpcf7-submit {
+    width: 100%;
+    margin: 20px 0 0; 
+  }
+}
+
+/* Custom File Upload Styling */
+.wpcf7-file-upload-custom-area {
+  border: 2px dashed #ccc;
+  padding: 30px;
+  text-align: center;
+  min-height: 150px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  .wpcf7-file-upload-custom-area .drop-text {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+  }
+}
+
+.wpcf7-file-upload-custom-area input[type="file"] {
+  display: none; 
+}
+
+.wpcf7-file-upload-custom-area .wpcf7-file-upload-button {
+  background-color: #c02c63; 
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.wpcf7-file-upload-custom-area .wpcf7-file-upload-button:hover {
+  background-color: #a02050; 
+}
+
+.wpcf7-file-upload-custom-area .wpcf7-file-upload-name {
+  display: none; 
+}
+
+.wpcf7-file-upload-custom-area .wpcf7-description {
+  font-size: 12px;
+  color: #777;
+  margin-top: 10px;
+}
+
+/* for tutor form */
+
+/* Styling for the main field wrapper */
+.wpcf7-form-control-v2 {
+  margin-bottom: 20px; 
+}
+
+/* Style for field labels */
+.wpcf7-form-control-v2 label {
+  display: block; 
+  margin-bottom: 8px; 
+  font-weight: bold;
+  color: #333; 
+  font-size: 15px; 
+}
+
+/* Style for the required indicator (e.g., '*') */
+.wpcf7-form-control-v2 label .wpcf7-list-item-label {
+  color: #e44d26; 
+  font-size: 0.9em; 
+  margin-left: 4px; 
+}
+
+/* Styling for all input fields (text, email, tel), select dropdowns, and textareas */
+.wpcf7-form-control-v2 input[type="text"],
+.wpcf7-form-control-v2 input[type="email"],
+.wpcf7-form-control-v2 input[type="tel"],
+.wpcf7-form-control-v2 select,
+.wpcf7-form-control-v2 textarea {
+  display: block; 
+  width: 100%;
+  padding: 12px 15px; 
+  border: 1px solid #ccc; 
+  border-radius: 6px; 
+  font-size: 14px;
+  line-height: 1.5;
+  color: #555; 
+  background-color: #fff; 
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075); 
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out; 
+  -webkit-appearance: none; 
+  -moz-appearance: none;
+  appearance: none;
+  box-sizing: border-box; 
+}
+
+/* Styling for file upload fields */
+.wpcf7-form-control-v2 input[type="file"] {
+  /* File input styling can be tricky and varies by browser.
+       You might need more advanced CSS/JS for consistent custom looks.
+       This will apply basic padding and border. */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  color: #555;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Focus styles for input fields, selects, and textareas */
+.wpcf7-form-control-v2 input[type="text"]:focus,
+.wpcf7-form-control-v2 input[type="email"]:focus,
+.wpcf7-form-control-v2 input[type="tel"]:focus,
+.wpcf7-form-control-v2 select:focus,
+.wpcf7-form-control-v2 textarea:focus,
+.wpcf7-form-control-v2 input[type="file"]:focus {
+  border-color: #007bff; 
+  outline: none; 
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); 
+}
+
+/* Specific styling for the textarea */
+.wpcf7-form-control-v2 textarea.wpcf7-textarea {
+  min-height: 120px; 
+  resize: vertical; 
+}
+
+/* Styling for the three-column date fields (Day, Month, Year) */
+/* Note: Your HTML structure for this part uses 'wpcf7-form-control-wrap' inside 'wpcf7-form-control-v2'. */
+/* The CSS targets the specific 'three-column-field' class. */
+.wpcf7-form-control-wrap.three-column-field {
+  display: flex; 
+  gap: 15px; 
+  flex-wrap: wrap; 
+  margin-top: 5px; 
+}
+
+.wpcf7-form-control-wrap.three-column-field select {
+  flex: 1; 
+  min-width: 90px; 
+  padding: 12px 10px; 
+  /* Inherits other select styles from the general rule above */
+}
+
+/* Styling for the submit button */
+.wpcf7-submit {
+  background-color: #007bff; 
+  color: #fff; 
+  padding: 12px 30px; 
+  border: none; 
+  border-radius: 6px; 
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; 
+  width: auto; 
+  display: inline-block; 
+  margin-top: 15px; 
+  text-transform: uppercase; 
+  letter-spacing: 0.5px;
+}
+
+.wpcf7-submit:hover {
+  background-color: #0056b3; 
+  transform: translateY(-2px); 
+}
+
+/* Placeholder text styling for cross-browser compatibility */
+.wpcf7-form-control-v2 ::placeholder {
+  color: #aaa;
+  opacity: 1;
+}
+.wpcf7-form-control-v2 :-ms-input-placeholder {
+  color: #aaa;
+}
+.wpcf7-form-control-v2 ::-ms-input-placeholder {
+  color: #aaa;
+}
+
+/* --- Styling for Custom Checkbox Groups --- */
+
+/* 1. Wrapper for Checkbox Groups (Analogous to your radio button wrapper) */
+/* This provides the bordered container for a vertical list of checkboxes. */
+.wpcf7-checkbox-group-wrap {
+  flex: 1 1 100%; 
+  width: 100%;
+  display: block;
+  margin-bottom: 25px;
+  margin-top: 10px;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #dedede;
+}
+
+/* 2. Style for each individual checkbox option */
+.wpcf7-checkbox-group-wrap .wpcf7-list-item {
+  display: block; 
+  margin-bottom: 12px; 
+  margin-left: 0;
+  list-style-type: none; 
+}
+
+/* On the last item in the list, remove the bottom margin for cleaner spacing */
+.wpcf7-checkbox-group-wrap .wpcf7-list-item:last-child {
+  margin-bottom: 0;
+}
+
+/* 3. Hide the default, ugly browser checkbox */
+.wpcf7-checkbox-group-wrap .wpcf7-list-item input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* 4. Style for the text label next to the checkbox */
+.wpcf7-checkbox-group-wrap .wpcf7-list-item span.wpcf7-list-item-label {
+  position: relative;
+  display: flex; 
+  align-items: center;
+  cursor: pointer;
+  color: #555;
+  font-size: 14px;
+}
+
+/* 5. Create the custom checkbox box using a pseudo-element */
+.wpcf7-checkbox-group-wrap
+  .wpcf7-list-item
+  input[type="checkbox"]
+  + span.wpcf7-list-item-label:before {
+  content: "";
+  display: inline-block;
+  width: 18px; 
+  height: 18px;
+  margin-right: 10px; 
+  border: 2px solid #ccc;
+  border-radius: 3px; 
+  vertical-align: middle;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  background-color: #fff;
+}
+
+/* 6. Style for the custom checkbox when it is checked */
+.wpcf7-checkbox-group-wrap
+  .wpcf7-list-item
+  input[type="checkbox"]:checked
+  + span.wpcf7-list-item-label:before {
+  background-color: #c0234e; 
+  border-color: #c0234e;
+  /* The checkmark is a white SVG, embedded directly for performance and crispness */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12px;
+}
+
+/* --- Styling for reCAPTCHA Spacing --- */
+
+.recaptcha-wrapper {
+  margin-top: 20px; 
+  margin-bottom: 20px; 
+  flex: 1 1 100%;
+  padding: 0; 
+  border: none; 
+  background: none;
+}

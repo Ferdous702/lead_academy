@@ -1,0 +1,276 @@
+#gcse-hero.esol{
+    background-image: url('https://lead-academy.org/wp-content/uploads/2023/08/esol-courses-and-exam-hero-banner.webp');
+}
+#top-info{
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.34);
+    padding: 10px 0px 10px 0px;
+}
+#top-info > div.row > div.col-md-4{
+    padding: 30px 0px;
+}
+#top-info > div.row > div.col-md-4 > div.icon{
+    width: 20%;
+    float: left;
+    text-align: right;
+}
+#top-info > div.row > div.col-md-4 > div.text{
+    width: 80%;
+    float: left;
+    padding: 5px 0px;
+    font-weight: 700;
+    padding-left: 10px;
+    font-size: 20px;
+}
+#top-info > div.row > div.col-md-4 > div.icon > img{
+    width: 35px;
+    height: auto;
+}
+#browse-course{
+    padding-top: 30px;
+}
+#browse-course > h2{
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+}
+#browse-course > .exam-course-buttons{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+#browse-course > .exam-course-buttons > button{
+    background: #fff;
+    color: #AF1F47;
+    border-radius: 5px;
+    margin: 0px 12px;
+    font-size: 21px;
+    font-weight: 600;
+    padding: 15px 50px;
+    border: 2px solid #AF1F47;
+}
+#browse-course > .exam-course-buttons > button.active{
+    background: #AF1F47;
+    color: #fff;
+}
+
+/* Style for the card container */
+#course-list{
+    margin: 0px 60px;
+}
+.card {
+display: flex;
+border: 1px solid #ccc;
+border-radius: 8px;
+overflow: hidden;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+margin: 25px 0px;
+padding: 20px 20px 40px 20px;
+background-color: #F3F3F3;
+}
+#course-list > div > div.row > div.card > div.row > div:nth-child(2){
+    align-content: center;
+    align-items: center;
+}
+/* Style for the image inside the card */
+.card img {
+    height: 325px;
+    border-radius: 40px;
+    width: 100%;
+    /* object-fit: cover; */
+    /* padding: 20px; */
+}
+
+/* Style for the text content inside the card */
+.card .card-content {
+flex: 1;
+padding: 16px;
+}
+
+/* Optional: Add some style to the title and description */
+.card h2 {
+margin-bottom: 8px;
+}
+
+.card ul {
+list-style-type: none;
+padding: 0;
+}
+
+.card li {
+margin-bottom: 8px;
+position: relative;
+}
+
+.card li::before {
+position: absolute;
+left: -1.5em;
+content: "\f058";
+font-family: 'FontAwesome';
+color: #AF1F47;
+margin-right: 10px;
+font-size: 18px;
+}
+/* Style for the round button */
+.card .round-button {
+color: #fff;
+border-radius: 50px;
+padding: 15px 50px;
+cursor: pointer;
+background-image: linear-gradient(103deg, #D64A71 0%, #C52C52 100%);
+}
+.card > .row h2{
+text-align: left !important;
+padding: 20px 0px !important;
+font-size: 24px;
+font-weight: 600;
+}
+.card > .row h2>a{
+color:#000 !important;
+}
+.fsc-card-price-content{
+font-size:20px;
+margin-bottom: 2px;
+}
+.fsc-card-price-content > span:nth-child(1){
+color:#AF1F47;
+font-weight: 600;
+}
+.fsc-package-includes{
+font-size:20px;
+margin-bottom: 2px;
+margin-top: 15px;
+}
+#course-list > div.course-area > div.row > div.card > div:nth-child(2){
+    margin-top: 20px;
+}
+
+/* WHY TRAIN WITH US */
+#gcse-why-train{
+    margin: 100px;
+}
+#gcse-why-train > div.fsc-container > div.col-md-6 > h2{
+    font-size: 30px;
+    margin-bottom: 14px;
+    font-weight: 600;
+    color: #212121;
+}
+#gcse-why-train > div.fsc-container > div.col-md-6{
+    position: relative;
+    margin: 10px 40px;
+    /*min-width: 400px;*/
+    /*max-width: 520px;*/
+}
+#gcse-why-train > div.fsc-container > div.col-md-6 > ul > li{
+    font-size: 18px;
+    color: #282828;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    margin: 15px 0px;
+}
+#gcse-why-train > div.fsc-container > div.col-md-6 > ul > li::before{
+    content: "\f058";
+    font-family: 'FontAwesome';
+    color: #e64c7e;
+    margin-right: 10px;
+    font-size: 18px;
+}
+#gcse-why-train > div.fsc-container > div.col-md-6 > ul > li::before{
+    font-size: 30px;
+    vertical-align: middle;
+    margin-right: 18px;
+}
+#gcse-why-train > div.fsc-container > div.col-md-6.text-center > p{
+    text-align: left;
+}
+#gcse-why-train > div.fsc-container > div:nth-child(1)::after{
+    content: '';
+    position: absolute;
+    right: -40px;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: #0f0f0f;
+}
+#fsc-reviews{
+    margin: 60px;
+}
+/* Media Query Start */
+@media (max-width: 1440px) {
+    #gcse-hero .fsc-row{
+        padding: 10px;
+        margin-left: 50px;
+    }
+}
+@media (max-width: 991px) {
+    #gcse-hero .fsc-row{
+        height: auto;
+    }
+    #fsc-reviews{
+        margin: 30px;
+    }
+}
+@media (max-width: 767px) {
+    #top-info > div.row > div.col-md-4 {
+        position: relative;
+        padding: 10px 0px;
+    }
+    #top-info > div.row > div.col-md-4::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 15%; /* Adjust as needed */
+        width: 70%;
+        height: 2px; /* Adjust border thickness */
+        background-color:#AF1F47;
+    }
+    .fsc-container{
+        display: block;
+    }
+    #gcse-why-train{
+        margin: 0px;
+    }
+    #gcse-why-train > div.fsc-container > div.col-md-6{
+        margin: 10px 0px;
+        padding: 5px;
+    }
+    #gcse-why-train > div.fsc-container > div:nth-child(1)::after{
+        position: unset;
+    }
+    #gcse-hero .fsc-inner-container{
+        width: 100%;
+    }
+    #gcse-hero .fsc-container::before{
+        position: unset;
+    }
+    #browse-course{
+        margin: 20px 0px;
+    }
+    #gcse-hero .fsc-row{
+        margin-left: 0px;
+        width: 70%;
+    }
+    #fsc-reviews{
+        margin: 20px;
+    }
+}
+@media (max-width: 480px) {
+    #course-list{
+        margin: 0px;
+    }
+    #gcse-hero .fsc-row h1{
+        font-size: 22px;
+    }
+    #gcse-hero .fsc-row{
+        width: 100%;
+    }
+    #fsc-reviews{
+        margin: 0px;
+    }
+    .card{
+        padding: 20px 5px 40px 5px;
+    }
+    #content > div.ast-container > div.container{
+        padding: 0 15px;
+    }
+}

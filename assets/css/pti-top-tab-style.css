@@ -1,0 +1,576 @@
+/* ==========================================================
+   Face to Face Booking Card Tab Style
+   ========================================================== */
+
+/* --- CSS Custom Properties --- */
+:root {
+    --la-compact-primary: #AF1F47;
+    --la-compact-primary-light: #fbe9ef;
+    --la-compact-dark: #111827;
+    --la-compact-text-main: #374151;
+    --la-compact-text-muted: #6b7280;
+    --la-compact-bg: #f9fafb;
+    --la-compact-bg-card: #ffffff;
+    --la-compact-border: #e5e7eb;
+    --la-compact-disabled: #d1d5db;
+    --la-compact-warning: #f97316;
+    --la-compact-radius: 12px;
+    --la-compact-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --la-compact-transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.la-compact-header-wrapper p {
+    font-size: 35px;
+    font-weight: 600;
+    margin-bottom: 10px !important;
+}
+
+/* --- Base Styles --- */
+.la-compact-wrapper {
+    border: 1px solid #DCDCDC;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #fff;
+}
+.la-compact-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+}
+p.la-compact-card__venue {
+    margin: 0 !important;
+}
+.la-compact-intro-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.la-compact-tab-intro p {
+    margin-bottom: 0px !important;
+}
+/* Modal visible অবস্থায় ডিফল্টে শুধু প্রথম ৩টা কার্ড দেখাও */
+.modal #course-section-container .la-compact-cards-wrapper .la-compact-card { display: none; }
+.modal #course-section-container .la-compact-cards-wrapper .la-compact-card:nth-child(-n+3) { display: flex; }
+
+.la-compact-intro-header i { color: var(--la-compact-primary); margin-bottom: 1rem; display: inline-block; }
+.la-compact-intro-header h1 { font-size: 2.5rem; font-weight: 800; color: var(--la-compact-dark); margin: 0 0 0.5rem 0; }
+.la-compact-intro-header p { font-size: 1.1rem; color: var(--la-compact-text-muted); max-width: 600px; margin: 0 auto; }
+
+/* --- Polished Segmented Control Tabs --- */
+.la-compact-tabs__container { display: flex; background-color: var(--la-compact-border); border-radius: var(--la-compact-radius); padding: 0.3rem; position: relative; margin-bottom: 2rem; }
+.la-compact-tabs__glider { position: absolute; top: 0.3rem; height: calc(100% - 0.6rem); background-color: var(--la-compact-bg-card); border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); transition: var(--la-compact-transition); }
+.la-compact-tab-btn { flex: 1; padding: 0.75rem 1rem; font-size: 1rem; font-weight: 600; color: var(--la-compact-text-muted); background: none; border: none; cursor: pointer; transition: all 0.3s ease; z-index: 1; position: relative; text-align: center; }
+.la-compact-tab-btn.active { color: #ffffff; }
+.la-compact-tab-content { display: none; }
+.la-compact-tab-content.active { display: block; animation: contentFadeIn 0.6s ease; }
+@keyframes contentFadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* --- Tab Intro Text --- */
+.la-compact-tab-intro { background-color: var(--la-compact-bg-card); padding: 1.5rem; border: 1px solid var(--la-compact-border); border-left: 3px solid var(--la-compact-primary); border-radius: 5px; margin-bottom: 2rem; }
+.la-compact-tab-intro p { margin: 0 0 1rem 0; line-height: 1.6; color: var(--la-compact-text-main); }
+.la-compact-tab-intro p:last-child { margin-bottom: 0; }
+
+/* --- New Compact Card Design --- */
+.la-compact-card { display: flex; flex-direction: column; background-color: #af1f470a; border-radius: var(--la-compact-radius); border: 1px solid var(--la-compact-border); box-shadow: var(--la-compact-shadow); margin-bottom: 1.5rem; overflow: hidden; transition: var(--la-compact-transition); }
+.la-compact-card:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); }
+.la-compact-card__header { padding: 1.25rem 1.5rem; }
+.la-compact-card__header p { margin: 0 !important; font-size: 1.25rem; font-weight: 700; color: var(--la-compact-dark) !important; }
+.la-compact-card__body { padding: 0 1.5rem 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; }
+.la-compact-card__tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.la-compact-tag { display: inline-flex; align-items: center; gap: 0.4rem; background-color: var(--la-compact-bg); color: #b02348; padding: 0.35rem 0.45rem; border-radius: 2px; font-size: 0.875rem; font-weight: 600; border-left: 1px solid #b0234857; }
+.la-compact-tag i { color: var(--la-compact-text-muted); }
+.la-compact-card__venue { font-size: 0.9rem; color: var(--la-compact-text-muted); display: flex; align-items: center; gap: 0.4rem; }
+.la-compact-card__availability { font-size: 0.9rem; font-weight: 700; color: var(--la-compact-warning); display: flex; align-items: center; gap: 0.4rem; }
+.la-compact-card__footer { padding: 1.25rem 1.5rem; background-color: var(--la-compact-bg); border-top: 1px solid var(--la-compact-border); display: flex; justify-content: space-between; align-items: center; }
+.la-compact-price .current-price { font-size: 1.75rem; font-weight: 600; color: var(--la-compact-primary); }
+.la-compact-price .original-price { margin-left: 0.5rem; color: #000000; }
+.la-compact-book-btn { background-color: var(--la-compact-primary); color: var(--la-compact-bg-card); padding: 0.75rem 1.5rem; font-size: 1rem; font-weight: 700; text-decoration: none; border-radius: 8px; transition: var(--la-compact-transition); border: none; }
+.la-compact-book-btn:hover { background-color: #8e1938; transform: scale(1.05); color: #fff; }
+.la-compact-book-btn--disabled { background-color: var(--la-compact-disabled); color: var(--la-compact-text-muted); cursor: not-allowed; }
+.la-compact-book-btn--disabled:hover { background-color: var(--la-compact-disabled); transform: none; }
+
+/* --- Pagination & Loading Animation --- */
+.la-compact-pagination { display: flex; justify-content: center; gap: 1rem; margin-top: 2rem; }
+.la-compact-pagination-btn { padding: 0.75rem 1.5rem; font-size: 1rem; font-weight: 600; border-radius: 8px; border: 2px solid var(--la-compact-primary); cursor: pointer; transition: var(--la-compact-transition); display: flex; align-items: center; gap: 0.5rem; }
+#la-compact-see-more-btn { background-color: var(--la-compact-primary); color: white; }
+#la-compact-see-more-btn:hover { background-color: #8e1938; border-color: #8e1938; }
+#la-compact-see-less-btn { background-color: transparent; color: var(--la-compact-primary); }
+#la-compact-see-less-btn:hover { background-color: var(--la-compact-primary-light); }
+.card-is-loading { animation: cardFadeIn 0.6s ease-out forwards; }
+@keyframes cardFadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .la-compact-intro-header h1 { font-size: 2rem; }
+    .la-compact-tabs__container { flex-direction: column; background: none; padding: 0; gap: 0.5rem; }
+    .la-compact-tabs__glider { display: none; }
+    .la-compact-tab-btn { background: var(--la-compact-bg-card); border: 4px solid var(--la-compact-border); border-radius: 10px; }
+    .la-compact-tab-btn.active { border-color: var(--la-compact-primary); background: var(--la-compact-primary-light); color: var(--la-compact-primary); }
+    .la-compact-card__footer { flex-direction: row; gap: 1rem; align-items: center; }
+    .la-compact-book-btn {
+            text-align: center;
+            padding: 0.75rem 1rem;
+            font-size: 14px; 
+        }
+
+        .la-compact-price {
+    width: 40%;
+}
+form.cart.la-compact-cart-form {
+        width: 60%;
+        text-align: right;
+
+}
+}
+
+/* Header & Step Guide */
+.la-compact-header-wrapper {
+    text-align: center;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: baseline;
+}
+.la-compact-header-wrapper h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #111827;
+    margin: 0.5rem 0 0.75rem;
+}
+.la-compact-header-wrapper .header-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    background-color: #fbe9ef;
+    color: #b02348;
+    border-radius: 50%;
+}
+.la-steps-guide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+.la-step {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: #4b5563;
+}
+.la-step .step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background-color: #e5e7eb;
+    color: #4b5563;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 0.875rem;
+}
+.la-step-arrow {
+    color: #9ca3af;
+}
+
+/* Redesigned Tabs */
+.la-compact-tabs__glider {
+    display: none;
+}
+.la-compact-tabs__container {
+    background-color: transparent;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    gap: 1rem; /* Add space between buttons */
+}
+.la-compact-tab-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 12px 14px;
+    border: 4px solid #af1f46 !important;
+    background-color: #ffffff;
+    color: #af1f46 !important;
+    font-weight: 700;
+    font-size: 19px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.25s ease-out;
+    text-align: center;
+    white-space: nowrap;
+}
+.la-compact-tab-btn .active-tab-icon {
+    display: none; /* Hide icon by default */
+}
+.la-compact-tab-btn:not(.active):hover {
+    border-color: #040225;
+    color: #040225;
+    background: transparent;
+    transform: none;
+}
+.la-compact-tab-btn.active {
+    background-color: #b02348;
+    color: #ffffff !important;
+    border-color: #b02348;
+    box-shadow: 0 7px 15px -5px rgba(176, 35, 72, 0.3);
+    transform: none;
+}
+.la-compact-tab-btn.active .active-tab-icon {
+    display: inline-block; /* Show icon only on active tab */
+}
+
+/* Other styles from previous steps */
+.la-compact-card__availability.out-of-stock { color: #dc3232; }
+.la-compact-book-btn.disabled { background-color: #aaa; cursor: not-allowed; }
+.la-compact-price .original-price
+{
+    font-size: 18px;
+    margin-left: 0.5rem;
+    text-decoration: line-through;
+    color: #7f7f7f;
+    font-weight: 400;
+    text-decoration-color: #b02348;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .la-compact-header-wrapper h1 { font-size: 1.75rem; }
+    .la-steps-guide { flex-direction: column; gap: 0.75rem; align-items: flex-start; }
+    .la-step-arrow { display: none; }
+    .la-compact-tabs__container { flex-direction: column; }
+
+    .la-compact-header-wrapper .header-icon {
+    display: none;
+}
+.la-compact-header-wrapper p {
+    font-size: 25px;
+    padding: 0px 35px;
+}
+
+.la-compact-tab-btn {
+    gap: 0.5rem;
+    padding: 12px 0px;
+    font-size: 14px;
+}
+
+.la-compact-wrapper {
+    padding: 20px 10px;
+}
+
+body.woocommerce.ast-page-builder-template h2 {
+    font-size: 22px !important;
+}
+
+.la-course-at-a-glance ul {
+    margin: 0 !important;
+}
+}
+
+/* ==========================================================
+   Modal Styles for Enquiry Booking
+   ========================================================== */
+/* The Modal (background) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999999999999;
+    padding-top: 100px;
+    padding-bottom: 20px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    max-width: 100%;
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content */
+#enquiryBookingModal .modal-content {
+    background-color: #f8f8f8;
+    margin: auto;
+    padding: 5px 20px 13px 20px;
+    border: 1px solid #888;
+    width: 750px;
+    max-width: 80%;
+    max-height: 500px;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+div#enquiryBookingModal {
+    color: #000 !important;
+    z-index: 99999999999999999;
+}
+
+div#enquiryBookingModal .close {
+    margin-right: -12px;
+}
+
+div#enquiryBookingModal .float-row {
+    justify-content: space-between;
+}
+
+div#enquiryBookingModal .single-booking-row:first-child {
+    border-top: 0;
+    margin: 0;
+    padding: 0 0 20px;
+}
+
+div#enquiryBookingModal button.la-compact-tab-btn {
+    font-size: 16px !important;
+}
+
+div#enquiryBookingModal .la-compact-wrapper {
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    margin: 35px 0px 10px;
+}
+
+@media screen and (max-width: 768px) {
+    div#enquiryBookingModal {
+        padding-bottom: 0;
+    }
+
+    /* Modal Content */
+    #enquiryBookingModal .modal-content {
+        padding: 5px 0 0 0;
+        max-width: 100% !important;
+        max-height: 100% !important;
+
+    }
+
+    #subscribe-us, #get-in-touch, #phlebotomy-practical-session {
+        display: none;
+    }
+}
+
+button:not(:disabled) {
+    cursor: pointer !important;
+}
+
+/* Target the specific element for always-visible scrollbars */
+#enquiryBookingModal .la-compact-wrapper {
+max-height: 85vh; 
+    height: 600px; 
+}
+
+#enquiryBookingModal .os-scrollbar-vertical {
+    background-color: #f1f1f1 !important; 
+    width: 10px;
+}
+
+
+#enquiryBookingModal .os-scrollbar-handle {
+    background-color: #af1f47 !important;
+    border-radius: 4px;
+}
+
+#enquiryBookingModal .os-scrollbar-handle:hover {
+    background-color: #8e1939 !important; 
+}
+
+/* Target the specific element for always-visible scrollbars */
+#enquiryBookingModal .la-compact-wrapper {
+    overflow-y: scroll;
+    /* Force vertical scrollbar to always be visible */
+    -webkit-overflow-scrolling: touch;
+    /* Smooth scrolling on iOS */
+}
+
+/* Styling the scrollbar for visibility */
+#enquiryBookingModal .la-compact-wrapper::-webkit-scrollbar {
+    width: 10px;
+    /* Set scrollbar width */
+}
+
+#enquiryBookingModal .la-compact-wrapper::-webkit-scrollbar-thumb {
+    background-color: #af1f47;
+    /* Scrollbar thumb color */
+    border-radius: 4px;
+    /* Optional: rounded scrollbar thumb */
+}
+
+#enquiryBookingModal .la-compact-wrapper::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    /* Scrollbar track color */
+}
+
+button#phlebotomy-modal-enroll-btn {
+    background: #af1f47;
+    width: 70%;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+#course-fee .red-button {
+    width: 100%;
+}
+
+
+/* ==========================================================
+   Premium Sticky Footer CTA for Mobile (V2)
+   ========================================================== */
+
+/* Main container with a subtle, modern background */
+.bottom-fixed-phlebotomy-cta-mobile {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    /* Glassmorphism Effect */
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 -5px 20px -5px rgba(0, 0, 0, 0.1);
+    
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Price Section Styling */
+#mobile-course-price {
+    text-align: left;
+}
+
+#mobile-course-price .mobile-sale-price {
+    font-size: 24px;
+    font-weight: 900;
+    color: #111827; /* Dark text for contrast */
+    line-height: 1;
+}
+
+#mobile-course-price small {
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151; /* Slightly muted text */
+    margin-left: 2px;
+}
+
+#mobile-course-price .mobile-prev-price {
+    font-size: 15px;
+    text-decoration: line-through;
+    color: #AF1F47; /* Primary color for strike-through */
+    font-weight: 700;
+    opacity: 0.8;
+}
+
+/* Premium Button Styling */
+#mobile-see-dates-btn {
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    padding: 16px 28px;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    background-color: var(--la-compact-primary);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+#mobile-see-dates-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 20px rgba(175, 31, 71, 0.35);
+}
+
+/* Adding a calendar icon for better UX */
+#mobile-see-dates-btn::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-days"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.cpd-course-all-icons-content .la-gcse-bottom-single {
+    position: initial;
+    padding-left: 0;
+    display: inline-flex !important;
+    flex-wrap: nowrap;
+    flex-direction: row !important;
+    text-align: left !important;
+    border-bottom: 1px solid #d9d9d9;
+    padding-bottom: 10px;
+}
+
+#course-fee-others > .la-gcse-bottom-post-content {
+    grid-template-columns: repeat(1, 1fr) !important;
+}
+
+.cpd-course-all-icons-content .la-gcse-bottom-single:last-child {
+    border: none;
+    padding-bottom: 0;
+}
+
+.la-cpd-single-icon-contents {
+    width: 85%;
+    margin: auto 0px auto 0px !important;
+}
+
+#course-fee-others img {
+    height: auto !important;
+    margin-bottom: 0px !important;
+}
+
+#subscribe-us, #get-in-touch, #phlebotomy-practical-session {
+    background-color: #ffffff;
+}
+
+body.woocommerce.ast-page-builder-template main#main div.container #main-left div.la-course-at-a-glance {
+    background: #fef0f8;
+    padding: 15px 15px 5px !important;
+    margin-bottom: 30px;
+    border-radius: 6px;
+    border: 1px solid #b0234826;
+}
+
+#single-course-details .la-gcse-bottom-post-content {
+    margin-bottom: 30px !important;
+}
+
+.screenshot-slider-modern .slick-slide-item img {
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+}

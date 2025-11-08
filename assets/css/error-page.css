@@ -1,0 +1,78 @@
+.youtube-container{
+    position: static;
+}
+#myVideo{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0px;
+}
+.overlay{
+    background-color: transparent;
+    background-image: linear-gradient(180deg, #B91848 0%, #f2295b 100%);
+    opacity: 0.8;
+    transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+iframe{
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+#content > div.ast-container > div.container{
+    content-visibility: auto;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    width: 850px;
+}
+h1,p{
+    color: #fff;
+    text-align: center;
+}
+h1{
+    font-size: 65px;
+}
+#content div.container > p:nth-child(2){
+    font-size: 23px;
+}
+#content div.container > p:nth-child(3){
+    font-size: 15px;
+}
+#content > .ast-container > div.container > hr{
+    margin: 50px 0px;
+}
+#search{
+    width: 100%;
+    border-radius: 50px;
+    border: 3px solid #fff;
+    background: transparent;
+}
+#search i{
+    padding-left: 15px;
+    color: #fff;
+}
+input[type=search]{
+    background: transparent;
+    color: #fff;
+    width: calc(100% - 55px);
+    border:none;
+}
+input[type=search]:hover{
+    border:none;
+    background: transparent;
+    color:#fff;
+}
+input[type=search]:focus{
+    border:none;
+    background: transparent;
+    color:#fff;
+}
+input[type=search]::placeholder{
+    color:#fff;
+}

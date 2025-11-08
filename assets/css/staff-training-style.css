@@ -1,0 +1,1060 @@
+section#staff-training-banner {
+  background: linear-gradient(180deg, #27020dbf 25%, #8d003bc9 79%),
+    url(https://lead-academy.org/wp-content/uploads/0223/12/cheerful-speaker-talking-looking-distance-1-scaled-1.webp);
+  padding: 50px 0px;
+  background-size: cover;
+  background-position: center;
+}
+
+section#staff-training-banner h1 {
+  color: #ffffff;
+  font-family: "Sen", Sans-serif;
+  font-size: 55px;
+  font-weight: 600;
+  line-height: 1em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+section#staff-training-banner p {
+  color: #ffffff;
+  font-family: "Sen", Sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 35px;
+  text-align: center;
+}
+
+.staff-training-ffp-icon-card img {
+  width: 500px;
+}
+
+.staff-training-ffp-icon-card {
+  display: flex;
+  margin-bottom: 10px;
+  align-items: baseline;
+}
+
+.staff-training-ffp-icon {
+  background-color: #f6f6f6;
+  border-style: solid;
+  border-width: 3px 0px 0px 0px;
+  border-color: #d52f60;
+  transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+  padding: 12px 40px 12px 18px;
+  position: relative;
+}
+
+section#staff-training-part-2 {
+  padding: 50px 0px;
+}
+
+section#staff-training-part-2 h2 {
+  text-align: center;
+  color: #000000;
+  font-family: "Sen", Sans-serif;
+  font-size: 31px;
+  font-weight: 600;
+  line-height: 40px;
+  margin: 0px 260px 40px 260px;
+}
+
+.staff-training-ffp-icon:before,
+.staff-training-ffp-icon:after {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 15px;
+  left: 10px;
+  width: 350%;
+  top: 80%;
+  max-width: 300px;
+  background: #7f7f7f;
+  -webkit-box-shadow: 0 15px 10px #7f7f7f;
+  -moz-box-shadow: 0 15px 10px #7f7f7f;
+  box-shadow: 0 15px 10px #7f7f7f;
+  -webkit-transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
+  -o-transform: rotate(-3deg);
+  -ms-transform: rotate(-3deg);
+  transform: rotate(-3deg);
+}
+.staff-training-ffp-icon:after {
+  -webkit-transform: rotate(3deg);
+  -moz-transform: rotate(3deg);
+  -o-transform: rotate(3deg);
+  -ms-transform: rotate(3deg);
+  transform: rotate(3deg);
+  right: 10px;
+  left: auto;
+}
+
+.staff-training-ffp-icon-card h3 {
+  color: #000000;
+  font-family: "Sen", Sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.staff-training-ffp-icon-card p {
+  text-align: justify;
+  color: #000000;
+  font-family: "Sen", Sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.flip-box-front h3 {
+  color: #fff;
+  font-family: "Sen", Sans-serif;
+  font-weight: 600;
+  font-size: 25px;
+  margin: -75px 20px 40px 20px;
+}
+
+.flip-box-front p:nth-of-type(2) {
+  color: #b91948;
+  margin-top: 25px;
+  font-weight: bold;
+}
+
+.flip-box-front p {
+  color: #000;
+  font-family: "Sen", Sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0px 20px;
+}
+
+#staff-training-part-3 .flip-box {
+  width: 100%;
+  height: 500px;
+  perspective: 1000px;
+  overflow: hidden;
+  background-color: rgba(31, 26, 26, 0);
+  border-radius: 5px 5px 5px 5px;
+  box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 21%);
+  margin-top: 25px;
+}
+
+.flip-box-back button:hover {
+  color: #fff;
+  border: 2px solid #fff;
+  background-color: #000;
+  transition: all 500ms ease;
+}
+
+#staff-training-part-3 .flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+#staff-training-part-3 .flip-box:hover .flip-box-inner {
+  transform: translateX(-100%);
+}
+
+#staff-training-part-3 .flip-box-front,
+#staff-training-part-3 .flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+#staff-training-part-3 .flip-box-front {
+  background-color: #ffffff;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#staff-training-part-3 .flip-box-back {
+  background-color: #f9557d;
+  color: white;
+  transform: translateX(100%);
+  padding: 25px;
+}
+
+.flip-box-back h4 {
+  font-family: "Sen", Sans-serif;
+  font-weight: 600;
+  font-size: 25px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.staff-p {
+  font-family: "Sen", Sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 25px !important;
+  color: #fff !important;
+  margin-bottom: 20px !important;
+}
+
+.flip-box-back p {
+  color: #fff;
+  font-family: "Sen", Sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.flip-box-back button {
+  cursor: pointer;
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid #fff;
+  background: transparent;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 24px;
+  font-size: 18px;
+  display: inline-block;
+  margin-top: 25px;
+  transition: all 500ms ease;
+  border-radius: 5px;
+  font-family: "Sen", Sans-serif;
+}
+
+#staff-training-part-3 .flip-box-front img {
+  width: 100%;
+}
+
+section#staff-training-part-3 {
+  padding: 50px 0px;
+}
+
+section#staff-training-part-3 h2 {
+  color: #000;
+  font-family: "Sen", Sans-serif;
+  font-size: 31px;
+  font-weight: 700;
+  line-height: 35px;
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+#popupButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.staff-training-flip-box {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgb(0 0 0 / 55%);
+}
+
+.staff-training-flip-box .popup-content {
+  background-color: #fefefe;
+  margin: 5% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40%; /* Could be more or less, depending on screen size */
+  border-radius: 8px;
+}
+
+.staff-training-flip-box .staffclose {
+  color: #838383;
+  float: right;
+  font-size: 30px;
+  font-weight: bold;
+  position: relative;
+  top: -15px;
+}
+
+.staff-training-flip-box .staffclose:hover,
+.staff-training-flip-box .staffclose:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.staff-training-flip-box .popup-content h2 {
+  color: #000000;
+  font-weight: 700;
+  text-align: center;
+  font-size: 30px;
+}
+
+.explore-available-course {
+  text-align: center;
+  margin-top: 50px;
+}
+
+button#explore-popupbutton {
+  font-family: "Sen", Sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: transparent;
+  background-image: linear-gradient(180deg, #ff2e6a 0%, #dc328e 100%);
+  border-radius: 50px 50px 50px 50px;
+  box-shadow: 0px 0px 10px 0px #ff2e6a;
+  padding: 13px 50px 13px 50px;
+  border: 0;
+  color: #fff;
+  margin-top: 15px;
+}
+
+.explore-available-course h4 {
+  color: #000000;
+  font-family: "Sen", Sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 35px;
+}
+
+/* CSS for play icon animation */
+.play-button {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  background-color: #ff475700;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 0 0 rgb(255 255 255 / 66%);
+  animation: pulse 2s infinite;
+  border: 4px solid #fff;
+}
+
+.play-button:before {
+  content: "";
+  position: absolute;
+  left: 40%;
+  width: 0;
+  height: 0;
+  border-left: 18px solid #fff;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 20px rgba(255, 71, 87, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 71, 87, 0);
+  }
+}
+
+/* CSS for Youtube popup */
+.staff-training-video {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.staff-training-video .popup-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #000000;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.staff-training-video .close {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  cursor: pointer;
+  font-size: 32px;
+  background-color: #b91948;
+  width: 25px;
+  height: 25px;
+  border-radius: 45px;
+  line-height: 0px;
+  color: #fff;
+  padding: 12px 3px;
+}
+
+section#staff-training-part-4 {
+  transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+  padding: 100px 0px 50px 0px;
+  background: linear-gradient(180deg, #4747477a 0%, #000000bf 54%),
+    url(https://lead-academy.org/wp-content/uploads/0223/12/confident-young-team-leader-giving-presentation-group-young-colleagues-as-they-sit-grouped-by-flip-chart-office-1-scaled.webp);
+  background-attachment: fixed;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+section#staff-training-part-4 p {
+  margin-top: 250px;
+  color: #ffffff;
+  font-family: "Sen", Sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+section#staff-training-part-4 h3 {
+  color: #ffffff;
+  font-family: "Sen", Sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1em;
+}
+
+.staff-animated-play-icon {
+  display: ruby-text;
+}
+
+section#staff-training-sub-part-4 {
+  text-align: center;
+  padding: 0px 300px;
+  margin: 50px 0px 20px 0px;
+}
+
+section#staff-training-sub-part-4 h2 {
+  color: #000000;
+  font-family: "Sen", Sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 35px;
+  margin-bottom: 15px;
+}
+
+section#staff-training-sub-part-4 p {
+  text-align: center;
+  color: #000000;
+  font-family: "Sen", Sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.staff-training-ffp-icon-card span:nth-of-type(1) {
+  width: 20%;
+}
+
+.staff-training-ffp-icon-card span:nth-of-type(2) {
+  width: 100%;
+}
+
+span#input_82_1_3_container {
+  padding: 0;
+}
+
+input#gform_submit_button_82 {
+  width: 100%;
+  background-color: #b91948;
+  font-weight: 600;
+}
+
+section#staff-training-part-5 {
+  padding: 60px 0px;
+}
+
+section#staff-training-part-5 h2 {
+  color: #000000;
+  font-family: "Sen", Sans-serif;
+  font-size: 31px;
+  font-weight: 600;
+  line-height: 35px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+section#staff-training-part-5 p {
+  text-align: center;
+  color: #000000;
+  font-family: "Sen", Sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.staff-training-part-5-left-part p {
+  color: #ff007a !important;
+  font-family: "Sen", Sans-serif;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  text-align: left !important;
+}
+
+.staff-training-part-5-left-part h3 {
+  color: #000000;
+  font-family: "Sen", Sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.staff-training-part-5-left-part ul {
+  margin: 0;
+  padding: 0;
+}
+
+.staff-training-part-5-left-part h3 {
+  color: #000000;
+  font-family: "Sen", Sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.staff-training-part-5-left-part ul li {
+  list-style: none;
+  font-family: "Sen", Sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #000000;
+  transition: color 0.3s;
+  padding: 12px 0px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.staff-training-part-5-left-part ul li span i {
+  color: #fc2f6e;
+  transition: color 0.3s;
+  margin-right: 10px;
+}
+
+.staff-training-part-5-sub {
+  margin-top: 35px;
+  background-image: url(https://lead-academy.org/wp-content/uploads/0223/12/dot.webp);
+  background-position: 570px 50px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.staff-training-part-5-right-part {
+  background-color: #00000036;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  margin-left: 45px;
+}
+
+.staff-training-part-5-right-part {
+  background-color: #d7d7d7bd;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.staff-training-part-5-right-part input {
+  border: 1px solid #858585;
+  padding: 12px 13px !important;
+}
+
+textarea#input_83_6 {
+  border: 1px solid #858585;
+}
+
+input#gform_submit_button_83 {
+  background-color: #fc2f6e;
+  color: #ffffff;
+  width: 100%;
+  font-size: 18px;
+  border-radius: 10px;
+  transition: all 500ms ease;
+}
+
+input#gform_submit_button_83:hover {
+  background-color: #000;
+  transition: all 500ms ease;
+}
+
+section#staff-training-part-6 img {
+  width: 50px;
+  height: 50px;
+}
+
+section#staff-training-part-6 {
+  text-align: center;
+  padding: 50px 0px;
+}
+
+section#staff-training-part-6 p {
+  color: #000000;
+  font-family: "Sen", Sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.staff-training-part-7 {
+  margin: 50px 0px !important;
+}
+
+.staff-training-part-association h2 {
+  color: #000000;
+  font-family: "Sen", Sans-serif;
+  font-size: 31px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.staff-training-part-association p {
+  color: #000000;
+  font-family: "Sen", Sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  text-align: center;
+}
+
+.staff-training-part-association {
+  margin-bottom: 35px;
+}
+
+section.staff-training-part-8 {
+  margin: 50px 0px !important;
+}
+
+.staff-training-part-8-text h2 {
+  color: #000000;
+  font-family: "Sen", Sans-serif;
+  font-size: 31px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.staff-training-part-8-text p {
+  color: #000000;
+  font-family: "Sen", Sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.5em;
+  text-align: center;
+}
+
+.staff-training-part-8-text {
+  margin-bottom: 30px;
+}
+
+.staff-training-part-association span {
+  color: #fd2f6d;
+}
+
+section#fsc-partners .owl-nav {
+  display: none;
+}
+
+section#staff-training-part-10 {
+  background: url(https://lead-academy.org/wp-content/uploads/0223/12/Join-Over-49-Companies-Worldeide-scaled.webp);
+  background-size: cover;
+  padding: 335px 0px 30px 0px;
+  text-align: center;
+}
+
+section#staff-training-part-10 h2 {
+  color: #000000;
+  font-family: "Sen", Sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.staff-training-counter {
+  margin-top: 40px;
+}
+
+section#staff-training-part-10 p {
+  color: #000000;
+  font-family: "Sen", Sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  background-color: #fff;
+}
+
+.staff-training-counter p {
+  font-size: 36px !important;
+  font-weight: 500 !important;
+  margin-bottom: 0;
+}
+
+.staff-training-counter h3 {
+  color: #000000;
+  font-family: "Poppins", Sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  background-color: #fff;
+}
+
+.training-counter-1 p {
+  color: #ff006b !important;
+}
+
+.training-counter-2 p {
+  color: #00c2ff !important;
+}
+
+.training-counter-3 p {
+  color: #19af00 !important;
+}
+
+section#staff-training-part-10 h2 span {
+  color: #000000;
+  font-family: "Sen", Sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+  section#staff-training-banner {
+    padding: 30px 0px;
+  }
+
+  section#staff-training-banner h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+
+  section#staff-training-banner p {
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  section#staff-training-part-2 h2 {
+    font-size: 24px;
+    line-height: 30px;
+    margin: 0px 0px 35px 0px;
+  }
+
+  .staff-training-ffp-icon {
+    padding: 12px 25px 12px 0px;
+  }
+
+  .staff-training-ffp-icon-card h3 {
+    font-size: 20px;
+  }
+
+  .staff-training-ffp-icon-card p {
+    text-align: justify;
+    font-size: 16px;
+  }
+
+  .staff-training-ffp-icon-card img {
+    width: 400px;
+  }
+
+  section#staff-training-part-3 {
+    padding: 30px 0px;
+  }
+
+  section#staff-training-part-3 h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  .flip-box-front h3 {
+    font-size: 20px;
+    margin: -60px 20px 30px 20px;
+  }
+
+  .flip-box-back h4 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .flip-box-back button {
+    padding: 8px 24px;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  section#staff-training-sub-part-4 {
+    padding: 0px 0px;
+    margin: 30px 0px 20px 0px;
+  }
+
+  .explore-available-course h4 {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  button#explore-popupbutton {
+    padding: 10px 30px 10px 30px;
+  }
+
+  section#staff-training-sub-part-4 h2 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  section#staff-training-sub-part-4 p {
+    font-size: 15px;
+  }
+
+  section#staff-training-part-4 p {
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  section#staff-training-part-4 h3 {
+    font-size: 22px;
+    line-height: 30px;
+    text-align: center;
+  }
+
+  section#staff-training-part-4 {
+    padding: 60px 0px 25px 0px;
+    background-attachment: inherit;
+  }
+
+  .play-button:before {
+    border-left: 12px solid #fff;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+  }
+
+  .play-button {
+    width: 60px;
+    height: 60px;
+  }
+
+  .staff-training-flip-box .popup-content {
+    width: 90%;
+  }
+
+  .staff-training-flip-box .popup-content h2 {
+    font-size: 24px;
+  }
+
+  div#field_82_5 {
+    transform: scale(0.77);
+    transform-origin: 0 0;
+  }
+
+  .staff-training-video .popup-content {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #000000;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 90%;
+  }
+
+  div#field_83_7 {
+    transform: scale(0.77);
+    transform-origin: 0 0;
+  }
+
+  .staff-training-part-5-right-part {
+    padding: 30px 20px 10px 20px;
+    margin: 30px 0px 0px 0px;
+  }
+
+  section#staff-training-part-5 {
+    padding: 40px 0px;
+  }
+
+  section#staff-training-part-5 h2 {
+    font-size: 24px;
+    line-height: 30px;
+    margin-bottom: 10px;
+  }
+
+  section#staff-training-part-5 p {
+    font-size: 16px;
+  }
+
+  .staff-training-part-5-sub {
+    margin-top: 20px;
+    background-position: bottom;
+  }
+
+  .staff-training-part-5-left-part h3 {
+    font-size: 20px;
+  }
+
+  .staff-training-part-5-left-part p {
+    font-size: 18px !important;
+  }
+
+  .staff-training-part-5-left-part ul li {
+    font-size: 16px;
+  }
+
+  .staff-training-part-5-right-part input {
+    padding: 6px 13px !important;
+  }
+
+  input#gform_submit_button_83 {
+    font-size: 16px;
+  }
+
+  .staff-training-part-6-icon {
+    margin: 20px 0px;
+  }
+
+  .staff-training-part-association h2 {
+    font-size: 24px;
+  }
+
+  .staff-training-part-7 .owl-nav {
+    display: none;
+  }
+
+  .staff-training-part-7 {
+    margin: 0px 0px !important;
+  }
+
+  section.staff-training-part-8 {
+    padding: 25px;
+  }
+
+  .staff-training-part-8-text h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .staff-training-part-8-text p {
+    font-size: 16px;
+  }
+
+  section#staff-training-part-10 {
+    background: #fff;
+    padding: 30px 0px 30px 0px;
+  }
+
+  .staff-training-counter {
+    margin-top: 10px;
+  }
+}
+
+/** For tablet devices **/
+@media (min-width: 768px) and (max-width: 1024px) {
+  section#staff-training-banner {
+    padding: 35px 0px;
+  }
+
+  section#staff-training-banner h1 {
+    font-size: 35px;
+    margin-bottom: 10px;
+  }
+
+  section#staff-training-banner p {
+    font-size: 25px;
+    line-height: 30px;
+  }
+
+  .staff-training-ffp-icon {
+    padding: 12px 20px 12px 0px;
+  }
+
+  .staff-training-ffp-icon-card h3 {
+    font-size: 20px;
+  }
+
+  .staff-training-ffp-icon-card img {
+    width: 400px;
+  }
+
+  section#staff-training-part-2 h2 {
+    margin: 0px 0px 30px 0px;
+  }
+
+  .flip-box-front h3 {
+    font-size: 20px;
+    margin: -60px 20px 25px 20px;
+  }
+
+  .flip-box-back h4 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .flip-box-back button {
+    padding: 8px 24px;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+
+  .explore-available-course h4 {
+    font-size: 22px;
+  }
+
+  button#explore-popupbutton {
+    padding: 10px 30px 10px 30px;
+  }
+
+  section#staff-training-sub-part-4 {
+    padding: 0px 0px;
+    margin: 20px 0px 20px 0px;
+  }
+
+  section#staff-training-part-4 p {
+    margin-top: 50px;
+  }
+
+  section#staff-training-part-4 h3 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 40px;
+  }
+
+  section#staff-training-part-4 {
+    padding: 100px 0px 20px 0px;
+    background-attachment: inherit;
+  }
+
+  .staff-training-flip-box .popup-content {
+    margin: 10% auto;
+    width: 70%;
+  }
+
+  .staff-training-video .popup-content {
+    top: 30%;
+    width: 70%;
+  }
+
+  section#staff-training-part-5 {
+    padding: 45px 0px;
+  }
+
+  section#staff-training-part-5 p {
+    font-size: 16px;
+  }
+
+  .staff-training-part-5-right-part {
+    margin: 20px 0px 0px 0px;
+  }
+
+  .staff-training-part-5-sub {
+    background-position: bottom;
+  }
+
+  .staff-training-part-6-icon {
+    margin: 30px 0px;
+  }
+}

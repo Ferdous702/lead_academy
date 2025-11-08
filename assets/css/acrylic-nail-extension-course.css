@@ -1,0 +1,1495 @@
+ #phuk-top-3-sec{
+        background-color: #ffeaea;
+    }
+    #cntc-hero{
+       
+        margin: 10px auto !important;
+    }
+    .single-booking-right{
+        width: 150px !important;
+    }
+    .single-phlebotomy-top-3{
+        padding: 19px !important;
+    }
+    .cs-accreditation {
+    display: flex !important;
+    flex-direction: column; 
+    height: 100%;
+    align-items: center;
+    display: flex
+
+}
+    .right-service-item-single img {
+    border-radius: 36px;
+}
+
+.postid-409404 .cntc-single-card-contents {
+    height: auto;
+    text-align:center;
+    margin-top: 15px;
+    background: transparent;
+}
+
+.postid-409404 .cntc-single-card-contents h5 {
+    margin-top: 20px !important;
+    border-bottom: 2px solid #bb2c59;
+    padding-bottom: 10px !important;
+    padding-top: 0px !important;
+    margin-bottom: 10px !important;
+    width: fit-content;
+    font-size: 20px !important;
+    color: #bb2c59;
+}
+.cntc-single-card-contents h4 
+{
+    font-size: 18px !important;
+    margin-bottom: 0.75rem; 
+}
+
+.postid-409404 p.time-range {
+    padding-top: 10px;
+    color: #af1f47;
+}
+
+@media screen and (max-width: 767px) {
+    .postid-409404 .cntc-single-card-contents {
+    height: 100%;
+    }
+
+    .cntc-single-card-contents h3 {
+    margin-bottom: 5px !important;
+}
+
+.postid-409404 p.time-range {
+    padding-top: 10px;
+    color: #af1f47;
+    font-size: 18px;
+}
+
+.postid-409404 .cntc-single-card-contents h5 {
+    font-size: 20px !important;
+}
+}
+
+    @media screen and (max-width: 1040px) {
+        .phlebotomy-top-3 .phlebotomy-container {
+            flex-direction: column;
+        }
+    }
+
+div#phlebotomy-practical-session {
+    border: none;
+    background-color: #fbfbfb;
+}
+    .gift_course_button {
+        display: none !important;
+    }
+
+    .gform_wrapper.gravity-theme .gform_footer,
+    .gform_wrapper.gravity-theme .gform_page_footer {
+        padding: 0px !important;
+    }
+
+    /* The Modal (background) */
+    .modal {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        /* Stay in place */
+        z-index: 999999999999;
+        /* Sit on top */
+        padding-top: 100px;
+        /* Location of the box */
+        padding-bottom: 20px;
+        /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%;
+        /* Full width */
+        max-width: 100%;
+        height: 100%;
+        /* Full height */
+        overflow: auto;
+        /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4);
+        /* Black w/ opacity */
+    }
+
+    /* Modal Content */
+    #enquiryBookingModal .modal-content {
+        background-color: #f8f8f8;
+        margin: auto;
+        padding: 5px 20px 13px 20px;
+        border: 1px solid #888;
+        width: 750px;
+        max-width: 80%;
+        max-height: 500px;
+    }
+
+    /* The Close Button */
+    .close {
+        color: #aaaaaa !important;
+        float: right;
+        font-size: 40px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    #enquiryModal textarea {
+        height: 100px;
+    }
+
+    div#gform_64_validation_container h2 {
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+    div#enquiryBookingModal {
+        color: #000 !important;
+        z-index: 99999999999999999;
+    }
+
+    div#enquiryBookingModal .single-booking-option {
+        margin: 35px 5px 10px;
+        overflow-y: scroll;
+    }
+
+    div#enquiryBookingModal .close {
+        margin-right: -12px;
+    }
+
+    div#enquiryBookingModal .float-row {
+        justify-content: space-between;
+    }
+
+    div#enquiryBookingModal .single-booking-row:first-child {
+        border-top: 0;
+        margin: 0;
+        padding: 0 0 20px;
+    }
+
+    .hero-big-img img {
+    padding-left: 25px;
+    }
+
+    /* added by sadman */
+    .nail-technician-top-4-right p {
+    font-size: 16px !important;
+    margin-top: 8px !important;
+    text-transform: uppercase;
+    font-weight: 700;
+    }
+    .single-phlebotomy-top-3 p {
+    margin: 0 auto 5px;
+    }
+    @media screen and (max-width: 468px) {
+    .single-phlebotomy-top-3 p {
+        display: contents !important;
+    }
+    .postid-409404 #phlebotomy-practical-session
+    {
+        padding: 10px;
+    }
+    }
+    /* --- Top Benefits Section --- */
+  /* Main section styling */
+#phuk-top-3-sec {
+    padding: 15px 0;
+    background-color: #fef0f8;
+}
+
+/* Flex container for the benefit boxes */
+.top-benefits {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Styling for each individual benefit box */
+.benefit-box {
+    flex: 1;
+    min-width: 240px;
+    
+    /* This block creates the horizontal layout */
+    display: flex;
+    flex-direction: row;      /* Align items side-by-side */
+    align-items: center;      /* Vertically center the icon and text */
+    justify-content: center;  /* Horizontally center the content group in the box */
+    
+    padding: 20px 25px;
+    
+    background-color: #ffffff;
+    border: 1px solid #e9e9f0;
+    border-radius: 12px;
+    
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.benefit-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the images (icons) */
+.benefit-box img {
+    height: 45px;
+    width: auto;
+    margin-right: 15px; /* Creates space between the icon and the text */
+}
+
+/* Styling for the text */
+.benefit-box p {
+    margin: 0;
+    color: #333;
+    font-weight: 600;
+    font-size: 16px;
+    white-space: nowrap; /* Prevents text from wrapping to a new line */
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 1100px) {
+    .top-benefits {
+        justify-content: center;
+    }
+    .benefit-box {
+        flex-basis: calc(50% - 30px); /* Creates a 2x2 grid */
+    }
+}
+
+@media (max-width: 576px) {
+    .benefit-box {
+        flex-basis: 100%; /* Stacks boxes on mobile */
+        justify-content: flex-start; /* Aligns content to the left on mobile */
+    }
+    #phuk-top-3-sec
+    {
+        display: none;
+    }
+}
+
+    /* Top Benifits section End */
+
+#cntc-hero {
+    padding: 30px 0;
+}
+#cntc-hero .hero-left p
+{
+    max-width:100%;
+}
+#cntc-hero .hero-left h1
+{
+    margin: 0px auto 20px !important;
+    font-size: 36px !important;
+}
+#cntc-hero div.hero-left > p > span
+{
+    font-size: 30px;
+    font-weight: 600;
+    color: #b91849;
+}
+.course-price-wrap del
+{
+    font-size: 22px;
+    color: #9b9b9b !important;
+}
+/* --- Hero Wrapper (Main Layout) --- */
+.hero-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-left {
+    flex: 1.2;
+    padding-right: 15px;;
+}
+
+
+/* --- Left Column Content --- */
+.hero-left h1 {
+    font-size: 36px;
+    color: #1E1E1E;
+    margin-top: 0;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.course-price-wrap {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.course-price-wrap del {
+    color: #999;
+    margin: 0 5px;
+}
+
+.course-price-wrap .discount {
+    font-size: 30px !important;
+    font-weight: 700;
+    color: #D93A54; /* Primary red color */
+}
+
+.course-price-wrap sub {
+    font-size: 14px;
+    color: #888;
+    bottom: 0; /* Align with baseline */
+}
+
+/* --- Course Features List (2-Column Grid) --- */
+.course-features {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px; /* Row and column gap */
+}
+
+.course-features li {
+    display: flex;
+    align-items: flex-start; /* Align icon to the top of text */
+    gap: 10px;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+.hero-left ul li b 
+{
+    font-size: 16px;
+}
+.course-features li img {
+    width: 30px;
+    height: auto;
+    margin-top: 2px;
+}
+
+.course-features li b {
+    color: #1E1E1E;
+}
+#cntc-hero .hero-right
+{
+    padding-left: 15px;
+    height: 600px;
+     flex: 1;
+    display: flex;
+    gap: 13px;
+    
+}
+
+/* --- Buttons --- */
+/* Container for the buttons to manage spacing and alignment */
+#cntc-hero .buttons-wrap a
+{
+    background: linear-gradient(103deg, #ff5c8a 0%, #e44b7b 100%) !important;
+    width: 100%;
+    color: white !important;
+    margin: 0;
+    border-radius: 15px;
+    padding: 12px 28px !important;
+    box-shadow: 0 5px 15px rgba(230, 0, 126, 0.3);
+    font-weight: 700;
+}
+#cntc-hero .buttons-wrap a:hover
+{
+    transform: translateY(-1px);
+    box-shadow: 0 10px 25px rgba(230, 0, 126, 0.4);
+}
+#cntc-hero .buttons-wrap .btn-buy-now 
+{
+    padding:14px 28px !important;
+}
+#cntc-hero .buttons-wrap a.btn-add-to-cart
+{
+    background: none !important;
+    color: #e44b7b !important;
+    border: 3px solid #e44b7b;
+    font-weight: 700;
+}
+#cntc-daywise-course a.cntc-two-cards-bottom-btn
+{
+    max-width: max-content;
+    background: linear-gradient(103deg, #ff5c8a 0%, #e44b7b 100%) !important;
+    color: white;
+    margin: 0;
+    border-radius: 15px;
+    padding: 12px 28px !important;
+    box-shadow: 0 5px 15px rgba(230, 0, 126, 0.3);
+    font-weight: 700;
+    margin: auto;
+    font-size: 20px !important;
+    margin: auto !important;
+    margin-top: 5px !important;
+    max-width: max-content !important;
+}
+.buttons-wrap {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+    font-family: 'Poppins', sans-serif;
+    margin: 25px;
+}
+
+/* Base styles for consistent sizing and font */
+.btn-primary,
+.btn-outline {
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    /* KEY FIX: Both buttons now have a 3px border from the start.
+      This reserves the space, preventing any "jump" on hover.
+    */
+    border: 3px solid transparent; 
+}
+
+/* --- Primary Button (Solid) --- */
+.btn-primary {
+    background: linear-gradient(103deg, #D64A71 0%, #C52C52 100%) !important;
+    /* The border is transparent, so the background fills the full space */
+    border-color: transparent; 
+    color: #ffffff !important;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(230, 0, 126, 0.3);
+    border: 0;
+    padding: 14px 28px !important;
+    border-radius: 5px !important;
+
+}
+
+/* Hover effect for the primary button */
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Outline Button --- */
+.btn-outline {
+    background: transparent;
+    border-color: #C52C52; /* Makes the border visible by default */
+    color: #C52C52 !important;
+}
+
+/* Hover effect for the outline button */
+.btn-outline:hover {
+    background: linear-gradient(103deg, #D64A71 0%, #C52C52 100%);
+    /* KEY FIX: Instead of removing the border, we make its color match 
+      the background, so it becomes invisible but still takes up space.
+    */
+    border-color: #C52C52; 
+    color: #ffffff;
+     transform: translateY(-2px);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Right Column Images --- */
+.main-img {
+    flex: 1.5; /* Main image takes 2/3 of the space */
+}
+
+.thumbs {
+    flex: 1; /* Thumbs take 1/3 of the space */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.hero-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+}
+#cntc-hero div.hero-left > p > del
+{
+    text-decoration-color: #e94f7e;
+        color: #959595;
+}
+
+/* --- Responsive Design --- */
+/* --- Tablet View (max-width: 992px) --- */
+@media (max-width: 992px) {
+    .hero-wrapper {
+        flex-direction: column; /* Stack the text and image columns */
+        text-align: center; /* Center-align text for a better stacked look */
+    }
+    .hero-left h1 {
+        font-size: 30px;
+    }
+
+    .hero-right {
+        width: 100%;
+        max-width: 500px; /* Control image section width */
+        height: auto;
+        margin-top: 20px;
+    }
+
+    .course-features {
+        text-align: left; /* Keep feature text left-aligned */
+    }
+
+    .buttons-wrap {
+        justify-content: center; /* Center the buttons */
+    }
+}
+
+/* --- Mobile View (max-width: 576px) --- */
+@media (max-width: 576px) {
+    .hero-left h1 {
+        font-size: 28px;
+    }
+
+    .course-price-wrap .discount {
+        font-size: 26px;
+    }
+
+    .course-features {
+        grid-template-columns: 1fr; /* Single column for features on small screens */
+    }
+
+    .buttons-wrap {
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: stretch; /* Make buttons full-width */
+        gap: 5px;
+    }
+     .course-features {
+        grid-template-columns: 1fr; /* Single column list on mobile */
+    }
+     .hero-left h1 {
+        font-size: 26px;
+    }
+    .course-price-wrap .discount {
+        font-size: 28px;
+    }
+    #cntc-hero
+    {
+        padding: 0 0; 
+    }
+    #cntc-hero .hero-left h1
+    {
+        font-size: 25px !important;
+        margin-bottom: 5px !important;
+    }
+    .hero-left p b
+    {
+        font-size: 18px;
+    }
+    #cntc-hero div.hero-left > p > del
+    {
+        font-size: 20px;
+    }
+    #cntc-hero div.hero-left > p > span
+    {
+        font-size: 22px;
+    }
+    .hero-left ul li b
+    {
+        font-size: 16px !important;
+    }
+    #cntc-hero .hero-left ul li
+    {
+        margin-bottom: 5px;
+    }
+    .service-details-wrap .left-service-item-single:last-child, .service-details-wrap .right-service-item-single:last-child
+    {
+        margin-top: 15px !important;
+    }
+    #cntc-service-details .right-service-item-single img
+    {
+        height: 220px !important;
+        width: 100% !important;
+    }
+    .service-details-wrap .right-service-item
+    {
+        margin-top: 15px !important;
+    }
+    #cntc-hero .buttons-wrap a
+    {
+        margin-bottom: 5px;
+    }
+    .hero-right img
+    {
+        width: auto !important;
+        height: auto !important;
+    }
+    #cntc-hero .hero-right
+    {
+        height:auto !important;
+    }
+}
+
+/* Hero Section End */
+
+/* Service Details Start */
+
+#cntc-service-details {
+    background-color: #f8f9fa; /* A soft, light grey background for the whole section */
+    padding: 2rem 0; /* Adds vertical spacing */
+    padding-bottom: 4rem;
+}
+
+/* --- Main Section Title --- */
+#cntc-service-details .themed-section-title {
+    font-size: 34px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 3.5rem;
+    text-align: center;
+    max-width: 100% !important;
+    margin: 0px auto;
+    margin-bottom: 45px;
+}
+.box-shadow-none
+{
+    box-shadow: none !important;
+    background-color: transparent !important;
+}
+.service-details-wrap .right-service-item-single:last-child
+{
+    min-height: auto;
+}
+.service-details-wrap .left-service-item-single
+{
+    border: 0;
+}
+.service-details-wrap .left-service-item-single:first-child
+{
+    min-height: auto;
+}
+.service-details-wrap .left-service-item-single:last-child ul li:before, .service-details-wrap .right-service-item-single:last-child ul li:before
+{
+    background: transparent;
+    top: 2px;
+}
+/* --- Two-Column Layout --- */
+#cntc-service-details .service-details-wrap {
+    display: flex;
+    flex-wrap: wrap; 
+    align-items: stretch; 
+    padding-bottom: 25px;
+}
+
+#cntc-service-details .left-service-item,
+#cntc-service-details .right-service-item {
+    flex: 1;
+    min-width: 300px;
+    display: flex; 
+    flex-direction: column;
+   
+}
+
+/* --- Card Styling (for all content blocks) --- */
+#cntc-service-details .left-service-item-single,
+#cntc-service-details .right-service-item-single {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 0px;
+    min-height: auto;
+}
+.bg-theme-color
+{
+    background-color: #fef0f8 !important;
+    border-left: 4px solid #d63384 !important;
+}
+
+/* Adds a subtle hover effect to the cards */
+#cntc-service-details .left-service-item-single:hover,
+#cntc-service-details .right-service-item-single:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Content Typography --- */
+#cntc-service-details h3 {
+    font-size: 23px;
+    font-weight: 600;
+    color: #34495e;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #d63384;
+    padding-bottom: 15px;
+}
+
+#cntc-service-details p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+/* --- Course Highlights List --- */
+#cntc-service-details ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+#cntc-service-details li {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+#cntc-service-details li::before, .cntc-single-card-contents ul li::before  {
+    content: '✓';
+    color: #e64c7e;
+    font-weight: bold;
+    position: absolute;
+    left: 0; /* Position it at the start of the padding area */
+    top: 0;
+}
+.cntc-single-card-contents ul li
+{
+    line-height:35px;
+    font-size:17px;
+     padding-left: 1.5em; /* Create new, consistent indentation */
+    position: relative; /* Needed for positioning the custom bullet */
+    margin-bottom: 0.6em; 
+}
+#cntc-service-details li:last-child {
+    margin-bottom: 0;
+}
+#cntc-service-details h2
+{
+    max-width: 100%;
+    margin: 40px auto;
+}
+/* --- Image Styling --- */
+/* The image card has no padding to let the image fill it */
+#cntc-service-details .right-service-item-single:first-child {
+    padding: 0;
+    overflow: hidden; /* Ensures the image respects the border-radius */
+}
+
+#cntc-service-details .right-service-item-single img {
+    width: 100%;
+    height: 428px;
+    object-fit: cover; /* Prevents image from stretching */
+    display: block;
+}
+/* --- Tablet View (max-width: 992px) --- */
+@media (max-width: 992px) {
+    #cntc-service-details {
+        padding: 0;
+    }
+    
+    .left-service-item,
+    .right-service-item {
+        /* On tablets, allow columns to be full width if they stack */
+        min-width: 100%;
+    }
+    
+}
+
+/* --- Mobile View (max-width: 576px) --- */
+@media (max-width: 576px) {
+    #cntc-service-details .themed-section-title {
+        font-size: 25px;
+        margin-bottom: 15px;
+    }
+    #phlebotomy-practical-session
+    {
+        margin-top: 5px;
+        padding: 10px;
+    }
+
+    .left-service-item-single,
+    .right-service-item-single {
+        padding: 20px;
+    }
+
+    #cntc-service-details h3 {
+        font-size: 18px;
+    }
+    
+    .right-service-item-single.image-card img {
+        height: 250px; /* Reduce image height on mobile */
+    }
+    .cntc-single-card-contents ul li
+    {
+        font-size: 16px !important;
+    }
+    .cntc-single-card-contents p.time-range
+    {
+        margin-bottom: 10px;
+    }
+    #cntc-service-details .left-service-item-single,
+    #cntc-service-details .right-service-item-single
+    {
+    padding: 1rem !important;
+    }
+    section#msg-faq
+    {
+        padding: 0px 10px !important;
+    }
+    .owl-carousel.owl-2.owl-loaded.owl-drag
+    {
+        margin-bottom: 0px;
+    }
+    #la-single-feedbacks
+    {
+        margin-bottom:0;
+    }
+}
+
+/* Service Details End */
+
+/* Practical Session Start */
+#phlebotomy-practical-session {
+    text-align: center;
+    background-color: #f8f9fa;
+}
+
+#phlebotomy-practical-session p {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    position:relative;
+}
+
+/* Video Container and Image Styling */
+#phlebotomy-practical-session a {
+    position: relative;
+    display: block;
+    max-width: 700px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    padding:10px;
+}
+
+#phlebotomy-practical-session a:hover {
+    transform: translateY(-5px);
+}
+
+#phlebotomy-practical-session img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: filter 0.3s ease;
+}
+
+#phlebotomy-practical-session a:hover img {
+    filter: brightness(0.7); /* Darkens the image on hover */
+}
+/* Styling for the video container and image */
+#phlebotomy-practical-session {
+    text-align: center;
+}
+
+#phlebotomy-practical-session p {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#phlebotomy-practical-session a img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: filter 0.3s ease;
+}
+
+#phlebotomy-practical-session a:hover img {
+    filter: brightness(0.8);
+}
+
+/* --- Play Button and Pulsing Rings --- */
+.practical-session-exclude p
+{
+     max-width: 100%;
+    margin: 10px auto;
+    font-size: 32px;
+}
+.practical-session-exclude p:after
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: #e6007e;
+    border-radius: 2px;
+}
+#phlebotomy-practical-session a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #e6007e; /* The primary button color */
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+/* The play icon (triangle) */
+#phlebotomy-practical-session a::after {
+    content: '▶'; /* Unicode character for play icon */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    color: #fff;
+    z-index: 3;
+}
+
+/* The outer pulsing rings */
+#phlebotomy-practical-session .fancybox::before,
+#phlebotomy-practical-session .fancybox::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background-color: rgba(230, 0, 126, 0.4);
+    border-radius: 50%;
+    z-index: 1;
+    animation: pulse-ring 2s infinite;
+}
+
+/* The second, delayed pulsing ring */
+#phlebotomy-practical-session .fancybox::after {
+    animation-delay: 1s; /* Delayed start for a two-ring effect */
+}
+
+/* The animation that creates the pulsing effect */
+@keyframes pulse-ring {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2.5);
+        opacity: 0;
+    }
+}
+/* Practical Session End */
+
+/* Daywise Course Section Start */
+#cntc-daywise-course {
+    background-color: #fef0f8;
+    padding: 30px 0;
+    padding-bottom: 50px;
+}
+/* --- Section Title --- */
+.course-structure-tag {
+    font-size: 15px;
+    font-weight: 700;
+    color: #e64c7e;
+    letter-spacing: 1.5px;
+    margin-bottom: 0;
+}
+
+/* --- Section Titles --- */
+.cntc-section-subtitle {
+    text-align: center;
+    color: #e54b86; /* Accent pink color */
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+}
+
+.cntc-daywise-course-title {
+    color: #333;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 50px;
+
+}
+.list-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* You may also want to set a height for vertical centering to be visible */
+    height: 100vh;
+}
+
+.course-features {
+    /* Optional: Remove default list styling for a cleaner look */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.parent-container {
+  display: flex;
+  justify-content: center; /* Centers items horizontally */
+  align-items: center;    /* Centers items vertically */
+  height: 200px; /* Needs a defined height for vertical centering */
+}
+
+.postid-409404 #cntc-daywise-course .cntc-single-card-contents ul {
+   list-style-type: none; /* Remove the default black dot bullets */
+    padding-left: 0; /* Reset default browser padding */
+    margin-top: 0;
+    text-align: left;
+}
+
+
+/* Section Title */
+.cntc-daywise-course-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    position: relative;
+    padding-bottom: 20px;
+    margin-bottom: 60px;
+}
+
+#cntc-daywise-course h2.cntc-daywise-course-title
+{
+    font-size: 34px;
+    background: none !important;
+}
+.cntc-daywise-course-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 5px;
+    background-color: #e64c7e;
+    border-radius: 2px;
+}
+
+/* Cards Container */
+.cntc-two-cards {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Increased space between cards */
+    flex-wrap: wrap;
+    margin-bottom: 35px;
+}
+
+/* Individual Card Styling */
+.cntc-single-card {
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+    padding: 0; /* Use rem for scalable padding */
+    margin: 1rem;
+    max-width: max-content; /* Set a max-width for readability */
+    width: 100%;
+    border: 1px solid #f0f0f0;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cntc-single-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.cntc-single-card img {
+    width: 100%;
+    height: 280px !important;
+    object-fit: cover;
+    display: block;
+    border-radius: 15px 15px 0 0;
+}
+
+/* Card Content Area */
+.cntc-single-card-contents {
+    padding: 0px;
+    flex-grow: 1; 
+    margin: auto;
+}
+.cntc-single-card-contents ul {
+    display: inline-block; 
+    text-align: left;
+    padding: 10px;
+}
+.cntc-single-card-contents h3 {
+     text-align: center;
+    font-size: 1.75rem;
+    margin-top: 0;
+    margin-bottom: 0.25rem;
+    color: #e6007e;
+}
+
+.time-range {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #6c757d;
+    margin-top: 0;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+.cntc-single-card-contents p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #495057;
+    margin-bottom: 1rem;
+}
+
+/* Bottom Button Styling */
+.cntc-two-cards-bottom-btn {
+    display: block;
+    width: 100%;
+    margin: 40px auto 0;
+    padding: 18px 30px;
+    background-color: #e6007e;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(230, 0, 126, 0.3);
+}
+
+.cntc-two-cards-bottom-btn:hover {
+    background-color: #c9006e;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(230, 0, 126, 0.4);
+}
+.cntc-single-card-contents
+{
+    background: none !important;
+}
+
+/* --- Tablet View (max-width: 992px) --- */
+@media (max-width: 992px) {
+    .cntc-single-card {
+        flex-basis: calc(50% - 15px); /* Creates a 2-column grid on tablets */
+    }
+}
+
+/* --- Mobile View (max-width: 767px) --- */
+@media (max-width: 767px) {
+    #cntc-daywise-course {
+        padding: 5px 0;
+    }
+    
+    .cntc-daywise-course-title {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+    #cntc-daywise-course h2.cntc-daywise-course-title
+    {
+        font-size: 22px !important;
+        margin-bottom: 0 !important;
+        padding-top: 8px;
+    }
+    .mb-5
+    {
+        margin-bottom: 2rem !important;
+    }
+
+    .cntc-two-cards {
+        flex-direction: column; /* Stacks cards vertically */
+        align-items: center;
+        gap: 20px;
+    }
+
+    .cntc-single-card {
+        max-width: 100%;
+        width: 100%; /* Ensures cards take full width */
+        flex-basis: auto;
+        margin-bottom: 20px;
+    }
+    #msg-trd-section
+    {
+        padding: 2rem 0;
+    }
+    #msg-trd-section .design-for-mobile h2
+    {
+        font-size: 22px !important;
+    }
+    .cs-accreditation h2
+    {
+        margin-bottom: 15px !important;
+    }
+    .cs-accreditation img
+    {
+        margin:0 !important;
+    }
+    .nail-success-stories
+    {
+        margin-top: 0px !important;
+    }
+    .cs-accreditation h2
+    {
+        margin-bottom: 15px;
+    }
+    .cs-accreditation
+    {
+        margin: 5px 0px;
+    }
+    .cntc-single-card img {
+        height: 190px !important;
+    }
+    .postid-409404 .cntc-single-card-contents
+    {
+        margin-top:0;
+    }
+    #cntc-daywise-course a.cntc-two-cards-bottom-btn
+    {
+        margin-top: 0px !important;
+        font-size: 16px !important;
+    }
+
+    .cntc-single-card-contents {
+        padding: 20px;
+    }
+     .cntc-two-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    #cntc-daywise-course
+    {
+        padding: 15px 0 10px !important;
+    }
+    .cntc-two-cards
+    {
+        margin-bottom: 0px;
+    }
+    #msg-trd-section
+    {
+        padding: 1rem 0 !important;
+    }
+}
+/* Daywise Course Section End */
+
+/* msg-trd-section Start */
+/* --- Main Section Styling --- */
+#msg-trd-section {
+    background-color: #f8f9fa; 
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    display: flex;
+    align-items: center;      
+    justify-content: center;  
+    background-color: #f8f9fa; 
+}
+
+/* --- The New Unified Panel --- */
+#msg-trd-section .msg-train-b {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.07);
+    border-top: 4px solid #d63384; /* Adds a pink accent line at the top */
+    padding: 2.5rem;
+    overflow: hidden; /* Important for the separator line */
+    border-right: 0;
+    border-left: 0;
+    border-bottom: 0;
+
+}
+
+/* --- Column Layout and Vertical Separator --- */
+#msg-trd-section .row > [class*="col-"] {
+    padding: 0 2rem; /* Adds internal spacing for the columns */
+}
+
+/* Creates the vertical line */
+#msg-trd-section .row > .col-lg-6:first-child {
+    border-right: 1px solid #e9ecef;
+}
+
+/* On mobile, remove the line and add space between sections */
+@media (max-width: 991px) {
+    #msg-trd-section .row > .col-lg-6:first-child {
+        border-right: none;
+        margin-bottom: 2.5rem;
+    }
+}
+
+
+/* --- Content Styling (Titles) --- */
+.msg-cs-train h2,
+.cs-accreditation h2 {
+    font-size: 28px !important;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #343a40;
+    margin-bottom: 2rem;
+    text-align: left; 
+    margin-bottom: 35px;
+}
+.msg-cs-train
+{
+    border-right:0 !important;
+}
+
+/* --- Refined "Why Train With Us" List --- */
+.msg-cs-train ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.msg-cs-train ul li {
+    display: flex;
+    align-items: center;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #495057;
+    margin-bottom: 1.25rem;
+}
+
+.msg-cs-train ul li:last-child {
+    margin-bottom: 0;
+}
+
+/* New, simpler icon styling */
+.msg-cs-train ul li::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: #d63384; /* Pink icon color */
+    font-size: 1.2rem;
+    margin-right: 1rem;
+    width: 25px; /* Aligns text neatly */
+    flex-shrink: 0;
+}
+
+/* --- Assigning Icons --- */
+.msg-cs-train ul li:nth-child(1)::before { content: '\f0a3'; } /* Certified */
+.msg-cs-train ul li:nth-child(2)::before { content: '\f3ed'; } /* Insurance (shield) */
+.msg-cs-train ul li:nth-child(3)::before { content: '\f53a'; } /* Installments (percentage) */
+.msg-cs-train ul li:nth-child(4)::before { content: '\f274'; } /* 1 Day (calendar) */
+.msg-cs-train ul li:nth-child(5)::before { content: '\f51c'; } /* Experts (teacher) */
+.msg-cs-train ul li:nth-child(6)::before { content: '\f49e'; } /* Kit (box) */
+.msg-cs-train ul li:nth-child(7)::before { content: '\f1c1'; } /* PDF (file icon) */
+
+
+/* --- "Course Accreditation" Logo Styling --- */
+
+.cs-accreditation img {
+    max-width: 100%;
+    height: auto;
+    margin: 60px 0px;
+}
+/* msg-trd-section End */
+
+/* ACCREDITATION Section Start */
+/* --- Main Section Styling with Gradient --- */
+#msg-trd-section {
+    /* Creates a subtle pink-to-white gradient background */
+    background: linear-gradient(175deg, #fff0f7 0%, #ffffff 70%);
+    padding: 3rem 0;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    overflow: hidden; /* Recommended for gradient backgrounds */
+}
+
+/* --- Glassmorphism Content Panel --- */
+#msg-trd-section .msg-train-b {
+    margin: 0 auto;
+
+    /* The Glass Effect */
+    background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent white */
+    backdrop-filter: blur(12px); /* This creates the blur */
+    -webkit-backdrop-filter: blur(12px); /* Safari support */
+
+    border-radius: 20px;
+    padding: 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle edge for the glass */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    #msg-trd-section .msg-train-b {
+        padding: 1.5rem;
+    }
+    #cntc-hero .hero-left ul
+    {
+        margin-bottom: 10px !important;
+    }
+}
+
+/* --- Left Column (Video) Styling --- */
+.success-stories-nail h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #343a40;
+    margin-bottom: 1rem;
+    text-align: left !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.success-stories iframe {
+    border-radius: 12px;
+    display: block;
+    width: 100%;
+    height: 315px; /* Slightly taller for better aspect ratio */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Right Column (Text) Styling --- */
+.nail-success-stories {
+    padding-left: 0 !important ;
+    border-left:0 !important;
+}
+@media (max-width: 991px) {
+    .nail-success-stories {
+        padding-left: 0;
+        margin-top: 2.5rem;
+        margin-top: 0px;
+    }
+}
+
+.nail-success-stories h2 {
+    font-size: 2rem !important; /* Larger, more impactful title */
+    font-weight: 700;
+    line-height: 1.3;
+    color: #333;
+    text-align: left !important;
+    margin-bottom: 20px !important;
+}
+
+.nail-success-stories p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* Adds a decorative accent line */
+.nail-success-stories p::before {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #d63384; /* Pink accent color */
+    margin-bottom: 1.5rem;
+} 
+/* ACCREDITATION Section End */

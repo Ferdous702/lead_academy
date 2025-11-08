@@ -1,0 +1,500 @@
+section#order-gift-card-banner {
+    background: linear-gradient(320deg, #b91949cc 0%, #303131 100%), url(https://lead-academy.org/wp-content/uploads/2022/10/online-communication.jpg);
+    background-size: cover;
+    padding: 80px 0px;
+    background-position: center;
+}
+
+#order-gift-card-banner h1 {
+    color: #FFA428;
+    font-family: "Sen", Sans-serif;
+    font-size: 65px;
+    font-weight: 600;
+    text-align: center;
+}
+
+#order-gift-card-banner p {
+    text-align: center;
+    color: #FFFFFF;
+    font-family: "Sen", Sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+#introducing-gift-card {
+    padding: 70px 200px;
+}
+
+.introducing-gift-card-right-part img {
+    width: 100%;
+}
+
+.introducing-gift-card-left-part p {
+    text-align: left;
+    color: #000000;
+    font-family: "Sen", Sans-serif;
+    font-size: 17px;
+    font-weight: 300;
+}
+
+.introducing-gift-card-left-part h2 {
+    color: #222222;
+    font-family: "Sen", Sans-serif;
+    font-size: 44px;
+}
+
+.introducing-gift-card-left-part h3 {
+    color: #B91948;
+    font-family: "Sen", Sans-serif;
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+
+strong {
+    font-weight: bold;
+}
+
+.gift-card-button a {
+    background-color: #B91948;
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    display: inline-block;
+    font-family: "Sen", Sans-serif;
+    font-weight: 700;
+}
+
+.gift-card-button a:hover {
+    background-color: #FFA428;
+    color: #fff;
+}
+
+.gift-card-short-message {
+    padding: 20px;
+    background-color: #B91948;
+    border-radius: 10px 10px 10px 10px;
+    margin-top: 30px;
+}
+
+.gift-card-short-message p {
+    font-family: "Sen", Sans-serif;
+    font-size: 19px;
+    font-weight: 400;
+    font-style: italic;
+    text-align: center;
+    color: #fff;
+    margin: auto;
+}
+
+.introducing-gift-card-right-part {
+    margin-top: 15px;
+}
+
+section#why-purchase-gift-card {
+    background-color: transparent;
+    background-image: linear-gradient(0deg, #B91948 0%, #303131 100%);
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+    padding: 80px;
+}
+
+.gift-cart-icon-box i {
+    background-color: #fff;
+    padding: 10px;
+    font-size: 21px;
+    border-radius: 21px;
+    color: #000000;
+    margin-right: 10px;
+}
+
+.gift-cart-icon-box h3 {
+    font-family: "Sen", Sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: #FFA428;
+}
+
+.gift-cart-icon-box p {
+    color: #FFFFFF;
+    font-family: "Sen", Sans-serif;
+    font-size: 17px;
+    font-weight: 300;
+}
+
+.why-purchase-gift-card-title h2 {
+    color: #FFA428;
+    font-family: "Sen", Sans-serif;
+    font-size: 44px;
+    text-align: center;
+}
+
+.why-purchase-gift-card-title p {
+    text-align: center;
+    color: #FFFFFF;
+    font-family: "Sen", Sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.why-purchase-gift-card-title {
+    margin-bottom: 50px;
+    padding: 0rem 23rem;
+}
+
+.gift-cart-icon-box-img img {
+    width: 95%;
+    margin-top: 70px;
+}
+
+.gift-cart-icon-box {
+    margin-top: 50px;
+}
+
+section#buy-a-gift-card {
+    background-image: linear-gradient(310deg, #B91948 30%, #1C1C1DDB 0%);
+    padding: 50px 0px 0px 0px;
+}
+
+section#buy-a-gift-card img {
+    width: 100%;
+}
+
+section#buy-a-gift-card h2 {
+    color: #FFA428;
+    font-family: "Sen", Sans-serif;
+    font-size: 43px;
+    font-weight: bold;
+    margin-top: 80px;
+}
+
+section#buy-a-gift-card p {
+    color: #FFFFFF;
+    font-family: "Sen", Sans-serif;
+    font-size: 17px;
+    font-weight: 300;
+}
+
+section#buy-a-gift-card li {
+    font-family: "Sen", Sans-serif;
+    font-size: 17px;
+    font-weight: 300;
+    color: #fff;
+    padding: 6px 0px;
+}
+
+section#buy-a-gift-card a {
+    background-color: #B91948;
+    text-decoration: none;
+    display: inline-block;
+    color: #Fff;
+    font-size: 16px;
+    padding: 15px 30px;
+    border-radius: 4px;
+}
+
+section#buy-a-gift-card .col-md-6 {
+    margin: auto;
+}
+
+.order-gift-card-trusted-by h2 {
+    color: #000;
+    font-family: "Sen", Sans-serif;
+    font-size: 45px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.order-gift-card-trusted-by p {
+    color: #000;
+    font-family: "Sen", Sans-serif;
+    font-size: 17px;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* Video Slider */
+.splide__slide {
+    img {
+        max-width: 100%;
+    }
+}
+.splide__arrow--prev {
+    margin-left: -50px;
+}
+.splide__arrow--next {
+    margin-right: -50px;
+}
+.splide__pagination {
+    margin-bottom: -35px;
+}
+.splide__pagination__page.is-active {
+    background: green;
+}
+
+section#gift-card-success-stories {
+    padding: 50px 0px;
+}
+
+section#gift-card-success-stories h2 {
+    color: #000000;
+    font-family: "Sen", Sans-serif;
+    font-size: 45px;
+    font-weight: 600;
+    text-align: center;
+}
+
+section#gift-card-success-stories p {
+    text-align: center;
+    color: #000000;
+    font-family: "Sen", Sans-serif;
+    font-size: 17px;
+    font-weight: 300;
+    padding: 0px 200px 15px 200px;
+}
+
+#fsc-partners {
+    margin-bottom: 0px !important;
+}
+
+#fsc-partners {
+    margin-top: 60px;
+}
+
+section#buy-a-gift-card ul {
+    margin: 0px 0px 25px 0px;
+}
+
+/* Video Slider End */
+
+@media (max-width: 992px) { 
+    #order-gift-card-banner h1 {
+        font-size: 32px;
+    }
+
+    section#order-gift-card-banner {
+        padding: 40px 0px;
+    }
+
+    #introducing-gift-card {
+        padding: 40px 0px;
+    }
+
+    .introducing-gift-card-left-part h2 {
+        font-size: 24px;
+        text-align: center;
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+
+    .introducing-gift-card-left-part h3 {
+        color: #B91948;
+        font-family: "Sen", Sans-serif;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .introducing-gift-card-left-part p {
+        text-align: center;
+        font-size: 16px;
+    }
+
+    .gift-card-button {
+        text-align: center;
+    }
+
+    .introducing-gift-card-right-part {
+        margin-bottom: 20px;
+    }
+
+    .why-purchase-gift-card-title {
+        margin-bottom: 0px;
+        padding: 0rem 0rem;
+    }
+
+    section#why-purchase-gift-card {
+        padding: 50px 10px;
+    }
+
+    .why-purchase-gift-card-title h2 {
+        color: #FFA428;
+        font-family: "Sen", Sans-serif;
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .why-purchase-gift-card-title p {
+        text-align: center;
+        color: #FFFFFF;
+        font-family: "Sen", Sans-serif;
+        font-size: 14px;
+        font-weight: 300;
+    }
+
+    .gift-cart-icon-box {
+        margin-top: 30px;
+    }
+
+    .gift-cart-icon-box-img {
+        display: none;
+    }
+
+    section#buy-a-gift-card {
+        padding: 50px 0px 50px 0px;
+    }
+
+    section#buy-a-gift-card h2 {
+        color: #FFA428;
+        font-family: "Sen", Sans-serif;
+        font-weight: bold;
+        font-size: 24px;
+        margin-top: 0px;
+    }
+
+    section#buy-a-gift-card p {
+        color: #FFFFFF;
+        font-family: "Sen", Sans-serif;
+        font-size: 15px;
+        font-weight: 300;
+    }
+
+    section#buy-a-gift-card li {
+        font-family: "Sen", Sans-serif;
+        font-size: 17px;
+        font-weight: 500;
+        color: #fff;
+        padding: 5px 0px;
+    }
+
+    section#buy-a-gift-card a {
+        background-color: #B91948;
+        text-decoration: none;
+        display: inline-block;
+        color: #Fff;
+        font-size: 14px;
+        padding: 10px 12px;
+        border-radius: 4px;
+        border: 2px solid #fff;
+        margin-top: 30px;
+    }
+
+    .introducing-gift-card-right-part {
+        margin-top: 0px;
+    }
+
+    section#gift-card-success-stories p {
+        padding: 0px 0px 15px 0px;
+    }
+
+    #buy-a-gift-card ul {
+        margin: 0;
+    }
+
+    section#gift-card-success-stories h2 {
+        font-size: 31px;
+    }
+
+    section#gift-card-success-stories p {
+        font-size: 16px;;
+    }
+
+    li#splide01-slide01 {
+        height: 100% !important;
+    }
+
+    .splide__arrow--next {
+        margin-right: 0;
+        margin-top: 120px;
+    }
+
+    .splide__arrow--prev {
+        margin-left: 0;
+        margin-top: 120px;
+    }
+
+    .splide__arrow--prev {
+        left: 8em !important;
+    }
+
+    .splide__arrow--next {
+        right: 8em !important;
+    }
+
+    section#fsc-partners {
+        margin: 30px 15px 0px 15px;
+    }
+
+    .order-gift-card-trusted-by h2 {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    section#buy-a-gift-card img {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1400px) {
+    .why-purchase-gift-card-title {
+        margin-bottom: 0px;
+        padding: 0rem 8rem;
+    }
+
+    section#why-purchase-gift-card {
+        padding: 80px 0px;
+    }
+
+    .gift-cart-icon-box h3 {
+        margin-bottom: 10px;
+    }
+
+    section#buy-a-gift-card {
+        padding: 50px 0px 40px 0px;
+    }
+
+    #introducing-gift-card {
+        padding: 70px 20px;
+    }
+
+    .introducing-gift-card-right-part {
+        margin-top: 0;
+    }
+
+    section#fsc-partners {
+        padding: 0px 30px;
+    }
+
+    section#gift-card-success-stories {
+        padding: 50px 50px;
+    }
+    
+
+}
+
+/* -Tab Device- */
+@media (max-width: 992px) {
+    .introducing-gift-card-right-part img {
+        width: 35%;
+    }
+
+    .introducing-gift-card-right-part {
+        text-align: center;
+    }
+
+    .why-purchase-gift-card-title p {
+        text-align: center;
+        color: #FFFFFF;
+        font-family: "Sen", Sans-serif;
+        font-size: 16px;
+        font-weight: 300;
+    }
+}
+
+@media (max-width: 480px) { 
+    .introducing-gift-card-right-part img {
+        width: 60%;
+    }
+
+    .introducing-gift-card-right-part {
+        text-align: center;
+    }
+}

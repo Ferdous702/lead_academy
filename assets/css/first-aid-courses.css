@@ -1,0 +1,431 @@
+section#first-aid-1 {
+    background-image: url(https://lead-academy.org/wp-content/uploads/2022/09/accident-work-construction-labor-people-basic-first-aid-cpr-training-outdoor-1-min-scaled-1.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 250px 0px 0px 0px;
+}
+
+section#first-aid-1 h1 {
+    color: #000000;
+    font-family: "Sen", Sans-serif;
+    font-size: 52px;
+    font-weight: 400;
+    line-height: 70px;
+    background-color: #fff;
+    padding: 5px 10px;
+    margin: 0;
+}
+
+section#first-aid-1 h2 {
+    color: #FFFFFF;
+    font-family: "Sen", Sans-serif;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 70px;
+    background-color: #af1f47;
+    margin: 0;
+    padding: 5px 10px;
+}
+
+section#first-aid-1 img {
+    display: none;
+}
+
+section#first-aid-2 {
+    padding: 50px 0px;
+}
+
+section#first-aid-2 p {
+    text-align: justify;
+    color: #000000;
+    font-family: "Sen", Sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+section#first-aid-2 img {
+    width: 150px;
+    height: 150px;
+}
+
+section#first-aid-3 {
+    padding: 50px 0px;
+}
+
+section#first-aid-3 h2 {
+    color: #000000;
+    font-family: "Sen", Sans-serif;
+    font-size: 38px;
+    font-weight: 600;
+    line-height: 1.3em;
+    text-align: center;
+    padding: 0px 200px 0px 200px;
+}
+
+.first-aid-course-box {
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+    margin: 50px 15px 0px 15px;
+    padding: 0px 0px 20px 0px;
+}
+
+.first-aid-course-box img {
+    width: 100%;
+    height: 100%;
+}
+
+.first-aid-course-box h3 a {
+    color: #000000;
+    font-family: "Sen", Sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+}
+
+.first-aid-course-box h3 {
+    text-align: center;
+    margin: 15px 20px;
+    line-height: 25px;
+}
+
+.first-aid-course-box p {
+    color: #000000;
+    font-family: "Sen", Sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    margin: 0px 20px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+}
+
+.first-aid-course-price {
+    display: flex;
+    justify-content: center;
+    padding: 30px 0px 15px 0px;
+}
+
+.first-aid-course-price del {
+    color: #000;
+    font-weight: bold;
+    font-size: 16px;
+    align-self: center;
+}
+
+.first-aid-course-price p {
+    color: #B91948;
+    font-family: "Sen", Sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.first-aid-course-btn a {
+    font-family: "Sen", Sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    fill: #FFFFFF;
+    color: #FFFFFF;
+    background-color: #B91948;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    border-color: #B91948;
+    border-radius: 0px 0px 0px 0px;
+    padding: 15px 25px 15px 25px;
+    display: block;
+    text-align: center;
+    margin: 0px 20px;
+    border: 5px solid #da3369;
+}
+
+.first-aid-course-btn a:hover {
+    background-color: #000;
+}
+
+section#first-aid-5 {
+    background-image: url(https://lead-academy.org/wp-content/uploads/0223/12/25101-1-min-scaled.webp);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 50px 0px;
+}
+
+section#first-aid-5 a {
+    font-family: "Sen", Sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #C0234E;
+    border-radius: 0px 0px 0px 0px;
+    padding: 15px 40px 15px 40px;
+    display: inline-block;
+    margin-top: 25px;
+    color: #fff;
+    border: 5px solid #da3369;
+}
+
+.first-aid-4 {
+    padding: 25px 0px 60px 0px;
+}
+
+section#first-aid-5 p strong {
+    font-size: 20px;
+}
+
+section#first-aid-5 h2 {
+    color: #000000;
+    font-family: "Sen", Sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 45px;
+    margin-bottom: 15px;
+}
+
+section#first-aid-5 h3 {
+    color: #000000;
+    font-family: "Sen", Sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 35px;
+}
+
+section#first-aid-5 p {
+    color: #000000;
+    font-family: "Sen", Sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+}
+
+section#first-aid-5 a:hover {
+    background-color: #000;
+}
+
+section.first-aid-6 {
+    padding: 60px 0px;
+}
+
+.first-aid-6-text {
+    padding: 0px 0px 20px 0px;
+    text-align: center;
+}
+
+.first-aid-6-text h2 {
+    color: #000000;
+    font-family: "Sen", Sans-serif;
+    font-size: 38px;
+    font-weight: 600;
+    line-height: 1.3em;
+    margin-bottom: 15px;
+}
+
+.first-aid-6-text p {
+    text-align: center;
+    color: #000000;
+    font-family: "Sen", Sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.first-aid-7-title-text {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.first-aid-7 {
+    margin: 50px 0px !important;
+}
+
+.first-aid-7-title-text h2 {
+    margin-bottom: 15px;
+    color: #000000;
+    font-family: "Sen", Sans-serif;
+    font-size: 38px;
+    font-weight: 600;
+    line-height: 1.3em;
+}
+
+.first-aid-7-title-text p {
+    text-align: center;
+    color: #000000;
+    font-family: "Sen", Sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.owl-nav {
+    display: none;
+}
+
+.course-cate-btn-text a {
+    font-family: "Sen", Sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #C0234E;
+    border-radius: 0px 0px 0px 0px;
+    padding: 15px 40px 15px 40px;
+    display: inline-block;
+    margin-top: 25px;
+    color: #fff;
+    border: 3px solid #da3369;
+}
+
+.course-cate-btn-text a:hover {
+    background-color: #fff;
+    color: #b91948;
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+    section#first-aid-1 {
+        background-image: none;
+        padding: 0px 0px 0px 0px;
+    }
+
+    section#first-aid-1 img {
+        display: inline-block;
+    }
+
+    section#first-aid-1 h1 {
+        font-size: 28px;
+        line-height: 70px;
+        padding: 0px 10px;
+        margin: 0;
+        text-align: center;
+    }
+
+    section#first-aid-1 h2 {
+        font-size: 26px;
+        line-height: 70px;
+        margin: 0;
+        padding: 0px 10px;
+        text-align: center;
+    }
+
+    .first-aid-trustpilot {
+        background-color: #f0f0f0;
+        padding: 20px 15px;
+        text-align: center;
+    }
+
+    section#first-aid-2 {
+        padding: 35px 0px;
+        text-align: center;
+    }
+
+    section#first-aid-2 img {
+        width: 130px;
+        height: 130px;
+        margin-top: 20px;
+    }
+
+    section#first-aid-3 h2 {
+        font-size: 26px;
+        padding: 0;
+        margin-bottom: 10px;
+    }
+
+    .first-aid-course-box {
+        margin: 50px 5px 0px 5px;
+        padding: 0px 0px 20px 0px;
+    }
+
+    section#first-aid-3 {
+        padding: 30px 0px;
+    }
+
+    section#first-aid-5 h2 {
+        font-size: 26px;
+        margin-bottom: 0px;
+    }
+
+    section#first-aid-5 h3 {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    .first-aid-6-text h2 {
+        font-size: 26px;
+    }
+
+    .first-aid-6-text p {
+        font-size: 16px;
+    }
+
+    .first-aid-7-title-text h2 {
+        font-size: 26px;
+    }
+
+    .first-aid-7-title-text p {
+        font-size: 16px;
+    }
+
+    .first-aid-7 {
+        margin: 30px 0px !important;
+    }
+
+    .subs-course-cate-box h3 {
+        margin-top: -35px !important;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+    }
+
+    .subs-course-cate-box h3 a {
+        font-size: 14px !important;
+    }
+
+    .subs-course-cate-box {
+        margin-bottom: 0px !important;
+    }
+}
+
+/** For tablet devices **/
+@media (min-width: 768px) and (max-width: 1023px) {
+    section#first-aid-1 {
+        background-image: none;
+        padding: 0px 0px 0px 0px;
+    }
+
+    section#first-aid-1 img {
+        display: inline-block;
+    }
+
+    section#first-aid-1 h1 {
+        font-size: 34px;
+        line-height: 70px;
+        padding: 0px 10px;
+        margin: 0;
+        text-align: center;
+    }
+
+    section#first-aid-1 h2 {
+        font-size: 30px;
+        line-height: 70px;
+        margin: 0;
+        padding: 0px 10px;
+        text-align: center;
+    }
+
+    .first-aid-trustpilot {
+        background-color: #f0f0f0;
+        padding: 20px 15px;
+        text-align: center;
+    }
+
+    section#first-aid-2 img {
+        width: 100px;
+        height: 100px;
+    }
+
+    section#first-aid-3 h2 {
+        font-size: 28px;
+        padding: 0px;
+        margin-bottom: 0;
+    }
+
+    section#first-aid-3 {
+        padding: 30px 0px;
+    }
+}
