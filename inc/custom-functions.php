@@ -979,6 +979,9 @@ if (! function_exists('create_json_object_if_not_exists')) {
             // Create if not exists
             if (!file_exists($file_path)) {
                 create_json_object_by_product_id($product_id);
+            } else {
+                // If file exists, update it
+                create_json_object_by_product_id($product_id);
             }
         }
     }
