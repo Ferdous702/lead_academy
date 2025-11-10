@@ -244,15 +244,23 @@ jQuery(document).ready(function () {
                 var location = data.location;
                 let serial = 0;
                 jQuery.each(data.items, function(index, item) {
+                    // Date validation FIRST to prevent empty divs
+                    let cleanDate = item.date.replace(/(\d+)(st|nd|rd|th)/, '$1');
+                    let dateObj = new Date(cleanDate);
+                    let now = new Date();
+                    if(dateObj < now){
+                        return true; // Skip past dates entirely
+                    }
+
                     serial++;
                     // Build classroom schedule for top_date_variation_content
                     if(check_is_admin == 1){
                         location = data.location+" Stock="+item.real;
                     }
                     if(serial > 7){
-                        top_date_variation_content += '<div style="display: none;" id="show-classroom-schedule" class="single-booking-row float-row">';
+                        top_date_variation_content += '<div style="display: none;" id="show-classroom-schedule-' + serial + '" class="single-booking-row float-row">';
                     }else{
-                        top_date_variation_content += '<div id="show-classroom-schedule" class="single-booking-row float-row">';
+                        top_date_variation_content += '<div id="show-classroom-schedule-' + serial + '" class="single-booking-row float-row">';
                     }
                     if (item.hide == 1) has_hide_content = true;
                     if(item.address && item.address.trim() !== ""){
@@ -276,13 +284,6 @@ jQuery(document).ready(function () {
                         regular_price = '£' + data.regular_price;
                     }
 
-                    let cleanDate = item.date.replace(/(\d+)(st|nd|rd|th)/, '$1');
-                    let dateObj = new Date(cleanDate);                    
-                    let now = new Date();
-                    if(dateObj < now){
-                        return true;
-                    }
-
                     top_date_variation_content += `
                         <div class="single-booking-left">
                             <span>${location}</span>
@@ -304,7 +305,7 @@ jQuery(document).ready(function () {
         
                     // Build modal date variation content
                     modal_date_variation_content += `
-                        <div id="show-classroom-schedule" class="single-booking-row float-row">
+                        <div id="show-classroom-schedule-modal-${serial}" class="single-booking-row float-row">
                             <div class="single-booking-left" style="padding-left: 0">
                                 <span>${location}</span>
                                 <p>${address}</p>
