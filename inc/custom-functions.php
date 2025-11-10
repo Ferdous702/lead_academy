@@ -1015,6 +1015,16 @@ if (! function_exists('create_json_object_by_product_id')) {
         $address        = sanitize_text_field(get_post_meta($meta_id, 'la_phleb_course_address_root', true));
         $regular_price  = '£' . get_post_meta($meta_id, 'la_phleb_course_regular_price', true);
         $sell_price     = '£' . get_post_meta($meta_id, 'la_phleb_course_sell_price', true);
+
+        $existing_dates = [];
+        if (is_array($course_meta_group) && !empty($course_meta_group)) {
+            $existing_dates = array_map(function ($course_item) {
+                $date_to_check = $course_item['adv_course_date'] ?? $course_item['la_phleb_course_date'];
+                return date('d F Y', strtotime($date_to_check));
+            }, $course_meta_group);
+            $existing_dates = array_unique($existing_dates);
+        }
+
         $formatted_items = [];
         foreach ($course_meta_group as $course) {
             $course_date = $course['adv_course_date'] ?? $course['la_phleb_course_date'];
@@ -1048,6 +1058,8 @@ if (! function_exists('create_json_object_by_product_id')) {
             $comma_count = substr_count($course['la_phleb_course_date'], ',');
             if ($comma_count < 2) {
                 $dummy_date = date('d F Y', strtotime($course_date) - 2 * 24 * 3600);
+                
+                if (!in_array($dummy_date, $existing_dates)) {
                 $dummy_item = $formatted_item;
                 $dummy_item['quota'] = 1;
                 $dummy_item['real'] = 0;
@@ -1055,6 +1067,8 @@ if (! function_exists('create_json_object_by_product_id')) {
                 $dummy_item['date'] = $dummy_date;
                 $formatted_items[] = $dummy_item;
 
+                }
+            
             }
 
             if ($delete_flag != 1) {
