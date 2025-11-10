@@ -258,9 +258,9 @@ jQuery(document).ready(function () {
                         location = data.location+" Stock="+item.real;
                     }
                     if(serial > 7){
-                        top_date_variation_content += '<div style="display: none;" id="show-classroom-schedule-' + serial + '" class="single-booking-row float-row">';
+                        top_date_variation_content += '<div style="display: none;" id="show-classroom-schedule" class="single-booking-row float-row">';
                     }else{
-                        top_date_variation_content += '<div id="show-classroom-schedule-' + serial + '" class="single-booking-row float-row">';
+                        top_date_variation_content += '<div id="show-classroom-schedule" class="single-booking-row float-row">';
                     }
                     if (item.hide == 1) has_hide_content = true;
                     if(item.address && item.address.trim() !== ""){
@@ -305,7 +305,7 @@ jQuery(document).ready(function () {
         
                     // Build modal date variation content
                     modal_date_variation_content += `
-                        <div id="show-classroom-schedule-modal-${serial}" class="single-booking-row float-row">
+                        <div id="show-classroom-schedule" class="single-booking-row float-row">
                             <div class="single-booking-left" style="padding-left: 0">
                                 <span>${location}</span>
                                 <p>${address}</p>
