@@ -2275,17 +2275,12 @@ function custom_coupon_min_category_products_validation($valid, $coupon) {
         }
     }
 
-    // ✅ Include face-to-face courses check
+    // ✅ Include face-to-face courses check (coupon only applies to Face-to-Face courses)
     if ($include_face === 'yes') {
-        $has_face_to_face = false;
         foreach (WC()->cart->get_cart() as $cart_item) {
-            if (in_array($cart_item['product_id'], $face_to_face_ids, true)) {
-                $has_face_to_face = true;
-                break;
+            if (!in_array($cart_item['product_id'], $face_to_face_ids, true)) {
+                throw new Exception(__('This coupon can only be applied to Face-to-Face courses.', 'woocommerce'));
             }
-        }
-        if (!$has_face_to_face) {
-            throw new Exception(__('This coupon requires at least one Face-to-Face course in your cart.', 'woocommerce'));
         }
     }
 
