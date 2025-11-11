@@ -2216,6 +2216,15 @@ function add_custom_coupon_min_category_products_meta($coupon_id, $coupon) {
         'value'       => $coupon->get_meta('exclude_face_to_face_courses')
     ));
 
+    // NEW FIELD: Include Face-to-Face Courses
+    woocommerce_wp_checkbox(array(
+        'id'          => 'include_face_to_face_courses',
+        'label'       => __('Include Face-to-Face Courses', 'woocommerce'),
+        'description' => __('Check this to require at least one predefined Face-to-Face course product in the cart for the coupon to be valid.', 'woocommerce'),
+        'desc_tip'    => true,
+        'value'       => $coupon->get_meta('include_face_to_face_courses')
+    ));
+
     echo '</div>';
 }
 
@@ -2230,11 +2239,13 @@ function save_custom_coupon_min_category_products_meta($coupon_id, $coupon) {
     $category_slug = isset($_POST['target_product_category_slug']) ? sanitize_text_field($_POST['target_product_category_slug']) : '';
     $min_total_qty = isset($_POST['min_total_products_qty']) ? absint($_POST['min_total_products_qty']) : '';
     $exclude_face  = isset($_POST['exclude_face_to_face_courses']) ? 'yes' : 'no';
+    $include_face  = isset($_POST['include_face_to_face_courses']) ? 'yes' : 'no';
 
     $coupon->update_meta_data('min_category_products_qty', $min_qty);
     $coupon->update_meta_data('target_product_category_slug', $category_slug);
     $coupon->update_meta_data('min_total_products_qty', $min_total_qty);
     $coupon->update_meta_data('exclude_face_to_face_courses', $exclude_face);
+    $coupon->update_meta_data('include_face_to_face_courses', $include_face);
     $coupon->save();
 }
 
@@ -2250,6 +2261,7 @@ function custom_coupon_min_category_products_validation($valid, $coupon) {
     $target_category     = $coupon->get_meta('target_product_category_slug');
     $min_total_quantity  = $coupon->get_meta('min_total_products_qty');
     $exclude_face        = $coupon->get_meta('exclude_face_to_face_courses');
+    $include_face        = $coupon->get_meta('include_face_to_face_courses');
 
     // ✅ Predefined Face-to-Face product IDs
     $face_to_face_ids = FACE_2_FACE_PRODUCT_CODES;
@@ -2260,6 +2272,20 @@ function custom_coupon_min_category_products_validation($valid, $coupon) {
             if (in_array($cart_item['product_id'], $face_to_face_ids, true)) {
                 throw new Exception(__('This coupon cannot be applied to Face-to-Face courses.', 'woocommerce'));
             }
+        }
+    }
+
+    // ✅ Include face-to-face courses check
+    if ($include_face === 'yes') {
+        $has_face_to_face = false;
+        foreach (WC()->cart->get_cart() as $cart_item) {
+            if (in_array($cart_item['product_id'], $face_to_face_ids, true)) {
+                $has_face_to_face = true;
+                break;
+            }
+        }
+        if (!$has_face_to_face) {
+            throw new Exception(__('This coupon requires at least one Face-to-Face course in your cart.', 'woocommerce'));
         }
     }
 
