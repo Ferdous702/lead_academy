@@ -1040,8 +1040,7 @@ if (! function_exists('create_json_object_by_product_id')) {
         if (is_array($course_meta_group) && !empty($course_meta_group)) {
             $existing_dates = array_map(function ($course_item) {
                 $date_to_check = $course_item['adv_course_date'] ?? $course_item['la_phleb_course_date'];
-                $formatted_date = date('d F Y', strtotime($date_to_check));
-                return get_date_with_ordinal_suffix($formatted_date);
+                return date('d F Y', strtotime($date_to_check));
             }, $course_meta_group);
             $existing_dates = array_unique($existing_dates);
         }
