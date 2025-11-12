@@ -1023,23 +1023,10 @@ if (! function_exists('create_json_object_by_product_id')) {
                 return date('d F Y', strtotime($date_to_check));
             }, $course_meta_group);
             $existing_dates = array_unique($existing_dates);
-            }
-    
-            $formatted_items = [];
-            $immediate_course = null;
-            foreach ($course_meta_group as $course) {
-                $course_date = $course['adv_course_date'] ?? $course['la_phleb_course_date'];
-                $is_future = strtotime($course_date) >= strtotime("now");
-                if ($is_future) {
-                    $stock_qty = get_stock_by_variation($course['la_phleb_course_var_id']);
-                    $quota_full = $stock_qty < 1;
-                    if (!$quota_full) {
-                        $immediate_course = $course;
-                        break;
-                    }
-                }
-            }
-            foreach ($course_meta_group as $course) {
+        }
+
+        $formatted_items = [];
+        foreach ($course_meta_group as $course) {
             $course_date = $course['adv_course_date'] ?? $course['la_phleb_course_date'];
             $is_future_date = strtotime($course_date) >= strtotime("now");
             $is_old = strtotime($course_date) < strtotime("now") - 2 * 24 * 3600;
@@ -1067,9 +1054,9 @@ if (! function_exists('create_json_object_by_product_id')) {
             if (!empty($course['la_phleb_course_time'])) {
                 $formatted_item['time'] = sanitize_text_field($course['la_phleb_course_time']);
             }
-$comma_count = substr_count($course['la_phleb_course_date'], ',');
 
-if ($comma_count < 2 && $immediate_course && $course['la_phleb_course_var_id'] === $immediate_course['la_phleb_course_var_id']) {
+            $comma_count = substr_count($course['la_phleb_course_date'], ',');
+            if ($comma_count < 2) {
                 $dummy_date = date('d F Y', strtotime($course_date) - 2 * 24 * 3600);
                 
                 if (!in_array($dummy_date, $existing_dates)) {
