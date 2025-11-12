@@ -1026,6 +1026,38 @@ if (! function_exists('create_json_object_by_product_id')) {
         }
 
         $formatted_items = [];
+        $immediate_course = null;
+        foreach ($course_meta_group as $course) {
+            $course_date = $course['adv_course_date'] ?? $course['la_phleb_course_date'];
+            $is_future = strtotime($course_date) >= strtotime("now");
+            if ($is_future) {
+                $stock_qty = get_stock_by_variation($course['la_phleb_course_var_id']);
+                $quota_full = $stock_qty < 1;
+                if (!$quota_full) {
+                    $immediate_course = $course;
+                    break;
+                }
+            }
+        }
+
+        // Create dummy date only for the immediate upcoming course if it's not full booked
+        if ($immediate_course) {
+            $course_date = $immediate_course['adv_course_date'] ?? $immediate_course['la_phleb_course_date'];
+            $dummy_date = date('d F Y', strtotime($course_date) - 2 * 24 * 3600);
+            if (!in_array($dummy_date, $existing_dates)) {
+                $dummy_item = [
+                    'var' => 0,
+                    'pti' => 0,
+                    'real' => 0,
+                    'seat' => 0,
+                    'hide' => 0,
+                    'quota' => 1,
+                    'delete' => 0,
+                    'date' => $dummy_date
+                ];
+                $formatted_items[] = $dummy_item;
+            }
+        }
         foreach ($course_meta_group as $course) {
             $course_date = $course['adv_course_date'] ?? $course['la_phleb_course_date'];
             $is_future_date = strtotime($course_date) >= strtotime("now");
@@ -1055,21 +1087,6 @@ if (! function_exists('create_json_object_by_product_id')) {
                 $formatted_item['time'] = sanitize_text_field($course['la_phleb_course_time']);
             }
 
-            $comma_count = substr_count($course['la_phleb_course_date'], ',');
-            if ($comma_count < 2) {
-                $dummy_date = date('d F Y', strtotime($course_date) - 2 * 24 * 3600);
-                
-                if (!in_array($dummy_date, $existing_dates)) {
-                $dummy_item = $formatted_item;
-                $dummy_item['quota'] = 1;
-                $dummy_item['real'] = 0;
-                $dummy_item['seat'] = 0;
-                $dummy_item['date'] = $dummy_date;
-                $formatted_items[] = $dummy_item;
-
-                }
-            
-            }
 
             if ($delete_flag != 1) {
                 $formatted_items[] = $formatted_item;
