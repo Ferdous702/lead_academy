@@ -1077,7 +1077,8 @@ if (! function_exists('create_json_object_by_product_id')) {
 
             $comma_count = substr_count($course['la_phleb_course_date'], ',');
             if ($comma_count < 2) {
-                $dummy_date = get_date_with_ordinal_suffix('27 November 2025');
+                $dummy_date = date('d F Y', strtotime($course_date) - 2 * 24 * 3600);
+                $dummy_date = get_date_with_ordinal_suffix($dummy_date);
                 
                 if (!in_array($dummy_date, $existing_dates)) {
                 $dummy_item = $formatted_item;
