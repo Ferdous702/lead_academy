@@ -19,26 +19,6 @@ if (!function_exists('sortByDateSingle')) {
     }
 }
 /* End for sort date array Ascending */
-// Function to add ordinal suffix to dates
-function get_date_with_ordinal_suffix($date) {
-    $timestamp = strtotime($date);
-    $day = date('j', $timestamp);
-    $month_year = date('F Y', $timestamp);
-    
-    // Add ordinal suffix to the day
-    if (!in_array($day % 100, [11, 12, 13])) {
-        switch ($day % 10) {
-            case 1: $ordinal = 'st'; break;
-            case 2: $ordinal = 'nd'; break;
-            case 3: $ordinal = 'rd'; break;
-            default: $ordinal = 'th'; break;
-        }
-    } else {
-        $ordinal = 'th';
-    }
-    
-    return $day . $ordinal . ' ' . $month_year;
-}
 
 //Redirect Start
 function add_custom_rewrite_rule()
@@ -1077,7 +1057,7 @@ if (! function_exists('create_json_object_by_product_id')) {
 
             $comma_count = substr_count($course['la_phleb_course_date'], ',');
             if ($comma_count < 2) {
-                $dummy_date = get_date_with_ordinal_suffix('27 November 2025');
+                $dummy_date = date('d F Y', strtotime($course_date) - 2 * 24 * 3600);
                 
                 if (!in_array($dummy_date, $existing_dates)) {
                 $dummy_item = $formatted_item;
