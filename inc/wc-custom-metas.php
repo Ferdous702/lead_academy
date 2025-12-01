@@ -29,6 +29,18 @@ function la_get_wc_products_with_ids(){
 }
 
 
+/**
+ * Callback function to show Course Tab Assignment field only for product ID 371100
+ */
+function show_course_tab_assignment_for_product_371100( $field_args, $field ) {
+	// Get the current post ID
+	$post_id = isset( $_GET['post'] ) ? intval( $_GET['post'] ) :
+			   ( isset( $_POST['post_ID'] ) ? intval( $_POST['post_ID'] ) : 0 );
+	
+	// Only show for product ID 371100
+	return $post_id === 371100;
+}
+
 add_action( 'cmb2_admin_init', 'wc_product_metaboxes' );
 function wc_product_metaboxes() {
 	// LMS Courses metas
@@ -1172,6 +1184,21 @@ function wc_product_metaboxes() {
 			'sortable'      => true,  // Allow changing the order of repeated groups.
 		),
 	) );
+
+	$phleb_metas->add_group_field( $phleb_metas_group_id, array(
+
+		'name' => 'Course Tab Assignment',
+		'desc' => 'Select which tab this course should appear in (London Post ID 397 only)',
+		'id'   => 'phuk_course_tab',
+		'type' => 'select',
+		'options' => array(
+			'two_day' => 'Phlebotomy & Cannulation (2 Day)',
+			'one_day' => 'Cannulation Training (1 Day)',
+		),
+		'default' => 'one_day',
+		'show_on_cb' => 'show_course_tab_assignment_for_product_371100',
+	));
+
 	$phleb_metas->add_group_field( $phleb_metas_group_id, array(
 		'name' => 'Course Date',
 		'desc' => 'Write the Date. Ex: 5th November, 2024',
