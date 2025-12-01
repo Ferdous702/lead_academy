@@ -1058,16 +1058,24 @@ if (! function_exists('create_json_object_if_not_exists')) {
             }
         }
         
-        // Special handling for product ID 371100 to create tab-specific JSON files
+        // Special handling for product ID 371100 to create both tab-specific JSON files
         if (is_product() && get_the_ID() == 371100) {
-            $course_tab = get_post_meta(371100, 'phuk_course_tab', true);
-            $tab_suffix = $course_tab === 'two_day' ? 'two_day' : 'one_day';
-            $tab_file_path = WP_CONTENT_DIR . '/json/' . 371100 . '-' . $tab_suffix . '.json';
+            // Check for both one_day and two_day JSON files
+            $one_day_file_path = WP_CONTENT_DIR . '/json/371100-one_day.json';
+            $two_day_file_path = WP_CONTENT_DIR . '/json/371100-two_day.json';
             
-            // Create if not exists
-            if (!file_exists($tab_file_path)) {
+            // Create one_day.json if not exists or update if exists
+            if (!file_exists($one_day_file_path)) {
                 create_json_object_by_product_id_and_tab(371100);
-            }else {
+            } else {
+                // If file exists, update it
+                create_json_object_by_product_id_and_tab(371100);
+            }
+            
+            // Create two_day.json if not exists or update if exists
+            if (!file_exists($two_day_file_path)) {
+                create_json_object_by_product_id_and_tab(371100);
+            } else {
                 // If file exists, update it
                 create_json_object_by_product_id_and_tab(371100);
             }
@@ -1257,12 +1265,22 @@ if (!function_exists('create_json_object_by_product_id_and_tab')) {
         ];
         $json_object = json_encode($product_details);
         
-        // Get the course tab value to determine filename
-        $course_tab = get_post_meta($meta_id, 'phuk_course_tab', true);
-        $tab_suffix = $course_tab === 'two_day' ? 'two_day' : 'one_day';
-        $file_path = WP_CONTENT_DIR . '/json/' . $product_id . '-' . $tab_suffix . '.json';
-        
-        file_put_contents($file_path, $json_object);
+        // Create both JSON files for product ID 371100 regardless of current tab selection
+        if ($product_id == 371100) {
+            // Create one_day.json file
+            $file_path_one_day = WP_CONTENT_DIR . '/json/' . $product_id . '-one_day.json';
+            file_put_contents($file_path_one_day, $json_object);
+            
+            // Create two_day.json file
+            $file_path_two_day = WP_CONTENT_DIR . '/json/' . $product_id . '-two_day.json';
+            file_put_contents($file_path_two_day, $json_object);
+        } else {
+            // For other products, use the original logic based on tab selection
+            $course_tab = get_post_meta($meta_id, 'phuk_course_tab', true);
+            $tab_suffix = $course_tab === 'two_day' ? 'two_day' : 'one_day';
+            $file_path = WP_CONTENT_DIR . '/json/' . $product_id . '-' . $tab_suffix . '.json';
+            file_put_contents($file_path, $json_object);
+        }
     }
 }
 
