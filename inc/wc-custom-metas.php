@@ -29,18 +29,6 @@ function la_get_wc_products_with_ids(){
 }
 
 
-/**
- * Callback function to show Course Tab Assignment field only for product ID 371100
- */
-function show_course_tab_assignment_for_product_371100( $field_args, $field ) {
-	// Get the current post ID
-	$post_id = isset( $_GET['post'] ) ? intval( $_GET['post'] ) :
-			   ( isset( $_POST['post_ID'] ) ? intval( $_POST['post_ID'] ) : 0 );
-	
-	// Only show for product ID 371100
-	return $post_id === 371100;
-}
-
 add_action( 'cmb2_admin_init', 'wc_product_metaboxes' );
 function wc_product_metaboxes() {
 	// LMS Courses metas
@@ -1196,7 +1184,6 @@ function wc_product_metaboxes() {
 			'one_day' => 'Cannulation Training (1 Day)',
 		),
 		'default' => 'one_day',
-		'show_on_cb' => 'show_course_tab_assignment_for_product_371100',
 	));
 
 	$phleb_metas->add_group_field( $phleb_metas_group_id, array(
@@ -1306,3 +1293,72 @@ function wc_product_metaboxes() {
 		'type' => 'checkbox',
 	) );
 }
+
+/**
+ * Enqueue JavaScript to conditionally hide Course Tab Assignment field
+ * Only show for product ID 371100
+ */
+function la_conditional_course_tab_field_script() {
+    global $post;
+    
+    // Only run on product edit pages
+    if (!$post || $post->post_type !== 'product') {
+        return;
+    }
+    
+    $current_product_id = $post->ID;
+    
+    // Only show for product ID 371100
+    $show_field = ($current_product_id === 371100);
+    
+    ?>
+    <script>
+    jQuery(document).ready(function($) {
+        // Function to hide/show Course Tab Assignment fields
+        function toggleCourseTabField() {
+            var showField = <?php echo $show_field ? 'true' : 'false'; ?>;
+            
+            // Find all Course Tab Assignment fields within the group
+            $('input[id*="phuk_course_tab"], select[id*="phuk_course_tab"]').each(function() {
+                var $field = $(this);
+                var $row = $field.closest('.cmb-row');
+                
+                if (!showField) {
+                    // Hide the field and its row
+                    $row.hide();
+                } else {
+                    // Show the field and its row
+                    $row.show();
+                }
+            });
+            
+            // Also hide the field labels
+            $('.cmb-row label').each(function() {
+                var $label = $(this);
+                if ($label.text().includes('Course Tab Assignment')) {
+                    if (!showField) {
+                        $label.closest('.cmb-row').hide();
+                    } else {
+                        $label.closest('.cmb-row').show();
+                    }
+                }
+            });
+        }
+        
+        // Run on page load
+        toggleCourseTabField();
+        
+        // Also run when new group items are added
+        $(document).on('cmb2_add_row', function() {
+            setTimeout(toggleCourseTabField, 100);
+        });
+        
+        // Run when group is opened/closed
+        $(document).on('click', '.cmb-handle-title', function() {
+            setTimeout(toggleCourseTabField, 50);
+        });
+    });
+    </script>
+    <?php
+}
+add_action('admin_footer', 'la_conditional_course_tab_field_script');
