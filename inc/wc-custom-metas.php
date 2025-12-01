@@ -1214,6 +1214,20 @@ function wc_product_metaboxes() {
 		'id'   => 'la_phleb_course_time',
 		'type' => 'text',
 	) );
+
+	$phleb_metas->add_group_field( $phleb_metas_group_id, array(
+		'name' => 'variant Regular Price',
+		'desc' => 'Write the variant Regular Price',
+		'id'   => 'la_regular_price',
+		'type' => 'text',
+	) );
+	$phleb_metas->add_group_field( $phleb_metas_group_id, array(
+		'name' => 'variant Sell Price',
+		'desc' => 'Write the variant Sell Price',
+		'id'   => 'la_sell_price',
+		'type' => 'text',
+	) );
+
 	$phleb_metas->add_group_field( $phleb_metas_group_id, array(
 		'name' => 'Course Seats Left',
 		'desc' => 'Write how many seats left. Ex: Hurry ! Only 05 seats left',

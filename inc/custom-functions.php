@@ -20,6 +20,58 @@ if (!function_exists('sortByDateSingle')) {
 }
 /* End for sort date array Ascending */
 
+
+// Function to format timestamp to ordinal date
+if (!function_exists('formatOrdinalDate')) {
+    function formatOrdinalDate($timestamp) {
+        return date('jS F Y', $timestamp);
+    }
+}
+
+// Function to format dates (3 or 4)
+if (!function_exists('formatThreeDates')) {
+    function formatThreeDates($dates) {
+        $count = count($dates);
+        if ($count < 3) return implode(' - ', $dates);
+
+        // Parse dates like "1st December 2025"
+        $parsed = [];
+        foreach ($dates as $date) {
+            if (preg_match('/^(\d{1,2})(st|nd|rd|th) (\w+) (\d{4})$/', $date, $m)) {
+                $parsed[] = ['day' => $m[1] . $m[2], 'month' => $m[3], 'year' => $m[4]];
+            } else {
+                return implode(' - ', $dates); // fallback
+            }
+        }
+
+        $days = array_column($parsed, 'day');
+        $months = array_unique(array_column($parsed, 'month'));
+        $years = array_unique(array_column($parsed, 'year'));
+
+        if (count($months) == 1 && count($years) == 1) {
+            if ($count == 3) {
+                return $days[0] . ', ' . $days[1] . ' and ' . $days[2] . ' ' . $months[0] . ', ' . $years[0];
+            } elseif ($count == 4) {
+                return $days[0] . ', ' . $days[1] . ', ' . $days[2] . ' and ' . $days[3] . ' ' . $months[0] . ', ' . $years[0];
+            }
+        } elseif (count($years) == 1) {
+            // different months, assume consecutive
+            $month_days = [];
+            foreach ($parsed as $p) {
+                $month_days[$p['month']][] = $p['day'];
+            }
+            $parts = [];
+            foreach ($month_days as $mon => $dys) {
+                $parts[] = implode(', ', $dys) . ' ' . $mon;
+            }
+            return implode(', ', array_slice($parts, 0, -1)) . ' and ' . end($parts) . ', ' . $years[0];
+        } else {
+            return implode(' - ', $dates);
+        }
+    }
+}
+
+
 //Redirect Start
 function add_custom_rewrite_rule()
 {
@@ -483,6 +535,12 @@ function la_custom_order_completed_action($order_id)
             try {
                 /** Omnisend InstantMail trigger */
                 la_instant_mail($order, $item);
+            } catch (Exception $ex) {
+            }
+
+            try {
+                /** Omnisend classroom_training trigger */
+                la_classroom_training($order, $item);
             } catch (Exception $ex) {
             }
 
@@ -979,7 +1037,7 @@ if (! function_exists('create_json_object_if_not_exists')) {
             // Create if not exists
             if (!file_exists($file_path)) {
                 create_json_object_by_product_id($product_id);
-            } else {
+            }else {
                 // If file exists, update it
                 create_json_object_by_product_id($product_id);
             }
@@ -1013,19 +1071,11 @@ if (! function_exists('create_json_object_by_product_id')) {
         $location       = sanitize_text_field(get_post_meta($meta_id, 'la_phleb_course_location_root', true));
         $time           = sanitize_text_field(get_post_meta($meta_id, 'la_phleb_course_time_root', true));
         $address        = sanitize_text_field(get_post_meta($meta_id, 'la_phleb_course_address_root', true));
-        $regular_price  = '£' . get_post_meta($meta_id, 'la_phleb_course_regular_price', true);
-        $sell_price     = '£' . get_post_meta($meta_id, 'la_phleb_course_sell_price', true);
-
-        $existing_dates = [];
-        if (is_array($course_meta_group) && !empty($course_meta_group)) {
-            $existing_dates = array_map(function ($course_item) {
-                $date_to_check = $course_item['adv_course_date'] ?? $course_item['la_phleb_course_date'];
-                return date('d F Y', strtotime($date_to_check));
-            }, $course_meta_group);
-            $existing_dates = array_unique($existing_dates);
-        }
+        $root_regular_price  = '£' . get_post_meta($meta_id, 'la_phleb_course_regular_price', true);
+        $root_sell_price     = '£' . get_post_meta($meta_id, 'la_phleb_course_sell_price', true);
 
         $formatted_items = [];
+        $is_dummy_date_created = false;
         foreach ($course_meta_group as $course) {
             $course_date = $course['adv_course_date'] ?? $course['la_phleb_course_date'];
             $is_future_date = strtotime($course_date) >= strtotime("now");
@@ -1037,7 +1087,6 @@ if (! function_exists('create_json_object_by_product_id')) {
             $quota_full = $stock_qty < 1;
             $delete_flag = !$is_future_date || !empty($course['la_phleb_course_delete']);
             $hide_flag = !empty($course['la_phleb_course_hide']) ? 1 : 0;
-
             $formatted_item = [
                 'var'     => intval($course['la_phleb_course_var_id'] ?? 0),
                 'pti'     => intval($course['pb_phleb_course_var_id'] ?? 0),
@@ -1046,7 +1095,9 @@ if (! function_exists('create_json_object_by_product_id')) {
                 'hide'    => $hide_flag,
                 'quota'   => $quota_full ? 1 : 0,
                 'delete'  => $delete_flag ? 1 : 0,
-                'date'    => sanitize_text_field($course['la_phleb_course_date'])
+                'date'    => sanitize_text_field($course['la_phleb_course_date']),
+                'regular_price' => sanitize_text_field(!empty($course['la_regular_price']) ? '£' . $course['la_regular_price'] : $root_regular_price),
+                'sell_price' => sanitize_text_field(!empty($course['la_sell_price']) ? '£' . $course['la_sell_price'] : $root_sell_price),
             ];
             if (!empty($course['la_phleb_course_address'])) {
                 $formatted_item['address'] = sanitize_text_field($course['la_phleb_course_address']);
@@ -1055,23 +1106,46 @@ if (! function_exists('create_json_object_by_product_id')) {
                 $formatted_item['time'] = sanitize_text_field($course['la_phleb_course_time']);
             }
 
-            $comma_count = substr_count($course['la_phleb_course_date'], ',');
-            if ($comma_count < 2) {
-                $dummy_date = date('d F Y', strtotime($course_date) - 2 * 24 * 3600);
+            if (!$is_dummy_date_created && $stock_qty > 0 && !$delete_flag) {
                 
-                if (!in_array($dummy_date, $existing_dates)) {
-                $dummy_item = $formatted_item;
-                $dummy_item['quota'] = 1;
-                $dummy_item['real'] = 0;
-                $dummy_item['seat'] = 0;
-                $dummy_item['date'] = $dummy_date;
-                $formatted_items[] = $dummy_item;
+                if (!empty($course['adv_course_middle_date'])) {
+                    $three_dates = [];
 
+                    for ($i = 3; $i >= 1; $i--) {
+                        $dummy_timestamp = strtotime($course_date) - ($i * 24 * 3600);
+                        $three_dates[] = formatOrdinalDate($dummy_timestamp);
+                    }
+                    $formatted_three_dates = formatThreeDates($three_dates);
+
+                    $dummy_item = $formatted_item;
+                    $dummy_item['quota'] = 1;
+                    $dummy_item['real']  = 0;
+                    $dummy_item['seat']  = 0;
+                    $dummy_item['date']  = $formatted_three_dates;
+
+                    $formatted_items[] = $dummy_item;
+
+                } else {
+                    $days_to_subtract = 2; 
+                    $dummy_timestamp = strtotime($course_date) - $days_to_subtract * 24 * 3600;
+                    $dummy_date = date('d F Y', $dummy_timestamp);
+                    
+                    $dummy_item = $formatted_item;
+                    $dummy_item['quota'] = 1;
+                    $dummy_item['real'] = 0;
+                    $dummy_item['seat'] = 0;
+                    $dummy_item['date'] = $dummy_date;
+                    $formatted_items[] = $dummy_item;
                 }
-            
+
+                $is_dummy_date_created = true;
+            } else if ($stock_qty < 1 && !$delete_flag) {
+                $is_dummy_date_created = true;
             }
 
-            if ($delete_flag != 1) {
+            
+
+        if ($delete_flag != 1) {
                 $formatted_items[] = $formatted_item;
             }
         }
@@ -1079,8 +1153,8 @@ if (! function_exists('create_json_object_by_product_id')) {
             'location'      => $location,
             'time'          => $time,
             'address'       => $address,
-            'regular_price' => $regular_price,
-            'sell_price'    => $sell_price,
+            'regular_price' => $root_regular_price,
+            'sell_price'    => $root_sell_price,
             'items'         => $formatted_items,
         ];
         $json_object = json_encode($product_details);
@@ -1633,13 +1707,32 @@ function la_consent_form($order, $product, $item)
 {
 
 
+    if (!$product->is_type('variable')) {
+        return;
+    }
+
+    $product_id     = $item->get_product_id();
+    $meta_id = ($product_id == 366854) ? 354284 : $product_id;
+    
+    $variation_id = $item->get_variation_id();
     $course_date = "";
-    if ($product->is_type('variable')) {
-        $variation_id = $item->get_variation_id();
+    
+    $repeater_data = get_post_meta($meta_id, 'la_phleb_course_meta_group', true);
+    
+    if (!empty($repeater_data) && is_array($repeater_data)) {
+        foreach ($repeater_data as $repeater_item) {
+            if (isset($repeater_item['la_phleb_course_var_id']) && $repeater_item['la_phleb_course_var_id'] == $variation_id) {
+                if (isset($repeater_item['adv_course_date']) && !empty($repeater_item['adv_course_date'])) {
+                    $course_date = $repeater_item['adv_course_date'];
+                    break;
+                }
+            }
+        }
+    }
+    
+    if (empty($course_date)) {
         $variation = wc_get_product($variation_id);
         $course_date = wc_get_formatted_variation($variation, true, false, false);
-    } else {
-        $course_date = $product->get_title();
     }
 
 
@@ -1658,9 +1751,9 @@ function la_consent_form($order, $product, $item)
     } elseif (in_array($product->get_id(), $IV_Cannulation_Training)) {
         $consent_form_url = 'https://lead-academy.org/consent-form-iv-cannulation/' . $order->get_id();
     } elseif (in_array($product->get_id(), $nail_Training)){
-        $consent_form_url = 'https://lead-academy.org/nail-training-consent-form' . $order->get_id();
+        $consent_form_url = 'https://lead-academy.org/nail-training-consent-form/' . $order->get_id();
     }elseif ($product->get_id() == 448459){
-        $consent_form_url = 'https://lead-academy.org/consent-form-iv-drip-training' . $order->get_id();
+        $consent_form_url = 'https://lead-academy.org/consent-form-iv-drip-training/' . $order->get_id();
     }
 
     $dynamic_value = [
@@ -1796,6 +1889,15 @@ function la_instant_mail($order, $item)
         "parking" => "Free on-site parking is available. Alternative parking arrangements can be found by  <a href=\"https://lead-academy.org/venue/manchester\" target=\"_blank\" style=\"color: #AF1F47; text-decoration: underline;\">clicking here</a>.",
         "certificate" => "<strong>For Certificate:</strong> To receive your hardcopy certificate with the correct name, please reply to this email with the full name you want on it. If you don’t confirm the name 4 working days before the class, Lead Academy will not be responsible for any errors on the certificate",
         "location_guide" => "<strong>Instructions for Entering the Training Room:</strong>Once you are inside the Salford Watersports Centre, please proceed to Reception, where a team member will guide you to the training room. "
+        ],
+        "Leeds" => [
+        "address" => " Cardigan Community Centre,\n 145-149 Cardigan Road, Burley\nLeeds\nLS6 1LJ",
+        "time" => "10:00 am - 5:00 pm",
+        "vanue_link" => "Arriving by Train or Bus: The venue is easily accessible via public transport. You can check detailed directions by <a href=\"https://lead-academy.org/venue/leeds\" target=\"_blank\" style=\"color: #AF1F47; text-decoration: underline;\">clicking here</a>.",
+        "instructions_all" => "<p><strong>Instructions to get into the training venue:</strong>\n</p>",
+        "parking" => "Free on-site parking is available. Alternative parking arrangements can be found by  <a href=\"https://www.yourparkingspace.co.uk/search?rental=short&address=LS6%201LJ,%20Hyde%20Park&lat=53.80986871934744&lng=-1.5745838358459423&include_booked=false&space_size&season_plan=mon-sun&sort=location&start=2025-11-13T09%3A30%3A00%2B00%3A00&end=2025-11-13T17%3A00%3A00%2B00%3A00\" target=\"_blank\" style=\"color: #AF1F47; text-decoration: underline;\">clicking here</a>.",
+        "certificate" => "<strong>For Certificate:</strong> To receive your hardcopy certificate with the correct name, please reply to this email with the full name you want on it. If you don’t confirm the name 4 working days before the class, Lead Academy will not be responsible for any errors on the certificate",
+        "training_venue" => "You are requested to come to the training venue by 9:45 am. After 10 am, we will not allow you to the classroom, as it may interrupt the class.",
         ]
     ];
 
@@ -1942,7 +2044,7 @@ function la_retry_instant_mail($data)
     
     wp_remote_post("https://api.omnisend.com/v5/events", [
         'headers' => [
-            'X-API-KEY' => 'your-key',
+            'X-API-KEY' => '644a6c6f71a2f8c907940b48-ZPvXST3Zm2mzhZ5hnUqnBLZJOPRegnEqWuJTCd7J4SuvJhKrQF',
             'Content-Type' => 'application/json',
         ],
         'body' => json_encode($unserialized_data),
@@ -1963,6 +2065,69 @@ function la_check_weekend_or_weekday($date)
         return "weekday";
     }
 }
+
+
+
+/**
+ * Omnisend classroom_training event trigger
+ *
+ * @param $order
+ * @param $item
+ */
+function la_classroom_training($order, $item)
+{
+    $data = [
+        "contact" => [
+            "email" => $order->get_billing_email()
+        ],
+        "origin" => "api",
+        "eventName" => "classroom_training",
+        "properties" => []
+    ];
+
+    // API request to Omnisend
+    $post_api_url = "https://api.omnisend.com/v5/events";
+
+    $response = wp_remote_post($post_api_url, [
+        'headers' => [
+            'X-API-KEY' => '644a6c6f71a2f8c907940b48-ZPvXST3Zm2mzhZ5hnUqnBLZJOPRegnEqWuJTCd7J4SuvJhKrQF',
+            'Content-Type' => 'application/json',
+        ],
+        'body' => json_encode($data),
+    ]);
+
+    if (is_wp_error($response)) {
+        error_log('classroom_training ERROR: ' . $response->get_error_message());
+        $serialized_data = maybe_serialize($data);
+        wp_schedule_single_event(time() + 60, 'la_retry_classroom_training_event', [$serialized_data]);
+    } else {
+        $code = wp_remote_retrieve_response_code($response);
+        $body = wp_remote_retrieve_body($response);
+        error_log("classroom_training Response [$code]: $body");
+
+        if ($code >= 400) {
+            $serialized_data = maybe_serialize($data);
+            wp_schedule_single_event(time() + 60, 'la_retry_classroom_training_event', [$serialized_data]);
+        }
+    }
+}
+
+add_action('la_retry_classroom_training_event', 'la_retry_classroom_training');
+
+function la_retry_classroom_training($data)
+{
+    // Unserialize data if it was serialized for cron
+    $unserialized_data = maybe_unserialize($data);
+
+    wp_remote_post("https://api.omnisend.com/v5/events", [
+        'headers' => [
+            'X-API-KEY' => '644a6c6f71a2f8c907940b48-ZPvXST3Zm2mzhZ5hnUqnBLZJOPRegnEqWuJTCd7J4SuvJhKrQF',
+            'Content-Type' => 'application/json',
+        ],
+        'body' => json_encode($unserialized_data),
+    ]);
+}
+
 
 
 
@@ -2573,4 +2738,3 @@ function specific_date_coupon_error_message( $err, $err_code, $coupon ) {
     
     return $err;
 }
-
