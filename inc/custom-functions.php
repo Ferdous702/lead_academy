@@ -859,6 +859,11 @@ if (!function_exists('la_order_completed_action')) {
                 $meta_id = ($product_id == 366854) ? 354284 : $product_id;
                 create_json_object_by_product_id($meta_id);
             }
+            
+            // Special handling for product ID 371100 to create tab-specific JSON files
+            if ($product_id == 371100) {
+                create_json_object_by_product_id_and_tab($product_id);
+            }
         }
     }
 }
@@ -997,6 +1002,11 @@ if (!function_exists('la_product_update_to_json_store')) {
             $meta_id = ($post_id == 366854) ? 354284 : $post_id;
             create_json_object_by_product_id($meta_id);
         }
+        
+        // Special handling for product ID 371100 to create tab-specific JSON files
+        if ($post_id == 371100) {
+            create_json_object_by_product_id_and_tab($post_id);
+        }
     }
 }
 // Update PTI Stock by API on Post Update
@@ -1023,6 +1033,11 @@ if (!function_exists('la_post_update_to_json_store')) {
         if (in_array($post_id, array(354284))) {
             create_json_object_by_product_id($post_id);
         }
+        
+        // Special handling for product ID 371100 to create tab-specific JSON files
+        if ($post_id == 371100) {
+            create_json_object_by_product_id_and_tab($post_id);
+        }
     }
 }
 
@@ -1040,6 +1055,21 @@ if (! function_exists('create_json_object_if_not_exists')) {
             }else {
                 // If file exists, update it
                 create_json_object_by_product_id($product_id);
+            }
+        }
+        
+        // Special handling for product ID 371100 to create tab-specific JSON files
+        if (is_product() && get_the_ID() == 371100) {
+            $course_tab = get_post_meta(371100, 'phuk_course_tab', true);
+            $tab_suffix = $course_tab === 'two_day' ? 'two_day' : 'one_day';
+            $tab_file_path = WP_CONTENT_DIR . '/json/' . 371100 . '-' . $tab_suffix . '.json';
+            
+            // Create if not exists
+            if (!file_exists($tab_file_path)) {
+                create_json_object_by_product_id_and_tab(371100);
+            }else {
+                // If file exists, update it
+                create_json_object_by_product_id_and_tab(371100);
             }
         }
     }
@@ -1159,6 +1189,79 @@ if (! function_exists('create_json_object_by_product_id')) {
         ];
         $json_object = json_encode($product_details);
         $file_path = WP_CONTENT_DIR . '/json/' . $product_id . '.json';
+        file_put_contents($file_path, $json_object);
+    }
+}
+
+//Create JSON object by product ID and tab
+if (!function_exists('create_json_object_by_product_id_and_tab')) {
+    function create_json_object_by_product_id_and_tab($product_id)
+    {
+        check_and_create_json_folder();
+        $meta_id = ($product_id == 366854) ? 354284 : $product_id;
+        $course_meta_group = get_post_meta($meta_id, 'la_phleb_course_meta_group', true);
+        /* Sort the date array in ascending order */
+        // $sort_function = isset($course_meta_group[0]['adv_course_date']) ? 'sortByDateAdv' : 'sortByDateSingle';
+        if (is_array($course_meta_group) && !empty($course_meta_group)) {
+            $sort_function = isset($course_meta_group[0]['adv_course_date']) ? 'sortByDateAdv' : 'sortByDateSingle';
+            usort($course_meta_group, $sort_function);
+        }
+        $location       = sanitize_text_field(get_post_meta($meta_id, 'la_phleb_course_location_root', true));
+        $time           = sanitize_text_field(get_post_meta($meta_id, 'la_phleb_course_time_root', true));
+        $address        = sanitize_text_field(get_post_meta($meta_id, 'la_phleb_course_address_root', true));
+        $root_regular_price  = '£' . get_post_meta($meta_id, 'la_phleb_course_regular_price', true);
+        $root_sell_price     = '£' . get_post_meta($meta_id, 'la_phleb_course_sell_price', true);
+
+        $formatted_items = [];
+        foreach ($course_meta_group as $course) {
+            $course_date = $course['adv_course_date'] ?? $course['la_phleb_course_date'];
+            $is_future_date = strtotime($course_date) >= strtotime("now");
+            $is_old = strtotime($course_date) < strtotime("now") - 2 * 24 * 3600;
+            preg_match('/\d+/', $course['la_phleb_course_seats_left'], $matches);
+            $seats_left = (int) ($matches[0] ?? 0);
+            $stock_qty = get_stock_by_variation($course['la_phleb_course_var_id']);
+            $seats_sort = ($stock_qty < 4) ? max($stock_qty, 0) : $seats_left;
+            $quota_full = $stock_qty < 1;
+            $delete_flag = !$is_future_date || !empty($course['la_phleb_course_delete']);
+            $hide_flag = !empty($course['la_phleb_course_hide']) ? 1 : 0;
+            $formatted_item = [
+                'var'     => intval($course['la_phleb_course_var_id'] ?? 0),
+                'pti'     => intval($course['pb_phleb_course_var_id'] ?? 0),
+                'real'    => $stock_qty,
+                'seat'    => $seats_sort,
+                'hide'    => $hide_flag,
+                'quota'   => $quota_full ? 1 : 0,
+                'delete'  => $delete_flag ? 1 : 0,
+                'date'    => sanitize_text_field($course['la_phleb_course_date']),
+                'regular_price' => sanitize_text_field(!empty($course['la_regular_price']) ? '£' . $course['la_regular_price'] : $root_regular_price),
+                'sell_price' => sanitize_text_field(!empty($course['la_sell_price']) ? '£' . $course['la_sell_price'] : $root_sell_price),
+            ];
+            if (!empty($course['la_phleb_course_address'])) {
+                $formatted_item['address'] = sanitize_text_field($course['la_phleb_course_address']);
+            }
+            if (!empty($course['la_phleb_course_time'])) {
+                $formatted_item['time'] = sanitize_text_field($course['la_phleb_course_time']);
+            }
+
+            if ($delete_flag != 1) {
+                $formatted_items[] = $formatted_item;
+            }
+        }
+        $product_details = [
+            'location'      => $location,
+            'time'          => $time,
+            'address'       => $address,
+            'regular_price' => $root_regular_price,
+            'sell_price'    => $root_sell_price,
+            'items'         => $formatted_items,
+        ];
+        $json_object = json_encode($product_details);
+        
+        // Get the course tab value to determine filename
+        $course_tab = get_post_meta($meta_id, 'phuk_course_tab', true);
+        $tab_suffix = $course_tab === 'two_day' ? 'two_day' : 'one_day';
+        $file_path = WP_CONTENT_DIR . '/json/' . $product_id . '-' . $tab_suffix . '.json';
+        
         file_put_contents($file_path, $json_object);
     }
 }
