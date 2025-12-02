@@ -96,6 +96,112 @@ if ( $product && $product->is_type( 'variable' ) ) :
 
     <script src="https://unpkg.com/lucide@latest"></script>
 
+    <script>
+    jQuery(document).ready(function($) {
+        // Track loaded tabs to prevent duplicate AJAX calls
+        var loadedTabs = {};
+        
+        $('.la-compact-tab-btn').on('click', function() {
+            var $btn = $(this);
+            var targetTab = $btn.data('tab');
+            var $content = $('#' + targetTab);
+            
+            // Get the tab type from the content div
+            var tabType = $content.data('tab-type') || '';
+            
+            // Check if this tab's content has already been loaded
+            if (loadedTabs[targetTab]) {
+                return; // Already loaded, just show/hide as per existing logic
+            }
+            
+            // Show loading message
+            var $cardsWrapper = $content.find('.la-compact-cards-wrapper');
+            var originalContent = $cardsWrapper.html();
+            $cardsWrapper.html('<div class="woocommerce-info">Loading course data...</div>');
+            
+            // Make AJAX call to load JSON data
+            $.ajax({
+                url: '<?php echo admin_url('admin-ajax.php'); ?>',
+                type: 'POST',
+                data: {
+                    action: 'load_tab_json_data',
+                    product_id: <?php echo $product_id; ?>,
+                    tab_type: tabType,
+                    nonce: '<?php echo wp_create_nonce('load_tab_json_nonce'); ?>'
+                },
+                success: function(response) {
+                    if (response.success) {
+                        var jsonData = response.data;
+                        var html = '';
+                        
+                        // Generate HTML from JSON data
+                        jsonData.items.forEach(function(item) {
+                            var courseDate = item.date;
+                            var isInStock = item.seat > 0 && !item.quota;
+                            var stockQuantity = item.seat;
+                            var currentPrice = item.sell_price.replace('£', '');
+                            var regularPrice = item.regular_price.replace('£', '');
+                            var salePrice = item.sell_price.replace('£', '');
+                            var isOnSale = item.regular_price != item.sell_price;
+                            
+                            html += '<div class="la-compact-card">';
+                            html += '    <div class="la-compact-card__header"><p>' + courseDate + '</p></div>';
+                            html += '    <div class="la-compact-card__body">';
+                            html += '        <div class="la-compact-card__tags">';
+                            html += '            <span class="la-compact-tag"><i data-lucide="clock-3"></i>' + jsonData.time + '</span>';
+                            html += '            <span class="la-compact-tag"><i data-lucide="map-pin"></i>' + jsonData.location + '</span>';
+                            html += '        </div>';
+                            html += '        <p class="la-compact-card__venue"><i data-lucide="building-2"></i>' + jsonData.address + '</p>';
+                            if (isInStock && stockQuantity) {
+                                html += '        <div class="la-compact-card__availability"><i class="fa fa-fire" aria-hidden="true"></i>Hurry! Only ' + stockQuantity + ' seats left</div>';
+                            } else {
+                                html += '        <div class="la-compact-card__availability out-of-stock"><i class="fa fa-fire" aria-hidden="true"></i>Sorry! No seats left</div>';
+                            }
+                            html += '    </div>';
+                            html += '    <div class="la-compact-card__footer">';
+                            html += '        <div class="la-compact-price">';
+                            if (isOnSale) {
+                                html += '            <span class="current-price">£' + salePrice + '</span>';
+                                html += '            <span class="original-price">£' + regularPrice + '</span>';
+                            } else {
+                                html += '            <span class="current-price">£' + currentPrice + '</span>';
+                            }
+                            html += '        </div>';
+                            if (isInStock) {
+                                html += '        <form class="cart la-compact-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post" enctype="multipart/form-data">';
+                                html += '            <input type="hidden" name="add-to-cart" value="<?php echo absint( $product->get_id() ); ?>" />';
+                                html += '            <input type="hidden" name="product_id" value="<?php echo absint( $product->get_id() ); ?>" />';
+                                html += '            <input type="hidden" name="variation_id" class="variation_id" value="' + item.var + '" />';
+                                html += '            <button type="submit" class="la-compact-book-btn">BOOK NOW</button>';
+                                html += '        </form>';
+                            } else {
+                                html += '        <button type="button" class="la-compact-book-btn la-compact-book-btn--disabled" disabled>FULLY BOOKED</button>';
+                            }
+                            html += '    </div>';
+                            html += '</div>';
+                        });
+                        
+                        $cardsWrapper.html(html);
+                        
+                        // Reinitialize Lucide icons for the new content
+                        if (typeof lucide !== 'undefined') {
+                            lucide.createIcons();
+                        }
+                        
+                        // Mark this tab as loaded
+                        loadedTabs[targetTab] = true;
+                    } else {
+                        $cardsWrapper.html('<div class="woocommerce-error">Error loading course data. Please try again.</div>');
+                    }
+                },
+                error: function() {
+                    $cardsWrapper.html('<div class="woocommerce-error">Error loading course data. Please try again.</div>');
+                }
+            });
+        });
+    });
+    </script>
+
     <div class="la-compact-wrapper">
         <section id="course-section-container">
 
@@ -183,7 +289,7 @@ if ( $product && $product->is_type( 'variable' ) ) :
                         }
                     }
                     ?>
-                    <div id="<?php echo esc_attr( $content_id ); ?>" class="la-compact-tab-content <?php echo $is_first_content ? 'active' : ''; ?>">
+                    <div id="<?php echo esc_attr( $content_id ); ?>" class="la-compact-tab-content <?php echo $is_first_content ? 'active' : ''; ?>" data-tab-type="<?php echo esc_attr($tab_type); ?>">
                         <?php if ($tab_meta && !empty($tab_meta['tab_intro_text'])) : ?>
                         <div class="la-compact-tab-intro">
                             <?php echo wpautop($tab_meta['tab_intro_text']); ?>

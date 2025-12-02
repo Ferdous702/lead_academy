@@ -1319,6 +1319,29 @@ if (!function_exists('get_combo_course_data_from_json')) {
     }
 }
 
+// AJAX handler for loading tab-specific JSON data
+add_action('wp_ajax_load_tab_json_data', 'load_tab_json_data_ajax');
+add_action('wp_ajax_nopriv_load_tab_json_data', 'load_tab_json_data_ajax');
+function load_tab_json_data_ajax()
+{
+    // Verify nonce for security
+    if (!wp_verify_nonce($_POST['nonce'], 'load_tab_json_nonce')) {
+        wp_die('Security check failed');
+    }
+    
+    $product_id = isset($_POST['product_id']) ? intval($_POST['product_id']) : 0;
+    $tab_type = isset($_POST['tab_type']) ? sanitize_text_field($_POST['tab_type']) : 'one_day';
+    
+    // Get JSON data for the specific tab
+    $json_data = get_combo_course_data_from_json($product_id, $tab_type);
+    
+    if ($json_data) {
+        wp_send_json_success($json_data);
+    } else {
+        wp_send_json_error('Failed to load JSON data');
+    }
+}
+
 function add_footer_custom_css()
 {
     // style for all pages
