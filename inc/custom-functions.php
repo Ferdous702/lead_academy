@@ -1058,7 +1058,6 @@ if (! function_exists('create_json_object_if_not_exists')) {
             }
         }
         
-        // Special handling for product ID 371100 to create both tab-specific JSON files
         if (is_product() && get_the_ID() == 371100) {
             // Check for both one_day and two_day JSON files
             $one_day_file_path = WP_CONTENT_DIR . '/json/371100-one_day.json';
@@ -1097,6 +1096,10 @@ function check_and_create_json_folder()
 if (! function_exists('create_json_object_by_product_id')) {
     function create_json_object_by_product_id($product_id)
     {
+        if ($product_id == 371100) {
+            return;
+        }
+        
         check_and_create_json_folder();
         $meta_id = ($product_id == 366854) ? 354284 : $product_id;
         $course_meta_group = get_post_meta($meta_id, 'la_phleb_course_meta_group', true);
