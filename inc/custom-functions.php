@@ -1268,15 +1268,52 @@ if (!function_exists('create_json_object_by_product_id_and_tab')) {
         ];
         $json_object = json_encode($product_details);
         
-        // Create both JSON files for product ID 371100 regardless of current tab selection
+        // Create JSON files based on date format checking for product ID 371100
         if ($product_id == 371100) {
-            // Create one_day.json file
-            $file_path_one_day = WP_CONTENT_DIR . '/json/' . $product_id . '-one_day.json';
-            file_put_contents($file_path_one_day, $json_object);
+            // Separate items based on date format
+            $one_day_items = [];
+            $two_day_items = [];
             
-            // Create two_day.json file
+            foreach ($formatted_items as $item) {
+                $course_date = $item['date'];
+                
+                // Check if date format indicates a single day or two days
+                // Single day format: "16th December, 2025"
+                // Two day format: "15th - 16th December 2025" or "10th and 11th January, 2026"
+                if (preg_match('/\b-\b|\b and \b/i', $course_date)) {
+                    // Two day format detected
+                    $two_day_items[] = $item;
+                } else {
+                    // Single day format detected
+                    $one_day_items[] = $item;
+                }
+            }
+            
+            // Create one_day.json file with single day items
+            $one_day_product_details = [
+                'location'      => $location,
+                'time'          => $time,
+                'address'       => $address,
+                'regular_price' => $root_regular_price,
+                'sell_price'    => $root_sell_price,
+                'items'         => $one_day_items,
+            ];
+            $one_day_json_object = json_encode($one_day_product_details);
+            $file_path_one_day = WP_CONTENT_DIR . '/json/' . $product_id . '-one_day.json';
+            file_put_contents($file_path_one_day, $one_day_json_object);
+            
+            // Create two_day.json file with two day items
+            $two_day_product_details = [
+                'location'      => $location,
+                'time'          => $time,
+                'address'       => $address,
+                'regular_price' => $root_regular_price,
+                'sell_price'    => $root_sell_price,
+                'items'         => $two_day_items,
+            ];
+            $two_day_json_object = json_encode($two_day_product_details);
             $file_path_two_day = WP_CONTENT_DIR . '/json/' . $product_id . '-two_day.json';
-            file_put_contents($file_path_two_day, $json_object);
+            file_put_contents($file_path_two_day, $two_day_json_object);
         } else {
             // For other products, use the original logic based on tab selection
             $course_tab = get_post_meta($meta_id, 'phuk_course_tab', true);
