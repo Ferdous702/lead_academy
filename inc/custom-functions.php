@@ -1284,6 +1284,41 @@ if (!function_exists('create_json_object_by_product_id_and_tab')) {
     }
 }
 
+// Function to read JSON data for combo courses and format it for display
+if (!function_exists('get_combo_course_data_from_json')) {
+    function get_combo_course_data_from_json($product_id, $tab_type = 'one_day')
+    {
+        // For product ID 371100, use tab-specific JSON files
+        if ($product_id == 371100) {
+            $json_file_path = WP_CONTENT_DIR . '/json/' . $product_id . '-' . $tab_type . '.json';
+        } else {
+            // For other products, use standard JSON file
+            $json_file_path = WP_CONTENT_DIR . '/json/' . $product_id . '.json';
+        }
+        
+        // Check if JSON file exists
+        if (!file_exists($json_file_path)) {
+            error_log("JSON file not found: " . $json_file_path);
+            return false;
+        }
+        
+        // Read and decode JSON file
+        $json_content = file_get_contents($json_file_path);
+        if ($json_content === false) {
+            error_log("Failed to read JSON file: " . $json_file_path);
+            return false;
+        }
+        
+        $data = json_decode($json_content, true);
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            error_log("Invalid JSON in file: " . $json_file_path . " - Error: " . json_last_error_msg());
+            return false;
+        }
+        
+        return $data;
+    }
+}
+
 function add_footer_custom_css()
 {
     // style for all pages
