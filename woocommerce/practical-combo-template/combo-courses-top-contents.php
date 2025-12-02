@@ -205,6 +205,8 @@ if ( $product && $product->is_type( 'variable' ) ) :
                                         $regular_price = str_replace('£', '', $item['regular_price']);
                                         $sale_price = str_replace('£', '', $item['sell_price']);
                                         $is_on_sale = $item['regular_price'] != $item['sell_price'];
+                                        $location = $item['location'];
+                                        $check_is_admin = is_user_logged_in() && array_filter(['administrator', 'editor', 'shop_manager'], 'current_user_can');
                                         ?>
                                         <div class='la-compact-card'>
                                             <div class='la-compact-card__header'><p><?php echo esc_html($course_date); ?></p></div>
@@ -214,7 +216,15 @@ if ( $product && $product->is_type( 'variable' ) ) :
                                                         <span class='la-compact-tag'><i data-lucide='calendar-check'></i><?php echo esc_html($tab_meta['tab_duration_tag']); ?></span>
                                                     <?php endif; ?>
                                                     <span class='la-compact-tag'><i data-lucide='clock-3'></i><?php echo esc_html($json_data['time']); ?></span>
-                                                    <span class='la-compact-tag'><i data-lucide='map-pin'></i><?php echo esc_html($json_data['location']); ?></span>
+                                                    <span class='la-compact-tag'><i data-lucide='map-pin'></i>
+                                                    <?php
+                                                    if ($check_is_admin == 1) {
+                                                        echo $location."Stock=".$item['real'];
+                                                    } else {
+                                                        echo $location;
+                                                    }
+                                                    ?>
+                                                </span>
                                                 </div>
                                                 <p class='la-compact-card__venue'><i data-lucide='building-2'></i><?php echo esc_html($json_data['address']); ?></p>
                                                 <?php if ( $is_in_stock && $stock_quantity ) : ?>
