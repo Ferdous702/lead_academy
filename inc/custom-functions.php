@@ -1285,26 +1285,34 @@ if (!function_exists('create_json_object_by_product_id_and_tab')) {
                 }
             }
             
+            // Get prices from first item in one_day array, fallback to root prices if array is empty
+            $one_day_regular_price = !empty($one_day_items) ? $one_day_items[0]['regular_price'] : $root_regular_price;
+            $one_day_sell_price = !empty($one_day_items) ? $one_day_items[0]['sell_price'] : $root_sell_price;
+            
             // Create one_day.json file with single day items
             $one_day_product_details = [
                 'location'      => $location,
                 'time'          => $time,
                 'address'       => $address,
-                'regular_price' => $root_regular_price,
-                'sell_price'    => $root_sell_price,
+                'regular_price' => $one_day_regular_price,
+                'sell_price'    => $one_day_sell_price,
                 'items'         => $one_day_items,
             ];
             $one_day_json_object = json_encode($one_day_product_details);
             $file_path_one_day = WP_CONTENT_DIR . '/json/' . $product_id . '-one_day.json';
             file_put_contents($file_path_one_day, $one_day_json_object);
             
+            // Get prices from first item in two_day array, fallback to root prices if array is empty
+            $two_day_regular_price = !empty($two_day_items) ? $two_day_items[0]['regular_price'] : $root_regular_price;
+            $two_day_sell_price = !empty($two_day_items) ? $two_day_items[0]['sell_price'] : $root_sell_price;
+            
             // Create two_day.json file with two day items
             $two_day_product_details = [
                 'location'      => $location,
                 'time'          => $time,
                 'address'       => $address,
-                'regular_price' => $root_regular_price,
-                'sell_price'    => $root_sell_price,
+                'regular_price' => $two_day_regular_price,
+                'sell_price'    => $two_day_sell_price,
                 'items'         => $two_day_items,
             ];
             $two_day_json_object = json_encode($two_day_product_details);
