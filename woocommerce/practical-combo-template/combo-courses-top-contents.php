@@ -64,8 +64,16 @@ if ( $product && $product->get_id() == 371100 && $product->is_type( 'variable' )
                     $content_id = $course_type_key . '_compact';
                     $tab_meta = false;
                     if (is_array($combo_tabs_data)) {
+                        // Create mapping from course_type_key to database course_type_slug
+                        $course_type_mapping = [
+                            'phlebotomy-cannulation' => 'Phlebotomy & Cannulation (2 Day)',
+                            'cannulation-training' => 'Cannulation Training (1 Day)'
+                        ];
+                        
+                        $db_course_type_slug = isset($course_type_mapping[$course_type_key]) ? $course_type_mapping[$course_type_key] : $course_type_key;
+                        
                         foreach ($combo_tabs_data as $tab) {
-                            if (isset($tab['course_type_slug']) && $tab['course_type_slug'] === $course_type_key) {
+                            if (isset($tab['course_type_slug']) && $tab['course_type_slug'] === $db_course_type_slug) {
                                 $tab_meta = $tab;
                                 break;
                             }
@@ -86,7 +94,7 @@ if ( $product && $product->get_id() == 371100 && $product->is_type( 'variable' )
                                 // Display data from JSON file
                                 foreach ($json_data['items'] as $item) {
                                     $course_date = $item['date'];
-                                    $is_in_stock = $item['seat'] > 0 && !$item['quota'];
+                                    $is_in_stock = $item['real'] > 0 && !$item['quota'];
                                     $stock_quantity = $item['seat'];
                                     $current_price = str_replace('£', '', $item['sell_price']);
                                     $regular_price = str_replace('£', '', $item['regular_price']);
