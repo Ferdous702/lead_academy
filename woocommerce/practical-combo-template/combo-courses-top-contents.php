@@ -1,8 +1,8 @@
 <?php
 /**
  * Phlebotomy Courses Top Tab Contents
- * This file is optimized exclusively for product ID 371100
- * Uses JSON-based system with WooCommerce fallback for maximum reliability
+ * Optimized exclusively for product ID 371100
+ * Uses JSON-based system for maximum performance
  */
 
 global $product;
@@ -34,29 +34,11 @@ if ( $product && $product->get_id() == 371100 && $product->is_type( 'variable' )
                     <?php
                     $is_first_tab = true;
                     foreach ( $course_types as $course_type_key => $tab_type ) :
-                        $json_data = get_combo_course_data_from_json($product_id, $tab_type);
                         $tab_id = $course_type_key . '_compact';
-                        
-                        // Use JSON data for prices if available
-                        if ($json_data) {
-                            $d_price   = str_replace('£', '', $json_data['sell_price']);
-                            $d_regular = str_replace('£', '', $json_data['regular_price']);
-                            $d_sale    = str_replace('£', '', $json_data['sell_price']);
-                            $d_on_sale = $json_data['regular_price'] != $json_data['sell_price'] ? 1 : 0;
-                        } else {
-                            $d_price   = '';
-                            $d_regular = '';
-                            $d_sale    = '';
-                            $d_on_sale = 0;
-                        }
                         ?>
                         <button
                             class="la-compact-tab-btn <?php echo $is_first_tab ? 'active' : ''; ?>"
                             data-tab="<?php echo esc_attr( $tab_id ); ?>"
-                            data-price="<?php echo $d_price; ?>"
-                            data-regular="<?php echo $d_regular; ?>"
-                            data-sale="<?php echo $d_sale; ?>"
-                            data-on-sale="<?php echo $d_on_sale; ?>"
                         >
                             <i class="active-tab-icon" data-lucide="check-circle"></i>
                             <?php
