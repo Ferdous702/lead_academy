@@ -205,7 +205,7 @@ if ( $product && $product->is_type( 'variable' ) ) :
                                         $regular_price = str_replace('£', '', $item['regular_price']);
                                         $sale_price = str_replace('£', '', $item['sell_price']);
                                         $is_on_sale = $item['regular_price'] != $item['sell_price'];
-                                        $location = $item['location'];
+                                        $location = $json_data['location'];
                                         $check_is_admin = is_user_logged_in() && array_filter(['administrator', 'editor', 'shop_manager'], 'current_user_can');
                                         ?>
                                         <div class='la-compact-card'>
@@ -219,7 +219,7 @@ if ( $product && $product->is_type( 'variable' ) ) :
                                                     <span class='la-compact-tag'><i data-lucide='map-pin'></i>
                                                     <?php
                                                     if ($check_is_admin == 1) {
-                                                        echo $location."Stock=".$item['real'];
+                                                        echo $location." Stock= ".$item['real'];
                                                     } else {
                                                         echo $location;
                                                     }
