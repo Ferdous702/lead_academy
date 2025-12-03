@@ -15,16 +15,12 @@ if ( $product && $product->is_type( 'variable' ) ) :
     $product_id = $product->get_id();
     $combo_tabs_data = get_post_meta($product_id, 'combo_course_tabs_group', true);
     
-    // For product ID 371100, determine tab types based on course type slugs
     if ($product_id == 371100) {
-        // Map course types to tab JSON files
         $course_types = ['phlebotomy-cannulation' => 'two_day', 'cannulation-training' => 'one_day'];
     } else {
-        // For other products, try to get JSON data first
         $json_data = get_combo_course_data_from_json($product_id);
         
         if ($json_data) {
-            // Create a single tab from JSON data
             $course_types = ['default' => 'one_day'];
             $grouped_variations = ['default' => []];
             
@@ -51,7 +47,6 @@ if ( $product && $product->is_type( 'variable' ) ) :
             // Fallback to original WooCommerce logic if JSON doesn't exist
             $available_variations = $product->get_available_variations();
             
-            // Group variations by the 'Course Type' attribute
             $grouped_variations = [];
             foreach ( $available_variations as $variation ) {
                 $course_type_key_1 = 'attribute_pa_course-type';

@@ -1276,15 +1276,11 @@ if (!function_exists('create_json_object_by_product_id_and_tab')) {
             
             foreach ($formatted_items as $item) {
                 $course_date = $item['date'];
-                
-                // Check if date format indicates a single day or two days
-                // Single day format: "16th December, 2025"
-                // Two day format: "15th - 16th December 2025" or "10th and 11th January, 2026"
-                if (preg_match('/\b-\b|\b and \b/i', $course_date)) {
-                    // Two day format detected
+    
+                // Two day format: "10th and 11th January, 2026"
+            if (preg_match('/\b-\b|\b and \b/i', $course_date)) {
                     $two_day_items[] = $item;
                 } else {
-                    // Single day format detected
                     $one_day_items[] = $item;
                 }
             }
@@ -1328,11 +1324,9 @@ if (!function_exists('create_json_object_by_product_id_and_tab')) {
 if (!function_exists('get_combo_course_data_from_json')) {
     function get_combo_course_data_from_json($product_id, $tab_type = 'one_day')
     {
-        // For product ID 371100, use tab-specific JSON files
         if ($product_id == 371100) {
             $json_file_path = WP_CONTENT_DIR . '/json/' . $product_id . '-' . $tab_type . '.json';
         } else {
-            // For other products, use standard JSON file
             $json_file_path = WP_CONTENT_DIR . '/json/' . $product_id . '.json';
         }
         
