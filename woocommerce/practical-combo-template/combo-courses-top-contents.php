@@ -15,9 +15,11 @@ if ( $product && $product->is_type( 'variable' ) ) :
     $product_id = $product->get_id();
     $combo_tabs_data = get_post_meta($product_id, 'combo_course_tabs_group', true);
     
+    // Product 371100 uses JSON-based system with WooCommerce fallback
     if ($product_id == 371100) {
         $course_types = ['phlebotomy-cannulation' => 'two_day', 'cannulation-training' => 'one_day'];
     } else {
+        // For other products, check if JSON system is available
         $json_data = get_combo_course_data_from_json($product_id);
         
         if ($json_data) {
@@ -44,7 +46,7 @@ if ( $product && $product->is_type( 'variable' ) ) :
                 ]
             ];
         } else {
-            // Fallback to original WooCommerce logic if JSON doesn't exist
+            // Fallback to WooCommerce logic if JSON doesn't exist
             $available_variations = $product->get_available_variations();
             
             $grouped_variations = [];
@@ -257,64 +259,75 @@ if ( $product && $product->is_type( 'variable' ) ) :
                                     echo '<div class="woocommerce-info">Course data is currently being updated. Please refresh the page in a moment.</div>';
                                 }
                             } else {
-                                // For other products, use original WooCommerce logic
-                                foreach ( $grouped_variations[$course_type_key] as $variation ) :
-                                    $variation_obj = wc_get_product( $variation['variation_id'] );
-                                    
-                                    $course_date_key_1 = 'attribute_pa_courses-date';
-                                    $course_date_key_2 = 'attribute_courses-date';
-                                    $course_date = 'Date not set';
-
-                                    if ( isset( $variation['attributes'][ $course_date_key_1 ] ) ) {
-                                        $course_date = $variation['attributes'][ $course_date_key_1 ];
-                                    } elseif ( isset( $variation['attributes'][ $course_date_key_2 ] ) ) {
-                                        $course_date = $variation['attributes'][ $course_date_key_2 ];
-                                    }
-                                    
-                                    $is_in_stock    = $variation_obj->is_in_stock();
-                                    $stock_quantity = $variation_obj->get_stock_quantity();
-                                    ?>
-                                    <div class='la-compact-card'>
-                                        <div class='la-compact-card__header'><p><?php echo esc_html($course_date); ?></p></div>
-                                        <div class='la-compact-card__body'>
-                                            <div class='la-compact-card__tags'>
-                                                <?php if ($tab_meta && !empty($tab_meta['tab_duration_tag'])) : ?>
-                                                    <span class='la-compact-tag'><i data-lucide='calendar-check'></i><?php echo esc_html($tab_meta['tab_duration_tag']); ?></span>
-                                                <?php endif; ?>
-                                                <span class='la-compact-tag'><i data-lucide='clock-3'></i>10:00 AM - 05:00 PM</span>
-                                                <span class='la-compact-tag'><i data-lucide='map-pin'></i>London</span>
-                                            </div>
-                                            <p class='la-compact-card__venue'><i data-lucide='building-2'></i>Bank Studio, 23 Park Royal Road, NW10 7JH</p>
-                                            <?php if ( $is_in_stock && $stock_quantity ) : ?>
-                                                <div class='la-compact-card__availability'><i class="fa fa-fire" aria-hidden="true"></i>Hurry! Only <?php echo esc_html( $stock_quantity ); ?> seats left</div>
-                                            <?php else : ?>
-                                                <div class='la-compact-card__availability out-of-stock'><i class="fa fa-fire" aria-hidden="true"></i>Sorry! No seats left</div>
-                                            <?php endif; ?>
-                                        </div>
-                                        <div class='la-compact-card__footer'>
-                                            <div class='la-compact-price'>
-                                                <?php if ( $variation_obj->is_on_sale() ) : ?>
-                                                    <span class='current-price'><?php echo wc_price( $variation_obj->get_sale_price() ); ?></span>
-                                                    <span class='original-price'><?php echo wc_price( $variation_obj->get_regular_price() ); ?></span>
+                                // For other products, use JSON data if available, otherwise fallback to WooCommerce
+                                $json_data = get_combo_course_data_from_json($product_id);
+                                
+                                if ($json_data) {
+                                    // Display data from JSON file
+                                    foreach ($json_data['items'] as $item) {
+                                        $course_date = $item['date'];
+                                        $is_in_stock = $item['seat'] > 0 && !$item['quota'];
+                                        $stock_quantity = $item['seat'];
+                                        $current_price = str_replace('£', '', $item['sell_price']);
+                                        $regular_price = str_replace('£', '', $item['regular_price']);
+                                        $sale_price = str_replace('£', '', $item['sell_price']);
+                                        $is_on_sale = $item['regular_price'] != $item['sell_price'];
+                                        $location = $json_data['location'];
+                                        $check_is_admin = is_user_logged_in() && array_filter(['administrator', 'editor', 'shop_manager'], 'current_user_can');
+                                        ?>
+                                        <div class='la-compact-card'>
+                                            <div class='la-compact-card__header'><p><?php echo esc_html($course_date); ?></p></div>
+                                            <div class='la-compact-card__body'>
+                                                <div class='la-compact-card__tags'>
+                                                    <?php if ($tab_meta && !empty($tab_meta['tab_duration_tag'])) : ?>
+                                                        <span class='la-compact-tag'><i data-lucide='calendar-check'></i><?php echo esc_html($tab_meta['tab_duration_tag']); ?></span>
+                                                    <?php endif; ?>
+                                                    <span class='la-compact-tag'><i data-lucide='clock-3'></i><?php echo esc_html($json_data['time']); ?></span>
+                                                    <span class='la-compact-tag'><i data-lucide='map-pin'></i>
+                                                    <?php
+                                                    if ($check_is_admin == 1) {
+                                                        echo $location." Stock= ".$item['real'];
+                                                    } else {
+                                                        echo $location;
+                                                    }
+                                                    ?>
+                                                </span>
+                                                </div>
+                                                <p class='la-compact-card__venue'><i data-lucide='building-2'></i><?php echo esc_html($json_data['address']); ?></p>
+                                                <?php if ( $is_in_stock && $stock_quantity ) : ?>
+                                                    <div class='la-compact-card__availability'><i class="fa fa-fire" aria-hidden="true"></i>Hurry! Only <?php echo esc_html( $stock_quantity ); ?> seats left</div>
                                                 <?php else : ?>
-                                                    <span class='current-price'><?php echo wc_price( $variation_obj->get_price() ); ?></span>
+                                                    <div class='la-compact-card__availability out-of-stock'><i class="fa fa-fire" aria-hidden="true"></i>Sorry! No seats left</div>
                                                 <?php endif; ?>
                                             </div>
-                                            
-                                            <?php if ( $is_in_stock ) : ?>
-                                                <form class="cart la-compact-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post" enctype="multipart/form-data">
-                                                    <input type="hidden" name="add-to-cart" value="<?php echo absint( $product->get_id() ); ?>" />
-                                                    <input type="hidden" name="product_id" value="<?php echo absint( $product->get_id() ); ?>" />
-                                                    <input type="hidden" name="variation_id" class="variation_id" value="<?php echo absint( $variation['variation_id'] ); ?>" />
-                                                    <button type="submit" class="la-compact-book-btn">BOOK NOW</button>
-                                                </form>
-                                            <?php else : ?>
-                                                <button type='button' class='la-compact-book-btn la-compact-book-btn--disabled' disabled>FULLY BOOKED</button>
-                                            <?php endif; ?>
+                                            <div class='la-compact-card__footer'>
+                                                <div class='la-compact-price'>
+                                                    <?php if ( $is_on_sale ) : ?>
+                                                        <span class='current-price'><?php echo wc_price( $sale_price ); ?></span>
+                                                        <span class='original-price'><?php echo wc_price( $regular_price ); ?></span>
+                                                    <?php else : ?>
+                                                        <span class='current-price'><?php echo wc_price( $current_price ); ?></span>
+                                                    <?php endif; ?>
+                                                </div>
+                                                
+                                                <?php if ( $is_in_stock ) : ?>
+                                                    <form class="cart la-compact-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post" enctype="multipart/form-data">
+                                                        <input type="hidden" name="add-to-cart" value="<?php echo absint( $product->get_id() ); ?>" />
+                                                        <input type="hidden" name="product_id" value="<?php echo absint( $product->get_id() ); ?>" />
+                                                        <input type="hidden" name="variation_id" class="variation_id" value="<?php echo absint( $item['var'] ); ?>" />
+                                                        <button type="submit" class="la-compact-book-btn">BOOK NOW</button>
+                                                    </form>
+                                                <?php else : ?>
+                                                    <button type='button' class='la-compact-book-btn la-compact-book-btn--disabled' disabled>FULLY BOOKED</button>
+                                                <?php endif; ?>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <?php
-                                endforeach;
+                                        <?php
+                                    }
+                                } else {
+                                    // Fallback to WooCommerce data if JSON doesn't exist
+                                    echo '<div class="woocommerce-info">Course data is currently being updated. Please refresh the page in a moment.</div>';
+                                }
                             }
                             ?>
                         </div>
