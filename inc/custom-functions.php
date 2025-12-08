@@ -519,31 +519,29 @@ add_action('woocommerce_order_status_completed', 'la_custom_order_completed_acti
 function la_custom_order_completed_action($order_id)
 {
     $order = wc_get_order($order_id);
+    
+    // Collect all qualifying items first
+    $qualifying_items = [];
+    $consent_form_items = [];
+    
     foreach ($order->get_items() as $item_id => $item) {
         $product_id = $item->get_product_id();
         $product = wc_get_product($product_id);
 
         if (in_array($product_id, CONSENT_FORM)) {
-            try {
-                /** Omnisend consent_form trigger */
-                la_consent_form($order, $product, $item);
-            } catch (Exception $ex) {
-            }
+            $consent_form_items[] = [
+                'order' => $order,
+                'product' => $product,
+                'item' => $item
+            ];
         }
 
         if (in_array($product_id, FACE_2_FACE_PRODUCT_CODES)) {
-            try {
-                /** Omnisend InstantMail trigger */
-                la_instant_mail($order, $item);
-            } catch (Exception $ex) {
-            }
-
-            try {
-                /** Omnisend classroom_training trigger */
-                la_classroom_training($order, $item);
-            } catch (Exception $ex) {
-            }
-
+            $qualifying_items[] = [
+                'order' => $order,
+                'product' => $product,
+                'item' => $item
+            ];
         }
 
         // Stock quantity check for variable products
@@ -559,6 +557,49 @@ function la_custom_order_completed_action($order_id)
                 $message = $product->get_name() . ', Variation: ' . $variable_title . ' is low on stock. Current stock: ' . $variation->get_stock_quantity();
                 $headers = 'Content-Type: text/html';
                 wp_mail($to, $subject, $message, $headers);
+            }
+        }
+    }
+    
+    // Process consent form items (individual)
+    foreach ($consent_form_items as $item_data) {
+        try {
+            la_consent_form($item_data['order'], $item_data['product'], $item_data['item']);
+        } catch (Exception $ex) {
+            // Error handling
+        }
+    }
+    
+    // Process qualifying items (consolidated or individual)
+    if (count($qualifying_items) > 1) {
+        // Multiple products - send consolidated email
+        try {
+            la_consolidated_instant_mail($order, $qualifying_items);
+        } catch (Exception $ex) {
+            // Error handling
+        }
+        
+        // Still send individual classroom_training for each
+        foreach ($qualifying_items as $item_data) {
+            try {
+                la_classroom_training($item_data['order'], $item_data['item']);
+            } catch (Exception $ex) {
+                // Error handling
+            }
+        }
+    } else {
+        // Single product - use existing individual approach
+        foreach ($qualifying_items as $item_data) {
+            try {
+                la_instant_mail($item_data['order'], $item_data['item']);
+            } catch (Exception $ex) {
+                // Error handling
+            }
+
+            try {
+                la_classroom_training($item_data['order'], $item_data['item']);
+            } catch (Exception $ex) {
+                // Error handling
             }
         }
     }
@@ -2018,6 +2059,307 @@ function la_retry_consent_form($data)
  * @param $order
  * @param $item
  */
+
+/**
+ * Consolidated InstantMail function for multiple products
+ * Sends a single email containing information for all qualifying products in an order
+ *
+ * @param WC_Order $order The order object
+ * @param array $items Array of qualifying order items
+ */
+function la_consolidated_instant_mail($order, $items)
+{
+    // Reuse existing venues array from la_instant_mail
+    $venues = [
+        "London" => [
+
+            "vanue_link" => "If you are arriving by Train or Bus, our venue is easily accessible via public transportation. You can check detailed directions by <a href=\"https://lead-academy.org/venue/london\" target=\"_blank\" style=\"color: #AF1F47; text-decoration: underline;\">clicking here</a>.",
+            "address" => "2nd Floor, Unit: 2.6, Bank Studio\n23 Park Royal Road\nLondon NW10 7JH",
+            "instructions_all" => "<strong>Instructions to get into training room:</strong> Upon arriving at the venue Bank Studio, use the intercom to dial 206/203 to access the building. Take the lift to the 2nd floor and go to unit 2.6.",
+            "parking" => "Free on-street parking is available on a first-come, first-serve basis. Alternative parking arrangements can be found by <a href=\"https://www.yourparkingspace.co.uk/search?rental=short&lat=51.526108&lng=-0.266143&address=NW10%207JH,%20London\ target=\"_blank\" style=\"color: #AF1F47; text-decoration: underline;\">clicking here</a>.",
+            "swedish_massage" => "Please note that students will be required to work on each other during the session; therefore, due to any medical condition or from a religious point of view, if you have any issue with applying massage on yourself, then kindly bring another person with you to whom we can apply massage technique to teach you best massage therapy approaches. You can only bring another person if you have issues in applying massage techniques in your body. It is essential that all students participate fully in both giving and receiving treatment to ensure a comprehensive learning experience for everyone.<br/>
+            Kindly wear comfortable clothing as you will be giving and receiving a full body massage during the practical part of the course.",
+            "certificate" => "<strong>For Certificate:</strong> To receive your hardcopy certificate with the correct name, please reply to this email with the full name you want on it. If you don't confirm the name 4 working days before the class, Lead Academy will not be responsible for any errors on the certificate",
+            "other_instructions" => "<strong>Other Instructions:</strong>Please be prepared to both give and receive Reflexology treatments during the practical session. Ensure you wear comfortable clothing. Additionally, inform us of any medical conditions that may prevent you from receiving treatment, such as a history of blood clotting, recent surgery (within the last six months), or being in the first trimester of pregnancy.",
+            "time" => "10:00 am - 5:00 pm",
+            "training_venue" => "You are requested to come to the training venue by 9:45 am. After 10 am, we will not allow you to the classroom, as it may interrupt the class.",
+            "location_guide" => "For more information, please see <a href=\"https://lead-academy.org/wp-content/uploads/0223/12/Lead-Academy-Training-London-Guide-1.pdf\" target=\"_blank\" style=\"color: #AF1F47; text-decoration: underline;\">clicking here</a>"
+        ],
+        "Swindon" => [
+            "vanue_link" => "If you are arriving by Train or Bus, our venue is easily accessible via public transportation. You can check detailed directions by <a href=\"https://lead-academy.org/venue/swindon\" target=\"_blank\" style=\"color: #AF1F47; text-decoration: underline;\">clicking here</a>.",
+            "address" => "Office 15, Pure Offices\nKembrey Park\nSwindon, SN2 8BW",
+            "instructions_all" => "<p><strong>Instructions to get into the training venue:</strong>\n</p>",
+            "parking" => "Free on-site parking is available on a first-come, first-serve basis. Alternative parking arrangements can be found by <a href=\"https://www.yourparkingspace.co.uk/search?rental=short&lat=51.578885&lng=-1.766471&address=SN2%208BW\" target=\"_blank\" style=\"color: #AF1F47; text-decoration: underline;\">clicking here</a>.",
+            "certificate" => "<strong>For Certificate:</strong> To receive your hardcopy certificate with the correct name, please reply to this email with the full name you want on it. If you don't confirm the name 4 working days before the class, Lead Academy will not be responsible for any errors on the certificate",
+            "time" => "10:00 am - 5:00 pm",
+            "training_venue" => "You are requested to come to the training venue by 9:45 am. After 10 am, we will not allow you to the classroom, as it may interrupt the class.",
+            "time" => "10:00 am - 5:00 pm",
+            "training_venue" => "You are requested to come to the training venue by 9:45 am. After 10 am, we will not allow you to the classroom, as it may interrupt the class.",
+        ],
+        "Bristol" => [
+            "vanue_link" => "If you are arriving by Train or Bus, our venue is easily accessible via public transportation. You can check detailed directions by <a href=\"https://lead-academy.org/venue/bristol\" target=\"_blank\" style=\"color: #AF1F47; text-decoration: underline;\">clicking here</a>.",
+            "address" => "Filwood Community Centre,\n15 – 19 Filwood Broadway,\nBristol BS4 1JL",
+            "instructions_all" => "<p><strong>Instructions to get into the training venue:</strong>\n</p>",
+            "parking" => "Free on-street parking is available on a first-come, first-serve basis. Alternative parking arrangements can be found by <a href=\"https://www.yourparkingspace.co.uk/search?rental=short&lat=51.425192&lng=-2.5879&address=BS4%201JP\" target=\"_blank\" style=\"color: #AF1F47; text-decoration: underline;\">clicking here</a>.",
+            "certificate" => "<strong>For Certificate:</strong> To receive your hardcopy certificate with the correct name, please reply to this email with the full name you want on it. If you don't confirm the name 4 working days before the class, Lead Academy will not be responsible for any errors on the certificate",
+            "time" => "10:00 am - 5:00 pm",
+            "training_venue" => "You are requested to come to the training venue by 9:45 am. After 10 am, we will not allow you to the classroom, as it may interrupt the class.",
+        ],
+        "Cardiff" => [
+            "vanue_link" => "If you are arriving by Train or Bus, our venue is easily accessible via public transportation. You can check detailed directions by <a href=\"https://lead-academy.org/venue/cardiff\" target=\"_blank\" style=\"color: #AF1F47; text-decoration: underline;\">clicking here</a>.",
+            "address" => "Ynysmaerdy Community Centre\nGlan-Yr-Ely,\nYnysmaerdy,\nPontyclun,\nCF72 8LJ",
+            "instructions_all" => "<p><strong>Instructions to get into the training venue:</strong>\n</p>",
+            "parking" => "Free on-site parking is available on a first-come, first-serve basis.",
+            "certificate" => "<strong>For Certificate:</strong> To receive your hardcopy certificate with the correct name, please reply to this email with the full name you want on it. If you don't confirm the name 4 working days before the class, Lead Academy will not be responsible for any errors on the certificate",
+            "time" => "10:00 am - 5:00 pm",
+            "training_venue" => "You are requested to come to the training venue by 9:45 am. After 10 am, we will not allow you to the classroom, as it may interrupt the class.",
+        ],
+        "Birmingham" => [
+            "vanue_link" => "If you are arriving by Train or Bus, our venue is easily accessible via public transportation. You can check detailed directions by <a href=\"https://lead-academy.org/venue/birmingham\" target=\"_blank\" style=\"color: #AF1F47; text-decoration: underline;\">clicking here</a>.",
+            "address" => "Lead Academy,\nOffice 4J/4K, 4th Floor\nCobalt Square\n83-85 Hagley      Road\nBirmingham\nB16 8QG",
+            "instructions_all" => "<p><strong>Instructions to get into the training venue:</strong>\n</p>",
+            "instructions_birmingham" => "👉 If your class is during a weekday and if you are unable to find the venue, please watch this tutorial for instruction: <a href=\"https://www.youtube.com/watch?v=WF_LhJM3i-M\" target=\"_blank\" style=\"color: #AF1F47; text-decoration: underline;\">click here</a><br><br>👉 If your class is during a weekend and if you are unable to find the venue, please watch this tutorial for instruction: <a href=\"https://www.youtube.com/watch?v=OgLPH8dXLRk\" target=\"_blank\" style=\"color: #AF1F47; text-decoration: underline;\">click here</a>",
+
+            "parking" => "Free on-site limited visitor parking is available on a first-come, first-serve basis. Alternative paid parking arrangements can be found by <a href=\"https://www.yourparkingspace.co.uk/search?rental=short&address=B16%208QG,%20Birmingham&lat=52.472511&lng=-1.922624&include_booked=false&space_size&season_plan=mon-sun&sort=location&start=2024-10-02T16%3A30%3A00%2B00%3A00&end=2024-10-02T23%3A30%3A00%2B01%3A00\" target=\"_blank\" style=\"color: #AF1F47; text-decoration: underline;\">clicking here</a>.",
+            "extra_note" => "Please note that students will be required to work on each other during the session; therefore, due to any medical condition or from a religious point of view, if you have any issue with applying massage on yourself, then kindly bring another person with you to whom we can apply massage technique to teach you best massage therapy approaches. You can only bring another person if you have issues in applying massage techniques in your body.<br/>
+            Wear comfortable clothing, keep nails short and hair tied back, avoid wearing jewelry, bring cleansing wipes, and minimise makeup to avoid unnecessary delays.<br/>
+            While previous courses may cover similar areas, it is essential to maintain attention and consideration for others. Negative comments or comparisons to other teachings are not helpful or necessary.",
+            "certificate" => "<strong>For Certificate:</strong> To receive your hardcopy certificate with the correct name, please reply to this email with the full name you want on it. If you don't confirm the name 4 working days before the class, Lead Academy will not be responsible for any errors on the certificate",
+            "time" => "10:00 am - 5:00 pm",
+            "training_venue" => "You are requested to come to the training venue by 9:45 am. After 10 am, we will not allow you to the classroom, as it may interrupt the class.",
+        ],
+        "Manchester" => [
+        "address" => "Salford Watersports Centre,\n15 The Quays, Salford\nM50 3SQ",
+        "time" => "10:00 am - 5:00 pm",
+        "vanue_link" => "Arriving by Train or Bus: The venue is easily accessible via public transport. You can check detailed directions by <a href=\"https://lead-academy.org/venue/manchester\" target=\"_blank\" style=\"color: #AF1F47; text-decoration: underline;\">clicking here</a>.",
+        "parking" => "Free on-site parking is available. Alternative parking arrangements can be found by  <a href=\"https://lead-academy.org/venue/manchester\" target=\"_blank\" style=\"color: #AF1F47; text-decoration: underline;\">clicking here</a>.",
+        "certificate" => "<strong>For Certificate:</strong> To receive your hardcopy certificate with the correct name, please reply to this email with the full name you want on it. If you don't confirm the name 4 working days before the class, Lead Academy will not be responsible for any errors on the certificate",
+        "location_guide" => "<strong>Instructions for Entering the Training Room:</strong>Once you are inside the Salford Watersports Centre, please proceed to Reception, where a team member will guide you to the training room. "
+        ],
+        "Leeds" => [
+        "address" => " Cardigan Community Centre,\n 145-149 Cardigan Road, Burley\nLeeds\nLS6 1LJ",
+        "time" => "10:00 am - 5:00 pm",
+        "vanue_link" => "Arriving by Train or Bus: The venue is easily accessible via public transport. You can check detailed directions by <a href=\"https://lead-academy.org/venue/leeds\" target=\"_blank\" style=\"color: #AF1F47; text-decoration: underline;\">clicking here</a>.",
+        "instructions_all" => "<p><strong>Instructions to get into the training venue:</strong>\n</p>",
+        "parking" => "Free on-site parking is available. Alternative parking arrangements can be found by  <a href=\"https://www.yourparkingspace.co.uk/search?rental=short&address=LS6%201LJ,%20Hyde%20Park&lat=53.80986871934744&lng=-1.5745838358459423&include_booked=false&space_size&season_plan=mon-sun&sort=location&start=2025-11-13T09%3A30%3A00%2B00%3A00&end=2025-11-13T17%3A00%3A00%2B00%3A00\" target=\"_blank\" style=\"color: #AF1F47; text-decoration: underline;\">clicking here</a>.",
+        "certificate" => "<strong>For Certificate:</strong> To receive your hardcopy certificate with the correct name, please reply to this email with the full name you want on it. If you don't confirm the name 4 working days before the class, Lead Academy will not be responsible for any errors on the certificate",
+        "training_venue" => "You are requested to come to the training venue by 9:45 am. After 10 am, we will not allow you to the classroom, as it may interrupt the class.",
+        ]
+    ];
+
+    // Group items by location for better organization
+    $items_by_location = [];
+    $all_product_names = [];
+    
+    foreach ($items as $item_data) {
+        $item = $item_data['item'];
+        $product = $item_data['product'];
+        $product_id = $item->get_product_id();
+        $meta_id = ($product_id == 366854) ? 354284 : $product_id;
+        
+        // Get location and group
+        $location = get_post_meta($meta_id, 'la_phleb_course_location_root', true);
+        $location = $location ? $location : 'Default';
+        
+        if (!isset($items_by_location[$location])) {
+            $items_by_location[$location] = [];
+        }
+        
+        $items_by_location[$location][] = [
+            'item' => $item,
+            'product' => $product,
+            'product_id' => $product_id,
+            'meta_id' => $meta_id
+        ];
+        
+        $all_product_names[] = $item->get_name();
+    }
+    
+    // Build consolidated email content
+    $email_content = build_consolidated_email_content($order, $items_by_location, $venues);
+    
+    // Send single email to customer
+    $data = [
+        "contact" => [
+            "email" => $order->get_billing_email(),
+        ],
+        "origin" => "api",
+        "eventName" => "InstantMail",
+        "properties" => [
+            "All_Courses" => implode(', ', $all_product_names),
+            "Consolidated_Email_Content" => $email_content,
+            "Order_ID" => $order->get_id(),
+            "Customer_Name" => $order->get_billing_first_name() . ' ' . $order->get_billing_last_name()
+        ]
+    ];
+    
+    // API request to Omnisend
+    send_omnisend_request($data);
+}
+
+/**
+ * Build consolidated email content for multiple products
+ *
+ * @param WC_Order $order The order object
+ * @param array $items_by_location Items grouped by location
+ * @param array $venues Venue information array
+ * @return string HTML email content
+ */
+function build_consolidated_email_content($order, $items_by_location, $venues)
+{
+    $content = "<h2>Your Booking Confirmation</h2>";
+    $content .= "<p>Dear " . $order->get_billing_first_name() . ",</p>";
+    $content .= "<p>Thank you for booking multiple courses with Lead Academy. Below are the details for all your courses:</p>";
+    
+    foreach ($items_by_location as $location => $location_items) {
+        if (isset($venues[$location])) {
+            $venue = $venues[$location];
+            
+            $content .= "<div style='margin: 20px 0; padding: 15px; border: 1px solid #ddd;'>";
+            $content .= "<h3>Location: " . $location . "</h3>";
+            $content .= "<p><strong>Address:</strong><br/>" . nl2br($venue['address']) . "</p>";
+            $content .= "<p><strong>Time:</strong> " . $venue['time'] . "</p>";
+            $content .= "<p><strong>Instructions:</strong><br/>" . $venue['instructions_all'] . "</p>";
+            
+            // List all courses at this location
+            $content .= "<h4>Courses at this venue:</h4>";
+            $content .= "<ul>";
+            
+            foreach ($location_items as $item_data) {
+                $item = $item_data['item'];
+                $product = $item_data['product'];
+                $product_id = $item_data['product_id'];
+                $meta_id = $item_data['meta_id'];
+                $variation_name = "";
+                
+                // Get variation details
+                $variation_data = $item->get_meta_data();
+                foreach ($variation_data as $meta) {
+                    if ($meta->key === 'courses') {
+                        $variation_name = $meta->value;
+                    }
+                }
+                
+                $content .= "<li><strong>" . $item->get_name() . "</strong>";
+                if ($variation_name) {
+                    $content .= " - " . $variation_name;
+                }
+                $content .= "</li>";
+            }
+            
+            $content .= "</ul>";
+            $content .= "<p><strong>Parking:</strong> " . $venue['parking'] . "</p>";
+            
+            // Add special notes for specific products/locations
+            $extra_note = "";
+            $Practical_1_Day_therapy_courses = [414746, 414748, 414685];
+            if ($location == 'Birmingham' && has_product_in_items($location_items, $Practical_1_Day_therapy_courses)) {
+                $extra_note = isset($venue['extra_note']) ? $venue['extra_note'] : "";
+                $content .= "<p>" . $extra_note . "</p>";
+            }
+            
+            $swedish_massage = "";
+            if ($location == 'London' && has_product_in_items($location_items, [421612])) {
+                $swedish_massage = isset($venue['swedish_massage']) ? $venue['swedish_massage'] : "";
+                $content .= "<p>" . $swedish_massage . "</p>";
+            }
+            
+            $location_guide = "";
+            if($location == 'London' || $location == 'Manchester') {
+                $location_guide = isset($venue['location_guide']) ? $venue['location_guide'] : "";
+                $content .= "<p>" . $location_guide . "</p>";
+            }
+            
+            $adv_phle_courses = [368595,382016,386971,410644,420510];
+            if (has_product_in_items($location_items, $adv_phle_courses)) {
+                $certificate_message = "<strong>To Issue Your Certificate:</strong>To receive your hardcopy certificate with the correct name, please reply to this email with a photo ID to verify and prepare certificate. If you don't confirm the name 4 working days before the class, Lead Academy will not be responsible for any errors on the certificate.";
+                $content .= "<p>" . $certificate_message . "</p>";
+            } else {
+                $content .= "<p><strong>" . $venue['certificate'] . "</p>";
+            }
+            
+            $Reflexology_massage = "";
+            if ($location == 'London' && has_product_in_items($location_items, [439294])) {
+                $Reflexology_massage = isset($venue['other_instructions']) ? $venue['other_instructions'] : "";
+                $content .= "<p>" . $Reflexology_massage . "</p>";
+            }
+            
+            $content .= "<p>" . $venue['training_venue'] . "</p>";
+            $content .= "</div>";
+        }
+    }
+    
+    $content .= "<p>Kind regards,<br/>Lead Academy</p>";
+    
+    return $content;
+}
+
+/**
+ * Helper function to check if items contain specific product IDs
+ *
+ * @param array $items Array of item data
+ * @param array $product_ids Array of product IDs to check
+ * @return bool True if any item matches the product IDs
+ */
+function has_product_in_items($items, $product_ids) {
+    foreach ($items as $item_data) {
+        if (in_array($item_data['product_id'], $product_ids)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+/**
+ * Helper function to send Omnisend API requests
+ *
+ * @param array $data Request data
+ */
+function send_omnisend_request($data)
+{
+    $post_api_url = "https://api.omnisend.com/v5/events";
+    
+    $response = wp_remote_post($post_api_url, [
+        'headers' => [
+            'X-API-KEY' => '644a6c6f71a2f8c907940b48-ZPvXST3Zm2mzhZ5hnUqnBLZJOPRegnEqWuJTCd7J4SuvJhKrQF',
+            'Content-Type' => 'application/json',
+        ],
+        'body' => json_encode($data),
+    ]);
+
+    if (is_wp_error($response)) {
+        error_log('ConsolidatedInstantMail ERROR: ' . $response->get_error_message());
+        $serialized_data = maybe_serialize($data);
+        wp_schedule_single_event(time() + 60, 'la_retry_consolidated_instant_mail_event', [$serialized_data]);
+    } else {
+        $code = wp_remote_retrieve_response_code($response);
+        $body = wp_remote_retrieve_body($response);
+        error_log("ConsolidatedInstantMail Response [$code]: $body");
+        
+        if ($code >= 400) {
+            $serialized_data = maybe_serialize($data);
+            wp_schedule_single_event(time() + 60, 'la_retry_consolidated_instant_mail_event', [$serialized_data]);
+        }
+    }
+}
+
+/**
+ * Retry handler for consolidated emails
+ */
+add_action('la_retry_consolidated_instant_mail_event', 'la_retry_consolidated_instant_mail');
+function la_retry_consolidated_instant_mail($data)
+{
+    // Unserialize data if it was serialized for cron
+    $unserialized_data = maybe_unserialize($data);
+    
+    wp_remote_post("https://api.omnisend.com/v5/events", [
+        'headers' => [
+            'X-API-KEY' => '644a6c6f71a2f8c907940b48-ZPvXST3Zm2mzhZ5hnUqnBLZJOPRegnEqWuJTCd7J4SuvJhKrQF',
+            'Content-Type' => 'application/json',
+        ],
+        'body' => json_encode($unserialized_data),
+    ]);
+}
 
 function la_instant_mail($order, $item)
 {
