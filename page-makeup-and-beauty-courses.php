@@ -1152,18 +1152,18 @@ Start your career in the beauty and makeup industry now!
                                     'Unlimited Tutor Support',
                                 ],
                             ],
-                            [
-                                'img_url' => '/wp-content/uploads/2025/03/Polygel-Nail-Extension.webp',
-                                'course_url' => '/polygel-nail-extension-training-london',
-                                'course_title' => 'Polygel Nail Extension Training London – Face 2 Face Course',
-                                'location' => 'London',
-                                'features' => [
-                                    '1 Day Face to Face Training',
-                                    '4 Instalments at Checkout',
-                                    'Accredited by CPD UK',
-                                    'Unlimited Tutor Support',
-                                ],
-                            ],
+                            // [
+                            //     'img_url' => '/wp-content/uploads/2025/03/Polygel-Nail-Extension.webp',
+                            //     'course_url' => '/polygel-nail-extension-training-london',
+                            //     'course_title' => 'Polygel Nail Extension Training London – Face 2 Face Course',
+                            //     'location' => 'London',
+                            //     'features' => [
+                            //         '1 Day Face to Face Training',
+                            //         '4 Instalments at Checkout',
+                            //         'Accredited by CPD UK',
+                            //         'Unlimited Tutor Support',
+                            //     ],
+                            // ],
                         ];
                     ?>
 
